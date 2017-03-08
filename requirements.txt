@@ -1,0 +1,10 @@
+dandelion-eu
+twython
+pandas
+langdetect
+numpy
+pymongo
+bson
+pprint
+twitter-text-python
+flask
