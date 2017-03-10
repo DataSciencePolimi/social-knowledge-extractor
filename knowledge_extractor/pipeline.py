@@ -1,4 +1,6 @@
 import pprint
+import pandas as pd
+import collections
 
 from .strategies.AST import AST
 from .strategies.EHE import EHE
@@ -15,6 +17,25 @@ class Pipeline:
           
         return experts
 
+    def createSpace(self,seeds):
+        print("Creating the vector space")
+        space = []
+        for k,v in seeds.items():
+            space += v
+        
+        space = set(space)
+        return space
+    
+    def createFeatureVector(self,space,data):
+        vector = {}
+        for k,v in data.items():
+            c = collections.Counter(v)
+            vector[k] = {}
+            for s in space:
+                vector[k][s] = c[s]
+        
+        return pd.DataFrame(vector)
+        
 
     def getSeeds(self):
         query = {}
@@ -23,21 +44,44 @@ class Pipeline:
     def getCandidates(self):
         query = {}
         return self.db.getCandidates(query)
-
-    def run(self):
-
-        seeds = self.getSeeds()
+    
+    def computeVectors(self,seeds):
+        mentions = {}
+        ast_mentions = {}
+        
+        print("Running the strategies")
         ehe = EHE(self.db,self.expertFile)
         ast = AST(self.db,self.expertFile)
         
-        mentions = {}
-        ast_mentions = {}
         for seed in seeds:
             #computer array of mentioned entity
             mentions[seed["_id"]] = ehe.getEntities(seed)
             ast_mentions[seed["_id"]] = ast.getEntities(seed)
         
-        pprint.pprint(ast_mentions)
+        space_ehe = self.createSpace(mentions)
+        space_ast = self.createSpace(ast_mentions)
+
+        print("Creating feature vector")
+        
+        seed_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions) 
+        seed_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)
+
+        seed_feature_vectors = seed_feature_vectors_ast.append(seed_feature_vectors_ehe)
+        return seed_feature_vectors
+
+    def run(self):
+
+        feature_vectors = {}
+
+        seeds = self.getSeeds()
+        candidates = self.getCandidates()
+
+        print("Computing seeds fv")
+        feature_vectors["seeds"] = self.computeVectors(seeds)
+        print("Computing candidates fv")
+        feature_vectors["candidates"] = self.computeVectors(candidates)
+
+        return feature_vectors
 
     def __init__(self,db,expertFile):
         self.db=db

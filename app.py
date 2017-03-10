@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 import os
 import pandas as pd
 import _thread
+import pprint
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -63,8 +64,9 @@ def start_pipeline():
     dbManager = DBManager("ske_db")
     
     pipeline = Pipeline(dbManager,"./knowledge_extractor/data/expert_types.csv")
-    pipeline.run()
-    return 'Hello, World!'
+    fv  = pipeline.run()
+    pprint.pprint(fv["seeds"].head())
+    return fv["seeds"].head()
 
 if __name__ == '__main__':
     app.run()
