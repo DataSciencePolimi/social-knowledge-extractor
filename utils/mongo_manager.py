@@ -1,15 +1,17 @@
 __author__ = 'marcotagliabue'
 
-import pymongo
-from pymongo.errors import DuplicateKeyError
-import configuration
 import sys
 import logging
+
+import pymongo
+from pymongo.errors import DuplicateKeyError
+
+import configuration
 
 
 class MongoManager():
     def __init__(self, name_db):
-        """This will be called each time we receive stream Data"""
+        """This will be called each time we receive stream data"""
         client = pymongo.MongoClient(configuration.address_local, configuration.port_local)
         self.db = client[name_db]
 

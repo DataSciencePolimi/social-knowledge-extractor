@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Social Knowledge Extractor</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Run Pipeline</h1>
+
+        <p class="lead">Fill the form in order to run the pipeline</p>
+
+        <div class="row">
+                <form action="/run" method="post" enctype = "multipart/form-data">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Email">Email address</label>
+                            <input type="email" class="form-control" name ="email" id="email" aria-describedby="emailHelp"
+                                   placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="consumer_secret">Dandelion App ID</label>
+                            <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id" placeholder="Enter access dandelion app ID">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="consumer_secret">Dandelion App Key</label>
+                            <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key" placeholder="Enter access dandelion app Key">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_seeds">Load CSV File</label>
+                            <input type="file" class="form-control-file" name="input_seeds" id="input_seeds" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">In the csv is required to have a list of handle extract from Twitter</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Run Pipeline</button>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="access_token">Twitter Access Token</label>
+                            <input type="text" class="form-control" name="access_token" id="access_token" placeholder="Enter access token">
+                        </div>
+                        <div class="form-group">
+                            <label for="access_token_secret">Twitter Secret Access Token</label>
+                            <input type="text" class="form-control" name="access_token_secret" id="access_token_secret" placeholder="Enter secret access token">
+                        </div>
+                        <div class="form-group">
+                            <label for="consumer_key">Twitter Consumer Key</label>
+                            <input type="text" class="form-control" name="consumer_key" id="consumer_key" placeholder="Enter access consumer key">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consumer_secret">Twitter Consumer Secret</label>
+                            <input type="text" class="form-control" name="consumer_secret" id="consumer_secret" placeholder="Enter access consumer secret">
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+    <!-- /.container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</body>
+</html>

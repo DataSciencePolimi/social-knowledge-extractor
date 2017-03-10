@@ -15,9 +15,10 @@ Date: 2017-02-27
 """
 
 import pandas as pd
-from Services import mongo_manager
-import configuration
 import pymongo
+
+from utils import mongo_manager
+import configuration
 
 
 class CsvFormatter:
@@ -29,18 +30,18 @@ class CsvFormatter:
         candidates = list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250]
         cand_ids = [c["_id"] for c in candidates if (c["ranking_index"] != 0)]
 
-        self.seed_candidates_to_csv(seeds, "Data/Out_csv/seed.csv")
-        self.seed_candidates_to_csv(candidates, "Data/Out_csv/cand.csv")
+        self.seed_candidates_to_csv(seeds, "../data/Out_csv/seed.csv")
+        self.seed_candidates_to_csv(candidates, "../data/Out_csv/cand.csv")
 
         entities_lf_seed = list(self.db_manager.find("entity_lf", {"seed": {"$in": seed_ids}}))
-        self.save_entities_lf(entities_lf_seed, "Data/Out_csv/seed_lfentities.csv")
+        self.save_entities_lf(entities_lf_seed, "../data/Out_csv/seed_lfentities.csv")
         entities_lf_cand = list(self.db_manager.find("entity_lf", {"seed": {"$in": cand_ids}}))
-        self.save_entities_lf(entities_lf_cand, "Data/Out_csv/cand_lfentities.csv")
+        self.save_entities_lf(entities_lf_cand, "../data/Out_csv/cand_lfentities.csv")
 
         entities_seed = list(self.db_manager.find("entity", {"seed": {"$in": seed_ids}}))
-        self.save_entities(entities_seed, "Data/Out_csv/seed_entities.csv")
+        self.save_entities(entities_seed, "../data/Out_csv/seed_entities.csv")
         entities_cand = list(self.db_manager.find("entity", {"seed": {"$in": cand_ids}}))
-        self.save_entities(entities_cand, "Data/Out_csv/cand_entities.csv")
+        self.save_entities(entities_cand, "../data/Out_csv/cand_entities.csv")
 
     def seed_candidates_to_csv(self, items, path):
         rows = []

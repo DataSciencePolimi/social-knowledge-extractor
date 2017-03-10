@@ -1,31 +1,35 @@
 __author__ = 'marcotagliabue'
 import math
 import logging
+
 from dandelion import DataTXT
+
 from dandelion.base import DandelionException
+
 import configuration
-from Services import mongo_manager
-from Model import tweets_chunk
+from utils import mongo_manager
+from model import tweets_chunk
 
 
 class CrawlDandelion:
-    def __init__(self):
+    def __init__(self, id_experiment):
+
+        self.id_experiment = id_experiment
 
         # Documentation: http://python-dandelion-eu.readthedocs.io/en/latest/datatxt.html#nex-named-entity-extraction
         self.db_manager = mongo_manager.MongoManager(configuration.db_name)
-        self.db_manager.delete_many("entity", {})
         languages = ("de", "en", "es", "fr", "it", "pt")
 
-        all_tweets = list(self.db_manager.find("tweets", {}))
+        all_tweets = list(self.db_manager.find("tweets", {"id_experiment":id_experiment}))
         chunks_for_each_key = math.ceil(len(all_tweets) / 4)
-        tweets_each_request = math.ceil(chunks_for_each_key / 1000)
+        tweets_each_request = math.ceil(chunks_for_each_key / configuration.NUMBER_REQUEST_DANDELION)
 
         print(len(all_tweets), chunks_for_each_key, tweets_each_request)
 
         # Retrieve all tweets
         languages_chunks = []
         for l in languages:
-            tweets = list(self.db_manager.find("tweets", {"lang": l}))
+            tweets = list(self.db_manager.find("tweets", {"lang": l, "id_experiment":id_experiment}))
             if (len(tweets) == 0):
                 continue
             # print(l,len(tweets), len(tweets)%tweets_each_request)
@@ -70,14 +74,15 @@ class CrawlDandelion:
             join_tweets.split_annotation_each_tweet(response.annotations)
             # pprint.pprint(join_tweets.index_tweet)
             for tweet in join_tweets.index_tweet:
-                seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"]}))[0][
+                seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"], "id_experiment":self.id_experiment}))[0][
                     "_id"]
                 for annotation in tweet["annotations"]:
                     annotation["tweet"] = tweet["tweet"]["_id"]
                     annotation["seed"] = seed_id
+                    annotation["id_experiment"] = self.id_experiment
                     # print(annotation)
                     self.db_manager.write_mongo("entity", annotation)
 
 
 if __name__ == "__main__":
-    CrawlDandelion()
+    CrawlDandelion("1234")

@@ -1,10 +1,12 @@
 __author__ = 'marcotagliabue'
 # PROBLEM: http://www.craigaddyman.com/mining-all-tweets-with-python/
 
-import configuration
-from twython import Twython, TwythonAuthError, TwythonError
 import logging
+
+from twython import Twython, TwythonAuthError, TwythonError
 from langdetect import detect
+
+import configuration
 
 
 class CrawlerUserTimelineTwitter:

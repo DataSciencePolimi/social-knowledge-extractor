@@ -8,3 +8,4 @@ bson
 pprint
 twitter-text-python
 flask
+yagmail

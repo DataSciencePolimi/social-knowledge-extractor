@@ -9,7 +9,7 @@ API_KEY_DANDELION3 = "76996c70b99f3b5f75855dd59ad18fde"
 APP3_ID = "fb625d39"
 API_KEY_DANDELION4 = "d6660596a9cd905ee42f9de9cc1581f4"
 APP4_ID = "55991b81"
-
+NUMBER_REQUEST_DANDELION = 1000
 
 # TWITTER API
 # Go to http://apps.twitter.com and create an app.

@@ -45,7 +45,7 @@ class Pipeline:
                 "http://dbpedia.org/ontology/Broadcaster",
                 "http://dbpedia.org/ontology/Artist",
                 "http://dbpedia.org/ontology/Magazine",
-                "http://dbpedia.org/ontology/Model",
+                "http://dbpedia.org/ontology/model",
                 "http://dbpedia.org/ontology/Organisation",
                 "http://dbpedia.org/ontology/TelevisionShow"
                 ]
