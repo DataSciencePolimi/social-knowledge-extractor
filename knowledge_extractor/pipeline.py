@@ -1,21 +1,13 @@
 import pprint
 import pandas as pd
 import collections
+from scipy.spatial.distance import cosine
 
 from .strategies.AST import AST
 from .strategies.EHE import EHE
 
 
 class Pipeline:
-
-    def parseExpertFile(self):
-        experts = []
-        with open('../data/expert_types.csv') as f:
-            experts = f.readlines() 
-        
-        experts = [x.strip() for x in experts]
-          
-        return experts
 
     def createSpace(self,seeds):
         print("Creating the vector space")
@@ -30,9 +22,10 @@ class Pipeline:
         vector = {}
         for k,v in data.items():
             c = collections.Counter(v)
-            vector[k] = {}
             for s in space:
-                vector[k][s] = c[s]
+                if s not in vector:
+                    vector[s] = {}
+                vector[s][k] = c[s]
         
         return pd.DataFrame(vector)
         
@@ -45,11 +38,11 @@ class Pipeline:
         query = {}
         return self.db.getCandidates(query)
     
-    def computeVectors(self,seeds):
+    def computeSeedVectors(self,seeds):
         mentions = {}
         ast_mentions = {}
         
-        print("Running the strategies")
+
         ehe = EHE(self.db,self.expertFile)
         ast = AST(self.db,self.expertFile)
         
@@ -61,13 +54,43 @@ class Pipeline:
         space_ehe = self.createSpace(mentions)
         space_ast = self.createSpace(ast_mentions)
 
-        print("Creating feature vector")
+        print("Creating feature vector for the seed")
         
-        seed_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions) 
-        seed_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)
+        seed_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions)*(1-self.alfa) 
+        seed_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)*self.alfa
 
-        seed_feature_vectors = seed_feature_vectors_ast.append(seed_feature_vectors_ehe)
-        return seed_feature_vectors
+        seed_feature_vectors = seed_feature_vectors_ast.join(seed_feature_vectors_ehe)
+        
+        return {
+            "fv":seed_feature_vectors,
+            "space_ehe":space_ehe,
+            "space_ast":space_ast
+        }
+    
+    def createCentroid(self,seeds):
+        return seeds.mean()
+    
+    def computeCandidatesVectors(self,cands,space_ast,space_ehe):
+        mentions = {}
+        ast_mentions = {}
+        
+        ehe = EHE(self.db,self.expertFile)
+        ast = AST(self.db,self.expertFile)
+        
+        for cand in cands:
+            #computer array of mentioned entity
+            mentions[cand["_id"]] = ehe.getEntities(cand)
+            ast_mentions[cand["_id"]] = ast.getEntities(cand)
+        
+
+        print("Creating feature vector for the candidates")
+        
+        cands_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions)*(1-self.alfa) 
+        cands_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)*self.alfa
+
+        cands_feature_vectors = cands_feature_vectors_ast.join(cands_feature_vectors_ehe)
+       
+        return cands_feature_vectors
 
     def run(self):
 
@@ -76,14 +99,22 @@ class Pipeline:
         seeds = self.getSeeds()
         candidates = self.getCandidates()
 
-        print("Computing seeds fv")
-        feature_vectors["seeds"] = self.computeVectors(seeds)
+        print("Compßuting seeds fv")
+        seeds_components = self.computeSeedVectors(seeds)
+        
+        feature_vectors["seeds"] = seeds_components["fv"]
         print("Computing candidates fv")
-        feature_vectors["candidates"] = self.computeVectors(candidates)
+        feature_vectors["candidates"] = self.computeCandidatesVectors(candidates,seeds_components["space_ast"],seeds_components["space_ehe"])
+        
+        centroid = self.createCentroid(feature_vectors["seeds"])
+        centroid = centroid.values
 
-        return feature_vectors
+        scores = feature_vectors["candidates"].apply(lambda row: cosine(row,centroid),axis=1)
+        pprint.pprint(scores)
+        return scores
 
     def __init__(self,db,expertFile):
+        self.alfa=0.7
         self.db=db
         self.expertFile = [
                 "http://dbpedia.org/ontology/Broadcaster",

@@ -64,9 +64,12 @@ def start_pipeline():
     dbManager = DBManager("ske_db")
     
     pipeline = Pipeline(dbManager,"./knowledge_extractor/data/expert_types.csv")
-    fv  = pipeline.run()
-    pprint.pprint(fv["seeds"].head())
-    return fv["seeds"].head()
+    scores  = pipeline.run()
+
+    #pprint.pprint(fv["seeds"].head())
+    #fv["candidates"].to_csv("cand_fv.csv")
+    #fv["seeds"].to_csv("seed_fv.csv")
+    return scores
 
 if __name__ == '__main__':
     app.run()

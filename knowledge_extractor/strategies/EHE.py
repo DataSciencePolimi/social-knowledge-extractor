@@ -1,6 +1,7 @@
 import pprint
 class EHE:
     
+
     def getEntities(self,seed):
         # need to select onlu the expert type entity
 
@@ -15,7 +16,7 @@ class EHE:
 
         consideredMention = []
         for entity in entities:
-            if entity["spot"].startswith("@") or entity["spot"].startswith("#"):
+            if "@" in entity["spot"] or "#" in entity["spot"]:
                consideredMention.append(entity["label"])
 
         return consideredMention
