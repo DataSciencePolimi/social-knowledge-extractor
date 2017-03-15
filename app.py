@@ -54,7 +54,7 @@ def run():
     seeds_file = request.files["input_seeds"]
     seeds_dataframe = pd.read_csv(seeds_file)
     seeds = seeds_dataframe.ix[:, 1].tolist()
-    _thread.start_new_thread(crawler_pipeline.PipelineCrawler, (100,seeds,id_experiment))
+    _thread.start_new_thread(crawler_pipeline.PipelineCrawler, (100,seeds[:20],id_experiment))
 
     return render_template('redirect.html',title='Completed Request')
 

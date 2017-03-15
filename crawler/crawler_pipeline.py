@@ -17,7 +17,7 @@ class PipelineCrawler:
         self.db_manager = mongo_manager.MongoManager(configuration.db_name)
 
         print("Pipeline started!")
-        print("Seeds: ", seeds)
+        print("Seeds: ", len(seeds), seeds)
 
         # Crawling Tweet
         print("Crawling Twitter...")
@@ -43,9 +43,9 @@ class PipelineCrawler:
         #csv_formatter.CsvFormatter()
 
         #Update status of requested Pipeline
-        user = list(self.db_manager.find("user",{"_id":ObjectId("58c277aa68f6201394b4d9ad")}))[0]
+        user = list(self.db_manager.find("user",{"_id":id_experiment}))[0]
         user["status"] = "complete"
-        self.db_manager.update("user",{"_id":ObjectId("58c277aa68f6201394b4d9ad")}, user)
+        self.db_manager.update("user",{"_id":id_experiment}, user)
 
         #Email sender with rank is needed
         print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])

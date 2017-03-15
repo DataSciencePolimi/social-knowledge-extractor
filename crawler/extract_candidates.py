@@ -21,6 +21,7 @@ class ExtractCandidates:
         self.db_manager = mongo_manager.MongoManager(configuration.db_name)
         self.parse_text = ttp.Parser()
 
+
     def computeDF(self, candidate, seeds):
         # Number of seeds with which a candidate co-occurs with
         # Query MongoDB db.getCollection('tweets').find({"$and":[{"entities.user_mentions.screen_name":"gucci"},{"entities.user_mentions.screen_name":"GalGadot"}]},{"entities.user_mentions.screen_name":1})

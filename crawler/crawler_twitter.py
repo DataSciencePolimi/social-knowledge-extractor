@@ -12,7 +12,6 @@ class CrawlerTwitter():
         self.db_manager = mongo_manager.MongoManager(configuration.db_name)
 
         self.db_manager.create_index("tweets", [("id_str", DESCENDING),("id_experiment", DESCENDING)])
-
         self.db_manager.create_index("seeds",[("handle", DESCENDING),("id_experiment", DESCENDING)])
 
     def storeSeeds(self, initial_seeds):
@@ -27,7 +26,7 @@ class CrawlerTwitter():
                 self.db_manager.write_mongo("seeds", {"handle": t, "starting": False, "id_experiment":self.id_experiment})
 
     def run(self, N, seeds):
-        new_seeds = []
+        new_seeds = set()
         # Exctract all the tweets
         for s in seeds:
             # print("Starting seed: "+s)
@@ -47,6 +46,6 @@ class CrawlerTwitter():
 
             if len(handels_new) != 0:
                 # self.db_manager.write_mongo("seeds", [{"handle":h, "starting":False} for h in handels_new])
-                new_seeds.extend(handels_new)
+                new_seeds.update(handels_new)
 
         return new_seeds
