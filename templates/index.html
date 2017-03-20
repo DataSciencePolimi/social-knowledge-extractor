@@ -65,11 +65,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="input_seeds">Load CSV File</label>
+                            <label for="input_seeds">Load Seed CSV File</label>
                             <input type="file" class="form-control-file" name="input_seeds" id="input_seeds" aria-describedby="fileHelp">
                             <small id="fileHelp" class="form-text text-muted">In the csv is required to have a list of handle extract from Twitter (Max 20 seeds)</small>
                         </div>
 
+                        <div class="form-group">
+                            <label for="input_seeds">Load Expert types CSV File</label>
+                            <input type="file" class="form-control-file" name="input_expert" id="input_expert" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">In the csv is required to have a list of Expert Types extracted from DBPedia</small>
+                        </div>
                         <button type="submit" class="btn btn-primary">Run Pipeline</button>
                     </div>
                     <div class="col-md-4">

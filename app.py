@@ -38,22 +38,22 @@ def run():
     configuration.APP1_ID = dandelion_app_id
     configuration.API_KEY_DANDELION1 = dandelion_app_key
 
-    configuration.APP2_ID = dandelion_app_id
-    configuration.API_KEY_DANDELION2 = dandelion_app_key
-    configuration.APP3_ID = dandelion_app_id
-    configuration.API_KEY_DANDELION3 = dandelion_app_key
-    configuration.APP4_ID = dandelion_app_id
-    configuration.API_KEY_DANDELION4 = dandelion_app_key
-    configuration.NUMBER_REQUEST_DANDELION = 250
+    configuration.NUMBER_REQUEST_DANDELION = 1000
 
     diction = {k:v[0] for (k,v) in dict(request.form).items()}
     diction["status"] = "processing"
 
-    id_experiment = db_manager.write_mongo("user", diction)
-
     seeds_file = request.files["input_seeds"]
     seeds_dataframe = pd.read_csv(seeds_file)
     seeds = seeds_dataframe.ix[:, 1].tolist()
+
+    expert_file = request.files["input_expert"]
+    expert_dataframe = pd.read_csv(expert_file)
+    experts = expert_dataframe.ix[:, 0].tolist()
+    diction["expert_types"] = experts
+
+    id_experiment = db_manager.write_mongo("experiment", diction)
+
     _thread.start_new_thread(crawler_pipeline.PipelineCrawler, (100,seeds[:20],id_experiment))
 
     return render_template('redirect.html',title='Completed Request')
