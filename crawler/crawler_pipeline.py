@@ -43,9 +43,9 @@ class PipelineCrawler:
         #csv_formatter.CsvFormatter()
 
         #Update status of requested Pipeline
-        user = list(self.db_manager.find("user",{"_id":id_experiment}))[0]
+        user = list(self.db_manager.find("experiment",{"_id":id_experiment}))[0]
         user["status"] = "complete"
-        self.db_manager.update("user",{"_id":id_experiment}, user)
+        self.db_manager.update("experiment",{"_id":id_experiment}, user)
 
         #Email sender with rank is needed
         print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])

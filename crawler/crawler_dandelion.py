@@ -14,6 +14,43 @@ from model import tweets_chunk
 class CrawlDandelion:
     def __init__(self, id_experiment):
 
+        #self.run_crawler_four_keys(id_experiment)
+        self.run_crawler_one_keys(id_experiment)
+
+
+    def run_crawler_one_keys(self,id_experiment):
+        self.id_experiment = id_experiment
+
+        # Documentation: http://python-dandelion-eu.readthedocs.io/en/latest/datatxt.html#nex-named-entity-extraction
+        self.db_manager = mongo_manager.MongoManager(configuration.db_name)
+        languages = ("de", "en", "es", "fr", "it", "pt")
+
+        all_tweets = list(self.db_manager.find("tweets", {"id_experiment":id_experiment}))
+
+        tweets_each_request = math.ceil(len(all_tweets) / configuration.NUMBER_REQUEST_DANDELION)
+        print(len(all_tweets), tweets_each_request)
+
+        # Retrieve all tweets
+        languages_chunks = []
+        for l in languages:
+            tweets = list(self.db_manager.find("tweets", {"lang": l, "id_experiment":id_experiment}))
+            if (len(tweets) == 0):
+                continue
+            # print(l,len(tweets), len(tweets)%tweets_each_request)
+            mod_tweets = tuple([tweets.pop() for i in range(0, len(tweets) % tweets_each_request)])
+            # print(l,mod_tweets,len(tweets), len(tweets)%tweets_each_request)
+
+            tweets_chunks = list(zip(*[iter(tweets)] * tweets_each_request))
+            # print(len(tweets_chunks))
+            if mod_tweets != ():
+                tweets_chunks.append(mod_tweets)
+            # print(len(tweets_chunks))
+
+            languages_chunks.extend(tweets_chunks)
+
+        self.run(languages_chunks, configuration.APP1_ID, configuration.API_KEY_DANDELION1)
+
+    def run_crawler_four_keys(self,id_experiment):
         self.id_experiment = id_experiment
 
         # Documentation: http://python-dandelion-eu.readthedocs.io/en/latest/datatxt.html#nex-named-entity-extraction
@@ -45,6 +82,8 @@ class CrawlDandelion:
             languages_chunks.extend(tweets_chunks)
 
         # print(len(languages_chunks))
+        self.run(languages_chunks, configuration.APP1_ID, configuration.API_KEY_DANDELION1)
+
         self.split_tweets_and_run(languages_chunks)
 
     def split_tweets_and_run(self, tweets):
