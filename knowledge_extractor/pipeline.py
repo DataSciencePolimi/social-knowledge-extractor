@@ -119,12 +119,5 @@ class Pipeline:
         self.alfa=0.7
         self.db=db
         self.experiment_id = experiment_id
-        self.expertFile = [
-                "http://dbpedia.org/ontology/Broadcaster",
-                "http://dbpedia.org/ontology/Artist",
-                "http://dbpedia.org/ontology/Magazine",
-                "http://dbpedia.org/ontology/model",
-                "http://dbpedia.org/ontology/Organisation",
-                "http://dbpedia.org/ontology/TelevisionShow"
-                ]
+        self.expertFile = self.db.getExpertTypes(experiment_id)
      

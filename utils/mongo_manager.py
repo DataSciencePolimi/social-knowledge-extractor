@@ -62,6 +62,14 @@ class MongoManager():
             return False
     
     # knowledge extractor pipeline method
+    def getExpertTypes(self,experimentId):
+        collection="experiment"
+        query={
+            "_id":experimentId
+        }
+        experiment = list(self.db.find(collection,query,project={expert_types:1}))[0]
+        return experiment["expert_types"]
+
     def getSeeds(self,query):
         collection = "seeds"
         return self.find(collection,query)

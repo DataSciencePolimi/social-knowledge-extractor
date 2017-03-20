@@ -37,17 +37,8 @@ class PipelineCrawler:
         print("Compute DF/TFF and rank candidates...")
         ExtractCandidates(self.id_experiment).extract_candidates()
 
-        # Format results in CSV
-        #print("Compute DF/TFF and rank candidates...")
-        #csv_formatter.CsvFormatter()
-
-        #Update status of requested Pipeline
-        user = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
-        user["status"] = "complete"
-        self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
-
         #Email sender with rank is needed
-        print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])
+        #print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])
 
     def __init__(self, N, seeds, id_experiment,db_manager):
         self.db_manager = db_manager

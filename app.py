@@ -2,7 +2,7 @@ from flask import Flask, render_template, request,session
 from knowledge_extractor.pipeline import Pipeline
 import configuration
 from utils import mongo_manager
-from crawler import crawler_pipeline
+from crawler.crawler_pipeline import PipelineCrawler
 from werkzeug.utils import secure_filename
 import os
 import pandas as pd
@@ -60,7 +60,7 @@ def run():
     orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
 
     threading.Thread(target=orchestrator,
-        args=(db_manager,1),
+        args=(db_manager,id_experiment),
     ).start()
 
     return render_template('redirect.html',title='Completed Request')
