@@ -27,11 +27,8 @@ class MongoManager():
     def find_one(self, collection):
         return self.db[collection].find_one()
 
-    def find(self, collection, *query, limite=sys.maxsize):
-        if (len(query) == 2):
-            return self.db[collection].find(query[1]).limit(limite)
-        else:
-            return self.db[collection].find(query[0]).limit(limite)
+    def find(self, collection, query, limite=sys.maxsize,project={}):
+        return self.db[collection].find(query).limit(limite)
 
     def delete_element(self, collection, query):
         return self.db[collection].delete_many(query)
@@ -63,6 +60,33 @@ class MongoManager():
             return True
         else:
             return False
+    
+    # knowledge extractor pipeline method
+    def getSeeds(self,query):
+        collection = "seeds"
+        return self.find(collection,query)
+
+    def getCandidates(self,query):
+        collection = "rank_candidates"
+        return self.find(collection,query)
+
+    def getMentions(self,query):
+        collection = "entity"
+        return self.find(collection,query,project={"spot":1,"types":1,"label":1})
+    
+    def getMentionType(self,query):
+        collection = "entity"
+        return self.find(collection,query,project={"types":1})
+
+    def saveScores(self,scores,id_experiment):
+        collection = "rankings"
+        for k,v in scores.items():
+            score = {
+                "handle":k,
+                "score":v,
+                "experiment_id":id_experiment
+            }
+            self.write_mongo(collection,score)
 
 
 if __name__ == '__main__':

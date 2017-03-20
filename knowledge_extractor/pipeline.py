@@ -111,13 +111,14 @@ class Pipeline:
 
         scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
         
-        self.db.saveScores(scores)
+        self.db.saveScores(scores,self.experiment_id)
         
         return scores
 
     def __init__(self,db,experiment_id):
         self.alfa=0.7
         self.db=db
+        self.experiment_id = experiment_id
         self.expertFile = [
                 "http://dbpedia.org/ontology/Broadcaster",
                 "http://dbpedia.org/ontology/Artist",
@@ -126,4 +127,4 @@ class Pipeline:
                 "http://dbpedia.org/ontology/Organisation",
                 "http://dbpedia.org/ontology/TelevisionShow"
                 ]
-        self.run()
+     

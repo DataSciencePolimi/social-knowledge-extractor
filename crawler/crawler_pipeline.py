@@ -13,42 +13,48 @@ from bson import ObjectId
 import yagmail
 
 class PipelineCrawler:
-    def __init__(self, N, seeds, id_experiment):
-        self.db_manager = mongo_manager.MongoManager(configuration.db_name)
 
+    def run(self):
         print("Pipeline started!")
-        print("Seeds: ", len(seeds), seeds)
+        print("Seeds: ", len(self.seeds), self.seeds)
 
         # Crawling Tweet
         print("Crawling Twitter...")
-        crawler_twitter = CrawlerTwitter(id_experiment)
-        new_seeds = crawler_twitter.run(N, seeds)
-        crawler_twitter.run(N, new_seeds)
-        crawler_twitter.storeSeeds(seeds)
+        crawler_twitter = CrawlerTwitter(self.id_experiment)
+        new_seeds = crawler_twitter.run(self.N, self.seeds)
+        crawler_twitter.run(self.N, self.new_seeds)
+        crawler_twitter.storeSeeds(self.seeds)
 
         # Crawling Dandelion
         print("Crawling Dandelion for High Frequencies Entities...")
-        CrawlDandelion(id_experiment)
+        CrawlDandelion(self.id_experiment)
 
         # Extract Low Frequencies Entities
         print("Extract Mention and Hashtag from Tweets...")
-        ExtractEntities(id_experiment)
+        ExtractEntities(self.id_experiment)
 
         # Compute ranking candidates
         print("Compute DF/TFF and rank candidates...")
-        ExtractCandidates(id_experiment).extract_candidates()
+        ExtractCandidates(self.id_experiment).extract_candidates()
 
         # Format results in CSV
         #print("Compute DF/TFF and rank candidates...")
         #csv_formatter.CsvFormatter()
 
         #Update status of requested Pipeline
-        user = list(self.db_manager.find("experiment",{"_id":id_experiment}))[0]
+        user = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
         user["status"] = "complete"
-        self.db_manager.update("experiment",{"_id":id_experiment}, user)
+        self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
 
         #Email sender with rank is needed
         print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])
+
+    def __init__(self, N, seeds, id_experiment,db_manager):
+        self.db_manager = db_manager
+        self.N = N
+        self.seeds = seeds
+        self.id_experiment = id_experiment
+       
 
 if __name__ == "__main__":
     # Input seeds

@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request,session
-from utils.DBManager import DBManager
 from knowledge_extractor.pipeline import Pipeline
 import configuration
 from utils import mongo_manager
@@ -7,8 +6,9 @@ from crawler import crawler_pipeline
 from werkzeug.utils import secure_filename
 import os
 import pandas as pd
-import _thread
+import threading
 import pprint
+import orchestrator
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -54,18 +54,28 @@ def run():
 
     id_experiment = db_manager.write_mongo("experiment", diction)
 
-    _thread.start_new_thread(crawler_pipeline.PipelineCrawler, (100,seeds[:20],id_experiment))
+    crawler = PipelineCrawler(100,seeds[:20],id_experiment,db_manager)
+    knowldege_extractor = Pipeline(db_manager)
+
+    orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
+
+    threading.Thread(target=orchestrator,
+        args=(db_manager,1),
+    ).start()
 
     return render_template('redirect.html',title='Completed Request')
 
 
 @app.route('/start')
 def start_pipeline():
-    dbManager = DBManager("ske_db",1)
+    #dbManager = DBManager("ske_db",1)
     
     #pipeline = Pipeline(dbManager)
     #scores  = pipeline.run()
-    _thread.start_new_thread(Pipeline, (dbManager,1))
+    #_thread.start_new_thread(Pipeline, (db_manager,1))
+
+  
+
     #pprint.pprint(fv["seeds"].head())
     #fv["candidates"].to_csv("cand_fv.csv")
     #fv["seeds"].to_csv("seed_fv.csv")
