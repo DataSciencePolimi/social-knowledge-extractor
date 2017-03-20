@@ -48,8 +48,8 @@ class Pipeline:
         
         for seed in seeds:
             #computer array of mentioned entity
-            mentions[seed["_id"]] = ehe.getEntities(seed)
-            ast_mentions[seed["_id"]] = ast.getEntities(seed)
+            mentions[seed["handle"]] = ehe.getEntities(seed)
+            ast_mentions[seed["handle"]] = ast.getEntities(seed)
         
         space_ehe = self.createSpace(mentions)
         space_ast = self.createSpace(ast_mentions)
@@ -79,8 +79,8 @@ class Pipeline:
         
         for cand in cands:
             #computer array of mentioned entity
-            mentions[cand["_id"]] = ehe.getEntities(cand)
-            ast_mentions[cand["_id"]] = ast.getEntities(cand)
+            mentions[cand["handle"]] = ehe.getEntities(cand)
+            ast_mentions[cand["handle"]] = ast.getEntities(cand)
         
 
         print("Creating feature vector for the candidates")
@@ -109,11 +109,13 @@ class Pipeline:
         centroid = self.createCentroid(feature_vectors["seeds"])
         centroid = centroid.values
 
-        scores = feature_vectors["candidates"].apply(lambda row: cosine(row,centroid),axis=1)
-        pprint.pprint(scores)
+        scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
+        
+        self.db.saveScores(scores)
+        
         return scores
 
-    def __init__(self,db,expertFile):
+    def __init__(self,db,experiment_id):
         self.alfa=0.7
         self.db=db
         self.expertFile = [
@@ -124,3 +126,4 @@ class Pipeline:
                 "http://dbpedia.org/ontology/Organisation",
                 "http://dbpedia.org/ontology/TelevisionShow"
                 ]
+        self.run()

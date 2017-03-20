@@ -61,15 +61,15 @@ def run():
 
 @app.route('/start')
 def start_pipeline():
-    dbManager = DBManager("ske_db")
+    dbManager = DBManager("ske_db",1)
     
-    pipeline = Pipeline(dbManager,"./knowledge_extractor/data/expert_types.csv")
-    scores  = pipeline.run()
-
+    #pipeline = Pipeline(dbManager)
+    #scores  = pipeline.run()
+    _thread.start_new_thread(Pipeline, (dbManager,1))
     #pprint.pprint(fv["seeds"].head())
     #fv["candidates"].to_csv("cand_fv.csv")
     #fv["seeds"].to_csv("seed_fv.csv")
-    return scores
+    return render_template('redirect.html',title='Completed Request')
 
 if __name__ == '__main__':
     app.run()
