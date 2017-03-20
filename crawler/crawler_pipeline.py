@@ -22,7 +22,7 @@ class PipelineCrawler:
         print("Crawling Twitter...")
         crawler_twitter = CrawlerTwitter(self.id_experiment)
         new_seeds = crawler_twitter.run(self.N, self.seeds)
-        crawler_twitter.run(self.N, self.new_seeds)
+        crawler_twitter.run(self.N, new_seeds)
         crawler_twitter.storeSeeds(self.seeds)
 
         # Crawling Dandelion

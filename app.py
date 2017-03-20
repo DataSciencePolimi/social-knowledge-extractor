@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import threading
 import pprint
-import orchestrator
+from orchestrator import Orchestrator
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -54,13 +54,14 @@ def run():
 
     id_experiment = db_manager.write_mongo("experiment", diction)
 
+    #TODO: create inside orchestrator
     crawler = PipelineCrawler(100,seeds[:20],id_experiment,db_manager)
-    knowldege_extractor = Pipeline(db_manager)
+    knowldege_extractor = Pipeline(db_manager,id_experiment)
 
-    orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
+    #orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
 
-    threading.Thread(target=orchestrator,
-        args=(db_manager,id_experiment),
+    threading.Thread(target=Orchestrator,
+        args=(crawler,knowldege_extractor,id_experiment,db_manager),
     ).start()
 
     return render_template('redirect.html',title='Completed Request')

@@ -21,8 +21,10 @@ class Orchestrator(object):
         user["status"] = "COMPLETED"
         self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
 
-    def __init__(self,crawler,knowldege_extractor,id_experiment):
+    def __init__(self,crawler,knowldege_extractor,id_experiment,db_manager):
         self.crawler=crawler
         self.knowledge_extractor=knowldege_extractor
         self.id_experiment = id_experiment
+        self.db_manager= db_manager 
+        self.run()
         

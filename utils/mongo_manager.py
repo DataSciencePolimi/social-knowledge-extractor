@@ -67,7 +67,7 @@ class MongoManager():
         query={
             "_id":experimentId
         }
-        experiment = list(self.db.find(collection,query,project={expert_types:1}))[0]
+        experiment = list(self.find(collection,query,project={"expert_types":1}))[0]
         return experiment["expert_types"]
 
     def getSeeds(self,query):
