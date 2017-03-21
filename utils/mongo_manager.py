@@ -5,9 +5,7 @@ import logging
 
 import pymongo
 from pymongo.errors import DuplicateKeyError
-
 import configuration
-
 
 class MongoManager():
     def __init__(self, name_db):
@@ -19,7 +17,8 @@ class MongoManager():
         try:
             return self.db[collection].insert(data)
         except DuplicateKeyError as e:
-            logging.error(e)
+            pass
+            #logging.error("")
 
     def write_mongo_no_duplicates(self, collection, data, unique_key):
         self.db[collection].update({unique_key: data[unique_key]}, data, upsert=True)
