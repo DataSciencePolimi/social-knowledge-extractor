@@ -10,7 +10,6 @@ import pymongo
 from utils import mongo_manager
 import configuration
 from bson import ObjectId
-import yagmail
 
 class PipelineCrawler:
 

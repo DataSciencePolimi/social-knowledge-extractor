@@ -119,7 +119,7 @@ class CrawlDandelion:
                     annotation["tweet"] = tweet["tweet"]["_id"]
                     annotation["seed"] = seed_id
                     annotation["id_experiment"] = self.id_experiment
-                    # print(annotation)
+                    #print(annotation)
                     self.db_manager.write_mongo("entity", annotation)
 
 
