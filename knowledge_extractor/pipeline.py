@@ -31,11 +31,11 @@ class Pipeline:
         
 
     def getSeeds(self):
-        query = {}
+        query = {"id_experiment":self.experiment_id}
         return self.db.getSeeds(query)
 
     def getCandidates(self):
-        query = {}
+        query = {"id_experiment":self.experiment_id}
         return self.db.getCandidates(query)
     
     def computeSeedVectors(self,seeds):
