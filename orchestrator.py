@@ -1,6 +1,6 @@
 from utils import mongo_manager
 
-class Orchestrator(object):
+class  Orchestrator(object):
     
     def run(self):
         print("Orchestrator: starting crawling pipeline")

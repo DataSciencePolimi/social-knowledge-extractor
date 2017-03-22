@@ -2,7 +2,6 @@ import pprint
 import pandas as pd
 import collections
 from scipy.spatial.distance import cosine
-
 from .strategies.AST import AST
 from .strategies.EHE import EHE
 
@@ -31,11 +30,11 @@ class Pipeline:
         
 
     def getSeeds(self):
-        query = {"id_experiment":self.experiment_id}
+        query = {"id_experiment":self.experiment_id, "starting":True}
         return self.db.getSeeds(query)
 
     def getCandidates(self):
-        query = {"id_experiment":self.experiment_id}
+        query = {"id_experiment":self.experiment_id, "starting":False}
         return self.db.getCandidates(query)
     
     def computeSeedVectors(self,seeds):
@@ -120,4 +119,12 @@ class Pipeline:
         self.db=db
         self.experiment_id = experiment_id
         self.expertFile = self.db.getExpertTypes(experiment_id)
-     
+
+if __name__ == "__main__":
+     from utils import mongo_manager
+     import configuration
+     from bson import ObjectId
+     db_manager = mongo_manager.MongoManager(configuration.db_name)
+
+     kn = Pipeline(db_manager, ObjectId('58d157ee68f6207a5e782ba7'))
+     kn.run()
