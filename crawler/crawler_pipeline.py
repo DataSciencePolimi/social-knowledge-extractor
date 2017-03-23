@@ -13,7 +13,7 @@ from bson import ObjectId
 
 class PipelineCrawler:
 
-    def run(self):
+    def run(self, one_dandelion_key = True):
         print("Pipeline started!")
         print("Seeds: ", len(self.seeds), self.seeds)
 
@@ -26,7 +26,7 @@ class PipelineCrawler:
 
         # Crawling Dandelion
         print("Crawling Dandelion for High Frequencies Entities...")
-        CrawlDandelion(self.id_experiment)
+        CrawlDandelion(self.id_experiment, one_dandelion_key)
 
         # Extract Low Frequencies Entities
         print("Extract Mention and Hashtag from Tweets...")

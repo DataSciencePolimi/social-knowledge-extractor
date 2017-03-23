@@ -1,6 +1,6 @@
 from utils import mongo_manager
 
-class  Orchestrator(object):
+class Orchestrator(object):
     
     def run(self):
         print("Orchestrator: starting crawling pipeline")
@@ -27,4 +27,4 @@ class  Orchestrator(object):
         self.id_experiment = id_experiment
         self.db_manager= db_manager 
         self.run()
-        
+

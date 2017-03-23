@@ -12,11 +12,11 @@ from model import tweets_chunk
 
 
 class CrawlDandelion:
-    def __init__(self, id_experiment):
-
-        #self.run_crawler_four_keys(id_experiment)
-        self.run_crawler_one_keys(id_experiment)
-
+    def __init__(self, id_experiment, one_dandelion_key):
+        if one_dandelion_key:
+            self.run_crawler_one_keys(id_experiment)
+        else:
+            self.run_crawler_four_keys(id_experiment)
 
     def run_crawler_one_keys(self,id_experiment):
         self.id_experiment = id_experiment
@@ -80,9 +80,6 @@ class CrawlDandelion:
             # print(len(tweets_chunks))
 
             languages_chunks.extend(tweets_chunks)
-
-        # print(len(languages_chunks))
-        self.run(languages_chunks, configuration.APP1_ID, configuration.API_KEY_DANDELION1)
 
         self.split_tweets_and_run(languages_chunks)
 
