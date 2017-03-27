@@ -53,8 +53,8 @@ def create_rank(id_experiment, scenario):
 
 if __name__ == '__main__':
     print(sys.argv)
-    scenario = ["au", "expo", "fashion", "finance"]
-    id_experiment = run_scenario(scenario[1])
-    create_rank(id_experiment, scenario[1])
+    scenario = ["au", "finance", "fashion", "expo"]
+    id_experiment = run_scenario(scenario[3])
+    create_rank(id_experiment, scenario[3])
 
 
