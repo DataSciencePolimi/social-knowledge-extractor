@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url_for('static', filename='css/bootstrap-social.css') }}" />
+
+
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -40,13 +44,23 @@
 </nav>
 
 <div class="container">
-
     <div class="starter-template">
-        <h1>Run Pipeline</h1>
 
-        <p class="lead">Fill the form in order to run the pipeline</p>
+        {% for message in get_flashed_messages() %}
+            <p><b>Error</b>: {{ message }}</p>
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+            <h2>Hi, {{ current_user.nickname }}!</h2>
+            <p><a href="{{ url_for('logout') }}">Logout</a></p>
+        {% else %}
+            <h1>Run Pipeline</h1>
 
-        <div class="row">
+            <a href="{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-block btn-social btn-twitter">
+                <span class="fa fa-twitter"></span> Sign in with Twitter
+            </a>
+            <p class="lead">Fill the form in order to run the pipeline</p>
+
+            <div class="row">
                 <form action="/run" method="POST" enctype = "multipart/form-data">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -97,8 +111,12 @@
                         </div>
                     </div>
                 </form>
-        </div>
+            </div>
+        {% endif %}
     </div>
+
+
+
 </div>
     <!-- /.container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

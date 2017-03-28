@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request,session
+from flask import Flask, redirect, url_for, render_template, flash,request
+from flask_login import LoginManager, UserMixin, login_user, logout_user,current_user
 from knowledge_extractor.pipeline import Pipeline
 import configuration
 from utils import mongo_manager
@@ -9,14 +10,42 @@ import pandas as pd
 import threading
 import pprint
 from orchestrator import Orchestrator
+from oauth import OAuthSignIn
+from model.User import User
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SECRET_KEY'] = 'top secret!'
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
+app.config['OAUTH_CREDENTIALS'] = {
+    'facebook': {
+        'id': '470154729788964',
+        'secret': '010cc08bd4f51e34f3f3e684fbdea8a7'
+    },
+    'twitter': {
+        'id': 'NaLubGAXma7cbd9oTJQ5CZF19',
+        'secret': 'D03BwxN7mjuIArji9CGOiR5uwhi5ULh99TuzOkPqiqhwEmND3c'
+    }
+}
+
+lm = LoginManager(app)
+lm.login_view = 'index'
+
+
+@lm.user_loader
+def load_user(social_id):
+    print("1",social_id)
+    u = list(db_manager.find("auth_users",{"social_id": social_id}))
+    print(u)
+    if len(u) == 0:
+        return None
+    print(u[0])
+    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"])
+
 
 @app.route('/')
 def index():
@@ -66,6 +95,37 @@ def run():
 
     return render_template('redirect.html',title='Completed Request')
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
+@app.route('/authorize/<provider>')
+def oauth_authorize(provider):
+    if not current_user.is_anonymous:
+        return redirect(url_for('index'))
+    oauth = OAuthSignIn.get_provider(provider)
+    return oauth.authorize()
+
+
+@app.route('/callback/<provider>')
+def oauth_callback(provider):
+    if not current_user.is_anonymous:
+        return redirect(url_for('index'))
+    oauth = OAuthSignIn.get_provider(provider)
+    social_id, username, email = oauth.callback()
+    if social_id is None:
+        flash('Authentication failed.')
+        return redirect(url_for('index'))
+    user = list(db_manager.find("auth_users", {"social_id":social_id}))
+    if len(user) == 0:
+        user = User(social_id, username, email)
+        db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email})
+    else:
+        User(user[0]["social_id"],user[0]["username"] ,user[0]["email"])
+    login_user(user, True)
+    return redirect(url_for('index'))
 
 @app.route('/start')
 def start_pipeline():
