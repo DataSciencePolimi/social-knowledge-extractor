@@ -43,28 +43,8 @@ class CrawlerTest(unittest.TestCase):
         configuration.db_name = configuration.db_name_test
 
     def test_crawler(self):
-        CrawlDandelion("12345")
+        CrawlDandelion("12345", False)
 
-    # def test_time_confidence(self):
-    #     datatxt = DataTXT(app_id=configuration.APP1_ID, app_key=configuration.API_KEY_DANDELION1)
-    #     #with confidence
-    #     start_time = time.time()
-    #     datatxt.nex("RT @sickymagazine: 'Sisters Forever' by Viola Rolando for SICKY Magazine http://t.co/NpAGg6za09 @NextModels @Missoni @nikestore @LucaLarenz…", **{"lang": "en",
-    #                                                                        "include": ["types", "categories",
-    #                                                                                    "abstract", "alternate_labels"],
-    #                                                                        "social.hashtag": True,
-    #                                                                        "social.mention": True,
-    #                                                                        "min_confidence":0})
-    #     print("--- %s seconds ---" % (time.time() - start_time))
-    #
-    #     #without confidence
-    #     start_time = time.time()
-    #     datatxt.nex("RT @sickymagazine: 'Sisters Forever' by Viola Rolando for SICKY Magazine http://t.co/NpAGg6za09 @NextModels @Missoni @nikestore @LucaLarenz…", **{"lang": "en",
-    #                                                                        "include": ["types", "categories",
-    #                                                                                    "abstract", "alternate_labels"],
-    #                                                                        "social.hashtag": True,
-    #                                                                        "social.mention": True})
-    #     print("--- %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == '__main__':
