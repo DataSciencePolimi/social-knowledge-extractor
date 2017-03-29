@@ -11,21 +11,18 @@ API_KEY_DANDELION4 = ""
 APP4_ID = ""
 NUMBER_REQUEST_DANDELION = 1000
 
-# TWITTER API
-# Go to http://apps.twitter.com and create an app.
-# The consumer key and secret will be generated for you after
-# Variables that contains the user credentials to access Twitter API
-access_token = ""
-access_token_secret = ""
-consumer_key = ""
-consumer_secret = ""
 
 # TWITTER API SECOND APP USEFULL TO AVOID RATE LIMIT
-access_token2 = ""
-access_token_secret2 = ""
-consumer_key2 = ""
-consumer_secret2 = ""
-
+providers = {
+    'facebook': {
+        'id': '470154729788964',
+        'secret': '010cc08bd4f51e34f3f3e684fbdea8a7'
+    },
+    'twitter': {
+        'id': 'NaLubGAXma7cbd9oTJQ5CZF19',
+        'secret': 'D03BwxN7mjuIArji9CGOiR5uwhi5ULh99TuzOkPqiqhwEmND3c'
+    }
+}
 
 # MONGO DB LOCAL
 address_local = "localhost"

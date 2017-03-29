@@ -8,16 +8,21 @@
     <title>{{ title }}</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="{{ url_for('static', filename='css/bootstrap-social.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-social.css') }}" />
+    <link href="{{ url_for('static', filename='css/bootstrap-treeview.css') }}" rel="stylesheet">
 
+    <style>
+        .h-scroll {
+            height: 50vh; /* %-height of the viewport */
+            overflow-y: scroll;
 
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -44,86 +49,142 @@
 </nav>
 
 <div class="container">
-    <div class="starter-template">
+    <div class="jumbotron vertical-center text-center">
 
         {% for message in get_flashed_messages() %}
             <p><b>Error</b>: {{ message }}</p>
         {% endfor %}
         {% if current_user.is_authenticated %}
             <h2>Hi, {{ current_user.nickname }}!</h2>
-            <p><a href="{{ url_for('logout') }}">Logout</a></p>
-        {% else %}
-            <h1>Run Pipeline</h1>
-
-            <a href="{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-block btn-social btn-twitter">
-                <span class="fa fa-twitter"></span> Sign in with Twitter
+            <a href="{{ url_for('logout') }}" class="btn btn-social btn-twitter">
+                <span class="fa fa-twitter"></span> Logout
             </a>
-            <p class="lead">Fill the form in order to run the pipeline</p>
+            <hr>
+            <div class="row text-left">
+                <div class="col-md-4 offset-md-3"></div>
+                    <form action="/run" method="POST" enctype = "multipart/form-data">
+                        <div class="col-md-4">
+                            {% if current_user.email == None %}
+                                <div class="form-group">
+                                    <label for="Email">Email address</label>
+                                    <input type="email" class="form-control" name ="email" id="email" aria-describedby="emailHelp"
+                                           placeholder="Enter email">
+                                </div>
+                            {% endif %}
 
-            <div class="row">
-                <form action="/run" method="POST" enctype = "multipart/form-data">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="Email">Email address</label>
-                            <input type="email" class="form-control" name ="email" id="email" aria-describedby="emailHelp"
-                                   placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="consumer_secret">Dandelion App ID</label>
-                            <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id" placeholder="Enter access dandelion app ID">
-                        </div>
+                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                                <a href="#" onclick="toggler('dandelion_input');">Insert your Dandelion Key  <i id="arr_dandelion_input" class="fa fa-arrow-down"></i></a><br>
+                                <div id="dandelion_input" style="display: none">
+                                    <div class="form-group">
+                                        <label for="consumer_secret">Dandelion App ID</label>
+                                        <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id" placeholder="Enter access dandelion app ID">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="consumer_secret">Dandelion App Key</label>
+                                        <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key" placeholder="Enter access dandelion app Key">
+                                    </div>
+                                </div>
+                            </div>
 
-                         <div class="form-group">
-                            <label for="consumer_secret">Dandelion App Key</label>
-                            <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key" placeholder="Enter access dandelion app Key">
-                        </div>
+                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                                <input type="hidden" name="count" value="1" />
+                                <div class="control-group" id="fields">
+                                    <label class="control-label" for="field1">Insert Twitter handle to use as a seed</label>
+                                    <div class="controls" id="profs">
+                                        <form class="input-append">
+                                            <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
+                                                <div class="col-md-10"><input autocomplete="off" class="form-control" id="input-field1" name="prof1" type="text" placeholder="Twitter username 1" aria-describedby="sizing-addon2" data-items="8"/></div>
+                                                <div class="col-md-2" id="add_col"><button id="b1" class="btn add-more" type="button">+</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <a href="#" onclick="toggler('seed_input_file');">Load seeds by csv File  <i id="arr_seed_input_file" class="fa fa-arrow-down"></i></a><br>
+                                <div class="form-group" id="seed_input_file" style="display: none">
+                                    <input type="file" class="form-control-file" name="input_seeds" id="input_seeds" aria-describedby="fileHelp">
+                                    <small id="fileHelp" class="form-text text-muted">List of Seeds (Max 20 seeds). <a target="_blank" href="{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here you can see an exemple:</a> </small>
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="input_seeds">Load Seed CSV File</label>
-                            <input type="file" class="form-control-file" name="input_seeds" id="input_seeds" aria-describedby="fileHelp">
-                            <small id="fileHelp" class="form-text text-muted">In the csv is required to have a list of handle extract from Twitter (Max 20 seeds)</small>
-                        </div>
+                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                                <label class="control-label" for="field1">Select DBPedia Type</label>
+                                <div id="tree" class="panel panel-default h-scroll"></div>
+                                <a href="#" onclick="toggler('expert_input_file');">Load expert types by csv File  <i id="arr_expert_input_file"class="fa fa-arrow-down"></i></a><br>
+                                <div class="form-group" id="expert_input_file" style="display: none">
+                                    <input type="file" class="form-control-file" name="input_expert" id="input_expert" aria-describedby="fileHelp">
+                                    <small id="fileHelp" class="form-text text-muted">List of Expert Types extracted from DBPedia <a target="_blank" href="{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here you can see an exemple:</a></small>
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="input_seeds">Load Expert types CSV File</label>
-                            <input type="file" class="form-control-file" name="input_expert" id="input_expert" aria-describedby="fileHelp">
-                            <small id="fileHelp" class="form-text text-muted">In the csv is required to have a list of Expert Types extracted from DBPedia</small>
+                            <br><button type="submit" class="btn btn-primary">Run Pipeline</button>
                         </div>
-                        <button type="submit" class="btn btn-primary">Run Pipeline</button>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="access_token">Twitter Access Token</label>
-                            <input type="text" class="form-control" name="access_token" id="access_token" placeholder="Enter access token">
-                        </div>
-                        <div class="form-group">
-                            <label for="access_token_secret">Twitter Secret Access Token</label>
-                            <input type="text" class="form-control" name="access_token_secret" id="access_token_secret" placeholder="Enter secret access token">
-                        </div>
-                        <div class="form-group">
-                            <label for="consumer_key">Twitter Consumer Key</label>
-                            <input type="text" class="form-control" name="consumer_key" id="consumer_key" placeholder="Enter access consumer key">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="consumer_secret">Twitter Consumer Secret</label>
-                            <input type="text" class="form-control" name="consumer_secret" id="consumer_secret" placeholder="Enter access consumer secret">
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
+        {% else %}
+                <h1>Run Pipeline</h1>
+                <p class="lead">Fill the form in order to run the pipeline</p>
+                <a href="{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-social btn-twitter">
+                    <span class="fa fa-twitter"></span> Sign in with Twitter
+                </a>
         {% endif %}
     </div>
-
-
-
 </div>
     <!-- /.container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+
+    <script>
+        $('#tree').treeview({data: data});
+
+        $(document).ready(function(){
+            var next = 1;
+            $(".add-more").click(function(e){
+                var number_fields = $('.dynamic-input').length + 1;
+                console.log(number_fields);
+                e.preventDefault();
+                next = next + 1;
+                var adding = '<div class="row dynamic-input" id="field' + next + '" style="margin-bottom: 5px"><div class="col-md-10"><input autocomplete="off" class="form-control" id="input-field' + next + '" name="prof' + next + '" type="text" placeholder="Twitter username ' + next + '" aria-describedby="sizing-addon2" data-items="8"/></div></div>';
+                var removeBtn = '<div class="col-md-2" id="remove_col' + next + '"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div></div></div>';
+
+                $("#field"+(next - 1)).after(adding);
+
+                $("#field"+(next)).append($("#add_col"));
+                if(number_fields >= 20) {
+                    $("#add_col").hide();
+                }
+
+                $("#field"+(next - 1)).append(removeBtn);
+
+                $('.remove-me').click(function(e){
+                    e.preventDefault();
+                    var fieldNum = this.id.match(/\d+/);
+                    var fieldID = "#field" + fieldNum;
+                    $(this).remove();
+                    $(fieldID).remove();
+
+                    console.log($('.dynamic-input').length + 1);
+                    if($('.dynamic-input').length + 1 <= 20) {
+                        $("#add_col").show();
+                    }
+                });
+
+            });
+        });
+
+        function toggler(divId) {
+            $("#" + divId).toggle();
+            if ($("#" +"arr_"+divId).attr("class") == 'fa fa-arrow-up')
+                $("#" +"arr_"+divId).attr('class', 'fa fa-arrow-down');
+            else
+                $("#" +"arr_"+divId).attr('class', 'fa fa-arrow-up');
+        }
+    </script>
+
 </body>
 </html>

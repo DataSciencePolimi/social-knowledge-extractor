@@ -21,30 +21,16 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
-app.config['OAUTH_CREDENTIALS'] = {
-    'facebook': {
-        'id': '470154729788964',
-        'secret': '010cc08bd4f51e34f3f3e684fbdea8a7'
-    },
-    'twitter': {
-        'id': 'NaLubGAXma7cbd9oTJQ5CZF19',
-        'secret': 'D03BwxN7mjuIArji9CGOiR5uwhi5ULh99TuzOkPqiqhwEmND3c'
-    }
-}
-
 lm = LoginManager(app)
 lm.login_view = 'index'
 
 
 @lm.user_loader
 def load_user(social_id):
-    print("1",social_id)
-    u = list(db_manager.find("auth_users",{"social_id": social_id}))
-    print(u)
+    u = list(db_manager.find("auth_users", {"social_id": social_id}))
     if len(u) == 0:
         return None
-    print(u[0])
-    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"])
+    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"], u[0]["access_token"],u[0]["access_token_secret"])
 
 
 @app.route('/')
@@ -53,11 +39,13 @@ def index():
 
 @app.route('/run', methods=['POST'])
 def run():
+    if request.form.get("email") != None:
+        db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
 
-    configuration.access_token = request.form["access_token"]
-    configuration.access_token_secret = request.form["access_token_secret"]
-    configuration.consumer_key = request.form["consumer_key"]
-    configuration.consumer_secret = request.form["consumer_secret"]
+    configuration.access_token = current_user.access_token
+    configuration.access_token_secret = current_user.access_token_secret
+    configuration.consumer_key = configuration.providers["twitter"]["id"]
+    configuration.consumer_secret = configuration.providers["twitter"]["secret"]
 
     dandelion_app_id = request.form["dandelion_app_id"]
     dandelion_app_key = request.form["dandelion_app_key"]
@@ -114,17 +102,18 @@ def oauth_callback(provider):
     if not current_user.is_anonymous:
         return redirect(url_for('index'))
     oauth = OAuthSignIn.get_provider(provider)
-    social_id, username, email = oauth.callback()
+    social_id, username, email, access_token, access_token_secret  = oauth.callback()
     if social_id is None:
         flash('Authentication failed.')
         return redirect(url_for('index'))
     user = list(db_manager.find("auth_users", {"social_id":social_id}))
     if len(user) == 0:
-        user = User(social_id, username, email)
-        db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email})
+        user = User(social_id, username, email, access_token, access_token_secret)
+        db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email, "access_token": access_token, "access_token_secret":access_token_secret })
     else:
-        User(user[0]["social_id"],user[0]["username"] ,user[0]["email"])
-    login_user(user, True)
+        user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"])
+
+    login_user(user, remember=True)
     return redirect(url_for('index'))
 
 @app.route('/start')
@@ -135,12 +124,10 @@ def start_pipeline():
     #scores  = pipeline.run()
     #_thread.start_new_thread(Pipeline, (db_manager,1))
 
-  
-
     #pprint.pprint(fv["seeds"].head())
     #fv["candidates"].to_csv("cand_fv.csv")
     #fv["seeds"].to_csv("seed_fv.csv")
     return render_template('redirect.html',title='Completed Request')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

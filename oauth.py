@@ -1,14 +1,14 @@
 from rauth import OAuth1Service, OAuth2Service
 from flask import current_app, url_for, request, redirect, session
 from rauth.compat import parse_qsl, is_basestring
-
+import configuration
 
 class OAuthSignIn(object):
     providers = None
 
     def __init__(self, provider_name):
         self.provider_name = provider_name
-        credentials = current_app.config['OAUTH_CREDENTIALS'][provider_name]
+        credentials = configuration.providers[provider_name]
         self.consumer_id = credentials['id']
         self.consumer_secret = credentials['secret']
 
@@ -69,9 +69,7 @@ class FacebookSignIn(OAuthSignIn):
         )
 
 def parse_utf8_qsl(s):
-    print(s.decode("utf-8"), type(s.decode("utf-8")))
     d = dict(parse_qsl(s.decode("utf-8")))
-    print(d)
     for k, v in d.items():  # pragma: no cover
         if not isinstance(k, bytes) and not isinstance(v, bytes):
             # skip this iteration if we have no keys or values to update
@@ -106,7 +104,6 @@ class TwitterSignIn(OAuthSignIn):
 
     def callback(self):
         request_token = session.pop('request_token')
-        print(request.args, request.args['oauth_verifier'])
         if 'oauth_verifier' not in request.args:
             return None, None, None
         oauth_session = self.service.get_auth_session(
@@ -118,4 +115,5 @@ class TwitterSignIn(OAuthSignIn):
         me = oauth_session.get('account/verify_credentials.json').json()
         social_id = 'twitter$' + str(me.get('id'))
         username = me.get('screen_name')
-        return social_id, username, None   # Twitter does not provide email
+
+        return social_id, username, None, oauth_session.access_token, oauth_session.access_token_secret   # Twitter does not provide email
