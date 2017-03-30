@@ -93,7 +93,7 @@
                                            placeholder="Enter access dandelion app Key">
                                 </div>
                             </div>
-                            <a href="#" onclick="toggler('dandelion_input');">Use Platform's Dandelion Keys <i
+                            <a href="#" onclick="toggler('dandelion_input',event);">Use Platform's Dandelion Keys <i
                                     id="arr_dandelion_input" class="fa fa-arrow-up"></i></a><br>
                         </div>
                         <div class="col-md-6">
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" onclick="toggler('seed_input_file');">Load seeds by csv File <i
+                            <a href="#" onclick="toggler('seed_input_file', event);">Load seeds by csv File <i
                                     id="arr_seed_input_file" class="fa fa-arrow-down"></i></a><br>
 
                             <div class="form-group" id="seed_input_file" style="display: none">
@@ -147,7 +147,7 @@
                             <div id="treeview-searchable" class="h-scroll"></div>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" onclick="toggler('expert_input_file');">Load expert types by csv File <i
+                            <a href="#" onclick="toggler('expert_input_file', event);">Load expert types by csv File <i
                                     id="arr_expert_input_file" class="fa fa-arrow-down"></i></a><br>
                             <div class="form-group" id="expert_input_file" style="display: none">
                                 <input type="file" class="form-control-file" name="input_expert" id="input_expert"

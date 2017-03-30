@@ -71,7 +71,8 @@ $(document).ready(function () {
     });
 });
 
-function toggler(divId) {
+function toggler(divId, e) {
+    e.preventDefault();
     $("#" + divId).toggle();
     if ($("#" + "arr_" + divId).attr("class") == 'fa fa-arrow-up')
         $("#" + "arr_" + divId).attr('class', 'fa fa-arrow-down');
