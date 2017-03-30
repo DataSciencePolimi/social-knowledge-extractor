@@ -1,17 +1,17 @@
 var data = [{
     'backColor': '#FFFFFF',
     'color': '#000000',
-    'icon': 'glyphicon glyphicon-stop',
+    'icon': '',
     'nodes': [{
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false, 
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -20,8 +20,8 @@ var data = [{
             },
             'text': 'BoardGame'
         }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false, 
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -33,13 +33,13 @@ var data = [{
         {
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
+            'icon': '',
             'nodes': [{
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false, 
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -51,13 +51,13 @@ var data = [{
                 {
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
+                    'icon': '',
                     'nodes': [{
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -69,9 +69,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -80,8 +80,8 @@ var data = [{
                             },
                             'text': 'BoxingStyle'
                         }],
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -93,9 +93,9 @@ var data = [{
                 {
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -104,8 +104,8 @@ var data = [{
                     },
                     'text': 'HorseRiding'
                 }],
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -114,8 +114,8 @@ var data = [{
             },
             'text': 'Sport'
         }],
-    'selectable': true,
-    'selectedIcon': 'glyphicon glyphicon-stop',
+    'selectable': false,
+    'selectedIcon': '',
     'state': {
         'checked': false,
         'disabled': false,
@@ -127,13 +127,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -145,13 +145,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -160,8 +160,8 @@ var data = [{
                     },
                     'text': 'NobleFamily'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -173,13 +173,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -191,13 +191,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -209,9 +209,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -223,9 +223,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -234,8 +234,8 @@ var data = [{
                                 },
                                 'text': 'TelevisionStation'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -247,9 +247,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -261,9 +261,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -275,13 +275,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -293,9 +293,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -307,9 +307,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -321,9 +321,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -335,9 +335,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -349,9 +349,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -363,9 +363,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -374,8 +374,8 @@ var data = [{
                                 },
                                 'text': 'Winery'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -387,13 +387,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -405,9 +405,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -419,9 +419,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -433,9 +433,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -444,8 +444,8 @@ var data = [{
                                 },
                                 'text': 'University'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -457,9 +457,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -471,9 +471,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -485,9 +485,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -499,9 +499,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -513,9 +513,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -527,13 +527,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -542,8 +542,8 @@ var data = [{
                             },
                             'text': 'RecordOffice'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -555,9 +555,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -569,9 +569,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -583,9 +583,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -597,9 +597,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -611,13 +611,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -629,9 +629,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -643,9 +643,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -657,9 +657,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -671,9 +671,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -685,9 +685,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -699,9 +699,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -713,9 +713,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -727,9 +727,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -741,9 +741,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -755,9 +755,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -769,9 +769,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -783,9 +783,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -797,9 +797,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -811,9 +811,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -825,9 +825,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -839,9 +839,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -853,9 +853,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -867,9 +867,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -881,9 +881,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -895,9 +895,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -909,9 +909,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -923,9 +923,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -937,9 +937,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -951,9 +951,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -965,9 +965,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -979,9 +979,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -993,9 +993,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1007,9 +1007,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1021,9 +1021,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1032,8 +1032,8 @@ var data = [{
                                 },
                                 'text': 'VolleyballLeague'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1045,13 +1045,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -1063,9 +1063,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1077,9 +1077,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1091,9 +1091,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1105,9 +1105,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1119,9 +1119,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1133,9 +1133,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1147,9 +1147,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1161,9 +1161,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1175,9 +1175,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1189,9 +1189,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1203,13 +1203,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1218,8 +1218,8 @@ var data = [{
                                     },
                                     'text': 'NationalSoccerClub'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1231,9 +1231,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1242,8 +1242,8 @@ var data = [{
                                 },
                                 'text': 'SpeedwayTeam'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1255,9 +1255,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1269,9 +1269,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1280,8 +1280,8 @@ var data = [{
                         },
                         'text': 'TradeUnion'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -1293,13 +1293,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -1311,9 +1311,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1325,9 +1325,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1339,9 +1339,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1353,17 +1353,17 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1375,9 +1375,9 @@ var data = [{
                                 {
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1386,8 +1386,8 @@ var data = [{
                                     },
                                     'text': 'VoiceActor'
                                 }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -1399,9 +1399,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1413,9 +1413,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1427,9 +1427,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1441,9 +1441,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1455,9 +1455,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1469,13 +1469,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1487,9 +1487,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -1501,13 +1501,13 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
                                         'nodes': [{
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -1516,8 +1516,8 @@ var data = [{
                                             },
                                             'text': 'Guitarist'
                                         }],
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -1526,8 +1526,8 @@ var data = [{
                                         },
                                         'text': 'Instrumentalist'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1539,9 +1539,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1553,9 +1553,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1567,9 +1567,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1581,13 +1581,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1599,9 +1599,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -1610,8 +1610,8 @@ var data = [{
                                         },
                                         'text': 'ScreenWriter'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1620,8 +1620,8 @@ var data = [{
                                 },
                                 'text': 'Writer'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1633,9 +1633,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -1647,13 +1647,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -1665,9 +1665,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1679,9 +1679,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1693,9 +1693,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1707,9 +1707,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1721,13 +1721,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1736,8 +1736,8 @@ var data = [{
                                     },
                                     'text': 'AmateurBoxer'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1749,9 +1749,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1763,9 +1763,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1777,9 +1777,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1791,9 +1791,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1805,9 +1805,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1819,9 +1819,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1833,9 +1833,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1847,9 +1847,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1861,9 +1861,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1875,9 +1875,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1889,9 +1889,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1903,13 +1903,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -1921,9 +1921,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -1932,8 +1932,8 @@ var data = [{
                                         },
                                         'text': 'CanadianFootballPlayer'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1945,9 +1945,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1959,9 +1959,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1973,9 +1973,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -1987,9 +1987,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2001,9 +2001,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2015,9 +2015,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2029,9 +2029,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2043,17 +2043,17 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
                                     'nodes': [{
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -2062,8 +2062,8 @@ var data = [{
                                         },
                                         'text': 'SpeedwayRider'
                                     }],
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -2075,13 +2075,13 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
                                         'nodes': [{
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -2093,9 +2093,9 @@ var data = [{
                                             {
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -2107,9 +2107,9 @@ var data = [{
                                             {
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -2121,9 +2121,9 @@ var data = [{
                                             {
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -2132,8 +2132,8 @@ var data = [{
                                                 },
                                                 'text': 'RallyDriver'
                                             }],
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -2142,8 +2142,8 @@ var data = [{
                                         },
                                         'text': 'RacingDriver'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2155,9 +2155,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2169,9 +2169,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2183,9 +2183,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2197,9 +2197,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2211,9 +2211,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2225,9 +2225,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2239,9 +2239,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2253,13 +2253,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -2268,8 +2268,8 @@ var data = [{
                                     },
                                     'text': 'SnookerChamp'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2281,9 +2281,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2295,9 +2295,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2309,9 +2309,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2323,9 +2323,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2337,9 +2337,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2351,9 +2351,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2365,9 +2365,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2379,13 +2379,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -2394,8 +2394,8 @@ var data = [{
                                     },
                                     'text': 'BeachVolleyballPlayer'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2407,13 +2407,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -2422,8 +2422,8 @@ var data = [{
                                     },
                                     'text': 'SumoWrestler'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2432,8 +2432,8 @@ var data = [{
                                 },
                                 'text': 'Wrestler'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2445,9 +2445,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2459,9 +2459,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2473,9 +2473,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2487,9 +2487,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2501,9 +2501,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2515,13 +2515,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -2533,9 +2533,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2547,9 +2547,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2561,9 +2561,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2575,9 +2575,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2589,9 +2589,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2603,9 +2603,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2614,8 +2614,8 @@ var data = [{
                                 },
                                 'text': 'Vicar'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2627,13 +2627,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -2645,9 +2645,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2659,9 +2659,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2670,8 +2670,8 @@ var data = [{
                                 },
                                 'text': 'VolleyballCoach'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2683,13 +2683,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -2701,9 +2701,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2712,8 +2712,8 @@ var data = [{
                                 },
                                 'text': 'SerialKiller'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2725,9 +2725,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2739,9 +2739,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2753,9 +2753,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2767,9 +2767,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2781,17 +2781,17 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2800,8 +2800,8 @@ var data = [{
                                 },
                                 'text': 'AnimangaCharacter'
                             }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -2813,9 +2813,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2827,9 +2827,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2841,9 +2841,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -2852,8 +2852,8 @@ var data = [{
                                 },
                                 'text': 'SoapCharacter'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2865,9 +2865,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2879,9 +2879,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2893,9 +2893,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2907,9 +2907,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2921,9 +2921,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2935,9 +2935,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2949,9 +2949,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2963,9 +2963,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2977,9 +2977,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -2991,9 +2991,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3005,9 +3005,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3019,13 +3019,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3034,8 +3034,8 @@ var data = [{
                             },
                             'text': 'SportsTeamMember'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3047,9 +3047,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3061,9 +3061,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3075,13 +3075,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3093,9 +3093,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3107,9 +3107,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3121,9 +3121,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3135,9 +3135,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3149,9 +3149,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3163,9 +3163,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3177,9 +3177,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3191,9 +3191,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3205,9 +3205,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3219,9 +3219,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3233,9 +3233,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3244,8 +3244,8 @@ var data = [{
                                 },
                                 'text': 'VicePrimeMinister'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3257,9 +3257,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3271,13 +3271,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3289,9 +3289,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3300,8 +3300,8 @@ var data = [{
                                 },
                                 'text': 'TelevisionHost'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3313,9 +3313,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3327,9 +3327,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3341,9 +3341,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3355,9 +3355,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3369,17 +3369,17 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3388,8 +3388,8 @@ var data = [{
                                 },
                                 'text': 'Baronet'
                             }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3401,9 +3401,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3412,8 +3412,8 @@ var data = [{
                                 },
                                 'text': 'PolishKing'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3425,13 +3425,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3443,9 +3443,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3457,9 +3457,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -3468,8 +3468,8 @@ var data = [{
                                 },
                                 'text': 'Professor'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3481,13 +3481,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3496,8 +3496,8 @@ var data = [{
                             },
                             'text': 'SoccerManager'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3509,13 +3509,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -3524,8 +3524,8 @@ var data = [{
                             },
                             'text': 'Host'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3534,8 +3534,8 @@ var data = [{
                         },
                         'text': 'TelevisionPersonality'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3544,8 +3544,8 @@ var data = [{
                 },
                 'text': 'Person'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3557,9 +3557,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3571,13 +3571,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -3589,9 +3589,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3603,9 +3603,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3617,9 +3617,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3631,9 +3631,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3645,9 +3645,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3659,9 +3659,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3673,9 +3673,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3687,9 +3687,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3698,8 +3698,8 @@ var data = [{
                 },
                 'text': 'Vein'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3711,9 +3711,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3725,13 +3725,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -3743,9 +3743,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3754,8 +3754,8 @@ var data = [{
                 },
                 'text': 'NobelPrize'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3767,13 +3767,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -3785,13 +3785,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -3803,9 +3803,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -3814,8 +3814,8 @@ var data = [{
                         },
                         'text': 'MouseGene'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3827,9 +3827,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3838,8 +3838,8 @@ var data = [{
                 },
                 'text': 'Protein'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3851,9 +3851,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3865,9 +3865,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3879,13 +3879,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -3897,9 +3897,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3911,9 +3911,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3925,9 +3925,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3939,13 +3939,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -3954,8 +3954,8 @@ var data = [{
                     },
                     'text': 'BrownDwarf'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -3964,8 +3964,8 @@ var data = [{
                 },
                 'text': 'Star'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3977,9 +3977,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -3991,13 +3991,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -4009,9 +4009,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4023,9 +4023,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4034,8 +4034,8 @@ var data = [{
                 },
                 'text': 'Mineral'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4047,9 +4047,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4061,9 +4061,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4075,9 +4075,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4089,9 +4089,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4103,13 +4103,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -4121,13 +4121,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4136,8 +4136,8 @@ var data = [{
                     },
                     'text': 'DigitalCamera'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4149,9 +4149,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4163,13 +4163,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4181,9 +4181,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4192,8 +4192,8 @@ var data = [{
                         },
                         'text': 'Organ'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4205,9 +4205,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4216,8 +4216,8 @@ var data = [{
                 },
                 'text': 'Weapon'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4229,9 +4229,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4243,9 +4243,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4257,9 +4257,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4271,9 +4271,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4285,21 +4285,21 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
+            'icon': '',
             'nodes': [{
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4311,9 +4311,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4325,9 +4325,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4339,9 +4339,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4350,8 +4350,8 @@ var data = [{
                         },
                         'text': 'Marriage'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4360,8 +4360,8 @@ var data = [{
                 },
                 'text': 'PersonalEvent'
             }],
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -4373,13 +4373,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4388,8 +4388,8 @@ var data = [{
                     },
                     'text': 'SolarEclipse'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4401,13 +4401,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4419,13 +4419,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -4434,8 +4434,8 @@ var data = [{
                             },
                             'text': 'ElectionDiagram'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4447,9 +4447,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4461,9 +4461,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4475,9 +4475,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4489,9 +4489,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4503,9 +4503,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4517,13 +4517,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -4535,9 +4535,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4549,9 +4549,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4563,9 +4563,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4577,9 +4577,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4591,13 +4591,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -4606,8 +4606,8 @@ var data = [{
                                     },
                                     'text': 'OlympicEvent'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4619,13 +4619,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -4637,9 +4637,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -4648,8 +4648,8 @@ var data = [{
                                         },
                                         'text': 'HorseRace'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4661,13 +4661,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -4679,9 +4679,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -4693,9 +4693,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -4707,9 +4707,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -4718,8 +4718,8 @@ var data = [{
                                         },
                                         'text': 'WomensTennisAssociationTournament'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4731,9 +4731,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -4742,8 +4742,8 @@ var data = [{
                                 },
                                 'text': 'WrestlingEvent'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4752,8 +4752,8 @@ var data = [{
                         },
                         'text': 'SportsEvent'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4762,8 +4762,8 @@ var data = [{
                 },
                 'text': 'SocietalEvent'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4775,9 +4775,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4789,17 +4789,17 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
+            'icon': '',
             'nodes': [{
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4811,13 +4811,13 @@ var data = [{
                 {
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
+                    'icon': '',
                     'nodes': [{
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -4826,8 +4826,8 @@ var data = [{
                         },
                         'text': 'ControlledDesignationOfOriginWine'
                     }],
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -4836,8 +4836,8 @@ var data = [{
                     },
                     'text': 'Wine'
                 }],
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -4849,9 +4849,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4860,8 +4860,8 @@ var data = [{
                 },
                 'text': 'Cheese'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4873,13 +4873,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -4891,9 +4891,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -4902,8 +4902,8 @@ var data = [{
                 },
                 'text': 'MouseGeneLocation'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4915,9 +4915,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4929,9 +4929,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4943,9 +4943,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4957,9 +4957,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4971,9 +4971,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4985,9 +4985,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -4999,9 +4999,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5013,13 +5013,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -5028,8 +5028,8 @@ var data = [{
             },
             'text': 'TrackList'
         }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5041,9 +5041,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5055,13 +5055,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -5073,9 +5073,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5087,9 +5087,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5101,9 +5101,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5115,9 +5115,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5129,9 +5129,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5143,9 +5143,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5157,9 +5157,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5171,9 +5171,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5185,9 +5185,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5196,8 +5196,8 @@ var data = [{
                 },
                 'text': 'Train'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5209,9 +5209,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5223,13 +5223,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -5241,9 +5241,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5252,8 +5252,8 @@ var data = [{
                 },
                 'text': 'Surname'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5265,9 +5265,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5279,13 +5279,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -5297,9 +5297,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -5308,8 +5308,8 @@ var data = [{
                 },
                 'text': 'Profession'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -5321,13 +5321,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -5339,17 +5339,17 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
+                    'icon': '',
                     'nodes': [{
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5361,9 +5361,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -5372,8 +5372,8 @@ var data = [{
                             },
                             'text': 'WaterRide'
                         }],
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -5385,9 +5385,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5399,13 +5399,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -5417,9 +5417,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5431,9 +5431,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5445,9 +5445,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5459,9 +5459,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5473,9 +5473,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5487,9 +5487,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5501,9 +5501,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5515,9 +5515,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5529,13 +5529,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -5547,9 +5547,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5561,9 +5561,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5575,9 +5575,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5586,8 +5586,8 @@ var data = [{
                                         },
                                         'text': 'Temple'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5599,9 +5599,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5613,9 +5613,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5627,9 +5627,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5641,13 +5641,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -5656,8 +5656,8 @@ var data = [{
                                     },
                                     'text': 'Theatre'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5666,8 +5666,8 @@ var data = [{
                                 },
                                 'text': 'Venue'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5679,9 +5679,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5693,9 +5693,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5707,13 +5707,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -5725,9 +5725,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5739,9 +5739,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5753,9 +5753,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5767,13 +5767,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -5782,8 +5782,8 @@ var data = [{
                                     },
                                     'text': 'NuclearPowerStation'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5795,13 +5795,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -5813,9 +5813,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5827,9 +5827,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5841,9 +5841,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5855,13 +5855,13 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
                                         'nodes': [{
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -5873,9 +5873,9 @@ var data = [{
                                             {
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -5887,9 +5887,9 @@ var data = [{
                                             {
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -5898,8 +5898,8 @@ var data = [{
                                                 },
                                                 'text': 'WaterwayTunnel'
                                             }],
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5908,8 +5908,8 @@ var data = [{
                                         },
                                         'text': 'Tunnel'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5921,13 +5921,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -5939,9 +5939,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -5950,8 +5950,8 @@ var data = [{
                                         },
                                         'text': 'RailwayStation'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -5960,8 +5960,8 @@ var data = [{
                                 },
                                 'text': 'Station'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -5973,13 +5973,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -5991,9 +5991,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6005,9 +6005,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6019,9 +6019,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6030,8 +6030,8 @@ var data = [{
                                 },
                                 'text': 'Windmill'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6043,9 +6043,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6057,9 +6057,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6071,13 +6071,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6089,9 +6089,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6100,8 +6100,8 @@ var data = [{
                                 },
                                 'text': 'WaterTower'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6110,8 +6110,8 @@ var data = [{
                         },
                         'text': 'Tower'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6123,9 +6123,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6137,9 +6137,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6151,9 +6151,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6165,9 +6165,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6179,9 +6179,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6193,13 +6193,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -6211,9 +6211,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6222,8 +6222,8 @@ var data = [{
                         },
                         'text': 'Memorial'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6235,13 +6235,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -6253,13 +6253,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6271,9 +6271,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6285,13 +6285,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -6303,9 +6303,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -6314,8 +6314,8 @@ var data = [{
                                         },
                                         'text': 'River'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6324,8 +6324,8 @@ var data = [{
                                 },
                                 'text': 'Stream'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6337,9 +6337,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6351,13 +6351,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6366,8 +6366,8 @@ var data = [{
                             },
                             'text': 'LunarCrater'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6379,9 +6379,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6393,9 +6393,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6407,9 +6407,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6421,9 +6421,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6435,9 +6435,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6449,9 +6449,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6463,9 +6463,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6474,8 +6474,8 @@ var data = [{
                         },
                         'text': 'Volcano'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6487,9 +6487,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6501,13 +6501,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -6519,9 +6519,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6533,9 +6533,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6547,13 +6547,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6562,8 +6562,8 @@ var data = [{
                             },
                             'text': 'OverseasDepartment'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6575,9 +6575,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6589,13 +6589,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6604,8 +6604,8 @@ var data = [{
                             },
                             'text': 'Atoll'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6617,9 +6617,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6631,9 +6631,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6645,21 +6645,21 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -6671,9 +6671,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -6685,9 +6685,9 @@ var data = [{
                                     {
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -6696,8 +6696,8 @@ var data = [{
                                         },
                                         'text': 'Parish'
                                     }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6709,13 +6709,13 @@ var data = [{
                                 {
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
                                     'nodes': [{
                                         'backColor': '#FFFFFF',
                                         'color': '#000000',
-                                        'icon': 'glyphicon glyphicon-stop',
-                                        'selectable': true,
-                                        'selectedIcon': 'glyphicon glyphicon-stop',
+                                        'icon': '',
+                                        'selectable': false,
+                                        'selectedIcon': '',
                                         'state': {
                                             'checked': false,
                                             'disabled': false,
@@ -6727,9 +6727,9 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6741,9 +6741,9 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6755,13 +6755,13 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
                                             'nodes': [{
                                                 'backColor': '#FFFFFF',
                                                 'color': '#000000',
-                                                'icon': 'glyphicon glyphicon-stop',
-                                                'selectable': true,
-                                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                                'icon': '',
+                                                'selectable': false,
+                                                'selectedIcon': '',
                                                 'state': {
                                                     'checked': false,
                                                     'disabled': false,
@@ -6770,8 +6770,8 @@ var data = [{
                                                 },
                                                 'text': 'FormerMunicipality'
                                             }],
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6783,9 +6783,9 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6797,9 +6797,9 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6811,9 +6811,9 @@ var data = [{
                                         {
                                             'backColor': '#FFFFFF',
                                             'color': '#000000',
-                                            'icon': 'glyphicon glyphicon-stop',
-                                            'selectable': true,
-                                            'selectedIcon': 'glyphicon glyphicon-stop',
+                                            'icon': '',
+                                            'selectable': false,
+                                            'selectedIcon': '',
                                             'state': {
                                                 'checked': false,
                                                 'disabled': false,
@@ -6822,8 +6822,8 @@ var data = [{
                                             },
                                             'text': 'SubMunicipality'
                                         }],
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -6832,8 +6832,8 @@ var data = [{
                                     },
                                     'text': 'GovernmentalAdministrativeRegion'
                                 }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6845,9 +6845,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6856,8 +6856,8 @@ var data = [{
                                 },
                                 'text': 'NaturalRegion'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6869,13 +6869,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -6887,9 +6887,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6901,9 +6901,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6915,9 +6915,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -6926,8 +6926,8 @@ var data = [{
                                 },
                                 'text': 'Village'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6939,9 +6939,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6953,9 +6953,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -6964,8 +6964,8 @@ var data = [{
                         },
                         'text': 'Street'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6977,9 +6977,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -6991,9 +6991,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7005,9 +7005,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7019,9 +7019,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7033,13 +7033,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -7051,9 +7051,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7065,13 +7065,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7080,8 +7080,8 @@ var data = [{
                             },
                             'text': 'Racecourse'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7093,9 +7093,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7104,8 +7104,8 @@ var data = [{
                         },
                         'text': 'Stadium'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7117,9 +7117,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7131,9 +7131,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7142,8 +7142,8 @@ var data = [{
                 },
                 'text': 'WorldHeritageSite'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7155,9 +7155,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7169,9 +7169,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7183,13 +7183,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7201,9 +7201,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7212,8 +7212,8 @@ var data = [{
                 },
                 'text': 'PublicServiceOutput'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7225,9 +7225,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7239,13 +7239,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7254,8 +7254,8 @@ var data = [{
             },
             'text': 'ArtificialSatellite'
         }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7267,9 +7267,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7281,13 +7281,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7299,9 +7299,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7313,17 +7313,17 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
+                    'icon': '',
                     'nodes': [{
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7335,9 +7335,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7349,9 +7349,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7363,9 +7363,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7377,9 +7377,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7391,9 +7391,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7405,13 +7405,13 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7423,9 +7423,9 @@ var data = [{
                                 {
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -7434,8 +7434,8 @@ var data = [{
                                     },
                                     'text': 'RaceHorse'
                                 }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7447,9 +7447,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7461,9 +7461,9 @@ var data = [{
                         {
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7472,8 +7472,8 @@ var data = [{
                             },
                             'text': 'Reptile'
                         }],
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -7485,9 +7485,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7499,13 +7499,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7517,9 +7517,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7531,9 +7531,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7545,9 +7545,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7559,9 +7559,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7573,13 +7573,13 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
+                                'icon': '',
                                 'nodes': [{
                                     'backColor': '#FFFFFF',
                                     'color': '#000000',
-                                    'icon': 'glyphicon glyphicon-stop',
-                                    'selectable': true,
-                                    'selectedIcon': 'glyphicon glyphicon-stop',
+                                    'icon': '',
+                                    'selectable': false,
+                                    'selectedIcon': '',
                                     'state': {
                                         'checked': false,
                                         'disabled': false,
@@ -7588,8 +7588,8 @@ var data = [{
                                     },
                                     'text': 'Grape'
                                 }],
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7601,9 +7601,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7615,9 +7615,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7629,9 +7629,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7643,9 +7643,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -7654,8 +7654,8 @@ var data = [{
                                 },
                                 'text': 'Moss'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7664,8 +7664,8 @@ var data = [{
                         },
                         'text': 'Plant'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7674,8 +7674,8 @@ var data = [{
                 },
                 'text': 'Eukaryote'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7687,13 +7687,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7702,8 +7702,8 @@ var data = [{
             },
             'text': 'OlympicResult'
         }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7715,13 +7715,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7733,13 +7733,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -7751,13 +7751,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -7766,8 +7766,8 @@ var data = [{
                             },
                             'text': 'NationalFootballLeagueSeason'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7779,9 +7779,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7793,9 +7793,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7807,9 +7807,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -7818,8 +7818,8 @@ var data = [{
                         },
                         'text': 'SoccerLeagueSeason'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7828,8 +7828,8 @@ var data = [{
                 },
                 'text': 'SportsTeamSeason'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7841,9 +7841,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7855,13 +7855,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7873,9 +7873,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7884,8 +7884,8 @@ var data = [{
                 },
                 'text': 'Openswarm'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7897,9 +7897,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -7911,13 +7911,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -7929,9 +7929,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7943,9 +7943,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7957,9 +7957,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7971,9 +7971,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7985,9 +7985,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -7999,9 +7999,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8010,8 +8010,8 @@ var data = [{
                 },
                 'text': 'YearInSpaceflight'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -8023,13 +8023,13 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'icon': '',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -8041,9 +8041,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8055,13 +8055,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8073,9 +8073,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8084,8 +8084,8 @@ var data = [{
                         },
                         'text': 'MusicGenre'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8097,9 +8097,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8111,9 +8111,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8125,9 +8125,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8139,13 +8139,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8157,9 +8157,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8168,8 +8168,8 @@ var data = [{
                         },
                         'text': 'GovernmentType'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8178,8 +8178,8 @@ var data = [{
                 },
                 'text': 'Type'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -8191,21 +8191,21 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
+            'icon': '',
             'nodes': [{
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8214,8 +8214,8 @@ var data = [{
                     },
                     'text': 'SupremeCourtOfTheUnitedStatesCase'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8224,8 +8224,8 @@ var data = [{
                 },
                 'text': 'LegalCase'
             }],
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -8237,13 +8237,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8252,8 +8252,8 @@ var data = [{
                     },
                     'text': 'ResearchProject'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8262,8 +8262,8 @@ var data = [{
                 },
                 'text': 'Project'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -8275,9 +8275,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -8289,17 +8289,17 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
+        'icon': '',
         'nodes': [{
             'backColor': '#FFFFFF',
             'color': '#000000',
-            'icon': 'glyphicon glyphicon-stop',
+            'icon': '',
             'nodes': [{
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8311,9 +8311,9 @@ var data = [{
                 {
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8322,8 +8322,8 @@ var data = [{
                     },
                     'text': 'Sculpture'
                 }],
-            'selectable': true,
-            'selectedIcon': 'glyphicon glyphicon-stop',
+            'selectable': false,
+            'selectedIcon': '',
             'state': {
                 'checked': false,
                 'disabled': false,
@@ -8335,13 +8335,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8353,9 +8353,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8364,8 +8364,8 @@ var data = [{
                         },
                         'text': 'HollywoodCartoon'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8377,13 +8377,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8392,8 +8392,8 @@ var data = [{
                     },
                     'text': 'Archive'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8405,13 +8405,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8420,8 +8420,8 @@ var data = [{
                     },
                     'text': 'BiologicalDatabase'
                 }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8433,9 +8433,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8447,9 +8447,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8461,9 +8461,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8475,13 +8475,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8493,9 +8493,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8507,9 +8507,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8521,9 +8521,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8535,9 +8535,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8549,13 +8549,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -8564,8 +8564,8 @@ var data = [{
                             },
                             'text': 'EurovisionSongContestEntry'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8574,8 +8574,8 @@ var data = [{
                         },
                         'text': 'Song'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8587,9 +8587,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8601,13 +8601,13 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'icon': '',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8619,9 +8619,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8630,8 +8630,8 @@ var data = [{
                         },
                         'text': 'VideoGame'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8643,9 +8643,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8657,9 +8657,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8671,9 +8671,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8685,9 +8685,9 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'icon': '',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -8699,17 +8699,17 @@ var data = [{
             {
                 'backColor': '#FFFFFF',
                 'color': '#000000',
-                'icon': 'glyphicon glyphicon-stop',
+                'icon': '',
                 'nodes': [{
                     'backColor': '#FFFFFF',
                     'color': '#000000',
-                    'icon': 'glyphicon glyphicon-stop',
+                    'icon': '',
                     'nodes': [{
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8718,8 +8718,8 @@ var data = [{
                         },
                         'text': 'Reference'
                     }],
-                    'selectable': true,
-                    'selectedIcon': 'glyphicon glyphicon-stop',
+                    'selectable': false,
+                    'selectedIcon': '',
                     'state': {
                         'checked': false,
                         'disabled': false,
@@ -8731,17 +8731,17 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
+                            'icon': '',
                             'nodes': [{
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8750,8 +8750,8 @@ var data = [{
                                 },
                                 'text': 'LightNovel'
                             }],
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -8760,8 +8760,8 @@ var data = [{
                             },
                             'text': 'Novel'
                         }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8773,9 +8773,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8787,13 +8787,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -8805,9 +8805,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8819,9 +8819,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8833,9 +8833,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8844,8 +8844,8 @@ var data = [{
                                 },
                                 'text': 'Manhwa'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8857,9 +8857,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8871,9 +8871,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8885,9 +8885,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8899,13 +8899,13 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
+                        'icon': '',
                         'nodes': [{
                             'backColor': '#FFFFFF',
                             'color': '#000000',
-                            'icon': 'glyphicon glyphicon-stop',
-                            'selectable': true,
-                            'selectedIcon': 'glyphicon glyphicon-stop',
+                            'icon': '',
+                            'selectable': false,
+                            'selectedIcon': '',
                             'state': {
                                 'checked': false,
                                 'disabled': false,
@@ -8917,9 +8917,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8931,9 +8931,9 @@ var data = [{
                             {
                                 'backColor': '#FFFFFF',
                                 'color': '#000000',
-                                'icon': 'glyphicon glyphicon-stop',
-                                'selectable': true,
-                                'selectedIcon': 'glyphicon glyphicon-stop',
+                                'icon': '',
+                                'selectable': false,
+                                'selectedIcon': '',
                                 'state': {
                                     'checked': false,
                                     'disabled': false,
@@ -8942,8 +8942,8 @@ var data = [{
                                 },
                                 'text': 'Newspaper'
                             }],
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8955,9 +8955,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8969,9 +8969,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8983,9 +8983,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -8997,9 +8997,9 @@ var data = [{
                     {
                         'backColor': '#FFFFFF',
                         'color': '#000000',
-                        'icon': 'glyphicon glyphicon-stop',
-                        'selectable': true,
-                        'selectedIcon': 'glyphicon glyphicon-stop',
+                        'icon': '',
+                        'selectable': false,
+                        'selectedIcon': '',
                         'state': {
                             'checked': false,
                             'disabled': false,
@@ -9008,8 +9008,8 @@ var data = [{
                         },
                         'text': 'StatedResolution'
                     }],
-                'selectable': true,
-                'selectedIcon': 'glyphicon glyphicon-stop',
+                'selectable': false,
+                'selectedIcon': '',
                 'state': {
                     'checked': false,
                     'disabled': false,
@@ -9018,8 +9018,8 @@ var data = [{
                 },
                 'text': 'WrittenWork'
             }],
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9031,9 +9031,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9045,9 +9045,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9059,9 +9059,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9073,9 +9073,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9087,9 +9087,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9101,9 +9101,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9115,9 +9115,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,
@@ -9129,9 +9129,9 @@ var data = [{
     {
         'backColor': '#FFFFFF',
         'color': '#000000',
-        'icon': 'glyphicon glyphicon-stop',
-        'selectable': true,
-        'selectedIcon': 'glyphicon glyphicon-stop',
+        'icon': '',
+        'selectable': false,
+        'selectedIcon': '',
         'state': {
             'checked': false,
             'disabled': false,

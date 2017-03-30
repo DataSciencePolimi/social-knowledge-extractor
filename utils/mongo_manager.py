@@ -97,4 +97,4 @@ class MongoManager():
 
 
 if __name__ == '__main__':
-    print("mongo_manager")
+    db_manager = MongoManager(configuration.db_name)

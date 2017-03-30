@@ -12,6 +12,7 @@ import pprint
 from orchestrator import Orchestrator
 from oauth import OAuthSignIn
 from model.User import User
+from utils import initialization_application_keys
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -21,16 +22,17 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
+initialization_application_keys.init_application_keys()
+
 lm = LoginManager(app)
 lm.login_view = 'index'
-
 
 @lm.user_loader
 def load_user(social_id):
     u = list(db_manager.find("auth_users", {"social_id": social_id}))
     if len(u) == 0:
         return None
-    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"], u[0]["access_token"],u[0]["access_token_secret"])
+    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"], u[0]["access_token"],u[0]["access_token_secret"], u[0]["profile_img"])
 
 
 @app.route('/')
@@ -42,6 +44,8 @@ def run():
     if request.form.get("email") != None:
         db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
 
+    pprint.pprint(request.form)
+
     configuration.access_token = current_user.access_token
     configuration.access_token_secret = current_user.access_token_secret
     configuration.consumer_key = configuration.providers["twitter"]["id"]
@@ -50,29 +54,41 @@ def run():
     dandelion_app_id = request.form["dandelion_app_id"]
     dandelion_app_key = request.form["dandelion_app_key"]
 
-    print(dandelion_app_id, dandelion_app_key)
-
     configuration.APP1_ID = dandelion_app_id
     configuration.API_KEY_DANDELION1 = dandelion_app_key
 
     configuration.NUMBER_REQUEST_DANDELION = 1000
 
-    diction = {k:v[0] for (k,v) in dict(request.form).items()}
-    diction["status"] = "processing"
+    #Get seeds and expert types
+    if request.files["input_seeds"].filename == '':
+        seeds = [v for k,v in request.form.items() if "prof" in k]
+    else:
+        seeds_file = request.files["input_seeds"]
+        seeds_dataframe = pd.read_csv(seeds_file)
+        seeds = seeds_dataframe.ix[:, 1].tolist()
 
-    seeds_file = request.files["input_seeds"]
-    seeds_dataframe = pd.read_csv(seeds_file)
-    seeds = seeds_dataframe.ix[:, 1].tolist()
+    if request.files["input_expert"].filename == '':
+        experts = [v for k,v in request.form.items() if "check-box" in k]
+    else:
+        expert_file = request.files["input_expert"]
+        expert_dataframe = pd.read_csv(expert_file)
+        experts = expert_dataframe.ix[:, 0].tolist()
 
-    expert_file = request.files["input_expert"]
-    expert_dataframe = pd.read_csv(expert_file)
-    experts = expert_dataframe.ix[:, 0].tolist()
-    diction["expert_types"] = experts
+    experiment = {}
+    experiment["email"] = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
+    experiment["dandelion_app_id"] = dandelion_app_id
+    experiment["dandelion_app_key"] = dandelion_app_key
+    experiment["access_token"] = current_user.access_token
+    experiment["access_token_secret"] = current_user.access_token_secret
+    experiment["consumer_key"] = configuration.providers["twitter"]["id"]
+    experiment["consumer_secret"] = configuration.providers["twitter"]["secret"]
+    experiment["expert_types"] = experts
+    experiment["status"] = "processing"
 
-    id_experiment = db_manager.write_mongo("experiment", diction)
+    id_experiment = db_manager.write_mongo("experiment", experiment)
 
-    #TODO: create inside orchestrator
-    crawler = PipelineCrawler(100,seeds[:20],id_experiment,db_manager)
+    # #TODO: create inside orchestrator
+    crawler = PipelineCrawler(100,seeds,id_experiment,db_manager)
     knowldege_extractor = Pipeline(db_manager,id_experiment)
 
     #orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
@@ -102,16 +118,16 @@ def oauth_callback(provider):
     if not current_user.is_anonymous:
         return redirect(url_for('index'))
     oauth = OAuthSignIn.get_provider(provider)
-    social_id, username, email, access_token, access_token_secret  = oauth.callback()
+    social_id, username, email, access_token, access_token_secret, profile_img  = oauth.callback()
     if social_id is None:
         flash('Authentication failed.')
         return redirect(url_for('index'))
     user = list(db_manager.find("auth_users", {"social_id":social_id}))
     if len(user) == 0:
-        user = User(social_id, username, email, access_token, access_token_secret)
-        db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email, "access_token": access_token, "access_token_secret":access_token_secret })
+        user = User(social_id, username, email, access_token, access_token_secret, profile_img)
+        db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email, "access_token": access_token, "access_token_secret":access_token_secret, "profile_img":profile_img })
     else:
-        user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"])
+        user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"], user[0]["profile_img"])
 
     login_user(user, remember=True)
     return redirect(url_for('index'))
