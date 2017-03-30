@@ -1,16 +1,16 @@
-seed_id,seed_name
-ObjectId(560ee0ee410112a6c7680113),ThailandPavilion2015
-ObjectId(560ee0ee410112a6c7680114),UK: Milan Expo 2015
-ObjectId(560ee0ee410112a6c7680115),Qatar Pavilion
-ObjectId(560ee0ee410112a6c7680116),Poland at EXPO
-ObjectId(560ee0ee410112a6c7680117),Kazakhstan Pavilion
-ObjectId(560ee0ee410112a6c7680118),USA Pavilion 2015
-ObjectId(560ee0ee410112a6c7680119),Estonia EXPO 2015
-ObjectId(560ee0ee410112a6c768011a),indonesiaworldexpo
-ObjectId(560ee0ee410112a6c768011b),CZ EXPO Milano 2015
-ObjectId(560ee0ee410112a6c768011c),expoaustria
-ObjectId(560ee0ee410112a6c768011d),Kuwait Pavilion
-ObjectId(560ee0ee410112a6c768011e),Swiss Pavilion
-ObjectId(560ee0ee410112a6c768011f),RussiaExpo2015
-ObjectId(560ee0ee410112a6c7680120),France Expo 2015
-ObjectId(56129d1e0f4bea25bd7fede7),German Pavilion
+seed_name
+ThailandPavilion2015
+UK: Milan Expo 2015
+Qatar Pavilion
+Poland at EXPO
+Kazakhstan Pavilion
+USA Pavilion 2015
+Estonia EXPO 2015
+indonesiaworldexpo
+CZ EXPO Milano 2015
+expoaustria
+Kuwait Pavilion
+Swiss Pavilion
+RussiaExpo2015
+France Expo 2015
+German Pavilion

@@ -44,18 +44,19 @@ def run():
     if request.form.get("email") != None:
         db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
 
-    pprint.pprint(request.form)
+    experiment = {}
 
     configuration.access_token = current_user.access_token
     configuration.access_token_secret = current_user.access_token_secret
     configuration.consumer_key = configuration.providers["twitter"]["id"]
     configuration.consumer_secret = configuration.providers["twitter"]["secret"]
 
-    dandelion_app_id = request.form["dandelion_app_id"]
-    dandelion_app_key = request.form["dandelion_app_key"]
+    if request.form["dandelion_app_id"] != "" and request.form["dandelion_app_key"] != "":
+        experiment["dandelion_app_id"] = request.form["dandelion_app_id"]
+        experiment["dandelion_app_key"] = request.form["dandelion_app_key"]
 
-    configuration.APP1_ID = dandelion_app_id
-    configuration.API_KEY_DANDELION1 = dandelion_app_key
+        configuration.APP1_ID = request.form["dandelion_app_id"]
+        configuration.API_KEY_DANDELION1 = request.form["dandelion_app_key"]
 
     configuration.NUMBER_REQUEST_DANDELION = 1000
 
@@ -65,7 +66,7 @@ def run():
     else:
         seeds_file = request.files["input_seeds"]
         seeds_dataframe = pd.read_csv(seeds_file)
-        seeds = seeds_dataframe.ix[:, 1].tolist()
+        seeds = seeds_dataframe.ix[:, 0].tolist()
 
     if request.files["input_expert"].filename == '':
         experts = [v for k,v in request.form.items() if "check-box" in k]
@@ -74,10 +75,7 @@ def run():
         expert_dataframe = pd.read_csv(expert_file)
         experts = expert_dataframe.ix[:, 0].tolist()
 
-    experiment = {}
     experiment["email"] = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
-    experiment["dandelion_app_id"] = dandelion_app_id
-    experiment["dandelion_app_key"] = dandelion_app_key
     experiment["access_token"] = current_user.access_token
     experiment["access_token_secret"] = current_user.access_token_secret
     experiment["consumer_key"] = configuration.providers["twitter"]["id"]

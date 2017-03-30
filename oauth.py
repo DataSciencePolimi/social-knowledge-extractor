@@ -116,5 +116,5 @@ class TwitterSignIn(OAuthSignIn):
         print(me)
         social_id = 'twitter$' + str(me.get('id'))
         username = me.get('screen_name')
-        profile_img = me["profile_image_url"]
+        profile_img = me["profile_image_url"].replace("_normal","")
         return social_id, username, None, oauth_session.access_token, oauth_session.access_token_secret, profile_img   # Twitter does not provide email
