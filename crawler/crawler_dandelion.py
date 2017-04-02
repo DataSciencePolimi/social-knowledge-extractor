@@ -48,7 +48,7 @@ class CrawlDandelion:
 
             languages_chunks.extend(tweets_chunks)
 
-        self.run(languages_chunks, configuration.APP1_ID, configuration.API_KEY_DANDELION1)
+        self.run(languages_chunks, configuration.APP_ID, configuration.API_KEY_DANDELION)
 
     def run_crawler_four_keys(self,id_experiment):
         self.id_experiment = id_experiment
@@ -118,7 +118,3 @@ class CrawlDandelion:
                     annotation["id_experiment"] = self.id_experiment
                     #print(annotation)
                     self.db_manager.write_mongo("entity", annotation)
-
-
-if __name__ == "__main__":
-    CrawlDandelion("1234")

@@ -14,14 +14,15 @@ class CrawlerTwitter():
         self.db_manager.create_index("tweets", [("id_str", DESCENDING),("id_experiment", DESCENDING)])
         self.db_manager.create_index("seeds",[("handle", DESCENDING),("id_experiment", DESCENDING)])
 
-    def storeSeeds(self, initial_seeds):
+    def storeSeeds(self, original_seeds):
+        initial_seeds = [s["handle"] for s in original_seeds]
         storable = []
         for t in self.db_manager.find("tweets", {"id_experiment":self.id_experiment}):
             storable.append(t["user"]["screen_name"])
 
         for t in set(storable):
             if t in initial_seeds:
-                self.db_manager.write_mongo("seeds", {"handle": t, "starting": True, "id_experiment":self.id_experiment})
+                self.db_manager.write_mongo("seeds", {"handle": t, "starting": True, "types":original_seeds[initial_seeds.index(t)]["types"], "id_experiment":self.id_experiment})
             else:
                 self.db_manager.write_mongo("seeds", {"handle": t, "starting": False, "id_experiment":self.id_experiment})
 
@@ -29,7 +30,7 @@ class CrawlerTwitter():
         new_seeds = set()
         # Exctract all the tweets
         for s in seeds:
-            # print("Starting seed: "+s)
+            print("Starting seed: "+s)
             tweets_seed = self.crawler.get_users_tweets(s, N)
             if (len(tweets_seed) == 0):
                 self.db_manager.delete_element("seeds", {"handle": s,"id_experiment":self.id_experiment})

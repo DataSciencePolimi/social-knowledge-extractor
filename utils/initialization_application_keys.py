@@ -7,8 +7,8 @@ def init_application_keys():
     db_manager = mongo_manager.MongoManager(configuration.db_name)
 
     dandelion = list(db_manager.find("application_keys", {"service":"dandelion"}))
-    configuration.API_KEY_DANDELION1 = dandelion[0]["key_dandelion"]
-    configuration.APP1_ID = dandelion[0]["app_id"]
+    configuration.API_KEY_DANDELION = dandelion[0]["key_dandelion"]
+    configuration.APP_ID = dandelion[0]["app_id"]
     configuration.API_KEY_DANDELION2 = dandelion[1]["key_dandelion"]
     configuration.APP2_ID = dandelion[1]["app_id"]
     configuration.API_KEY_DANDELION3 = dandelion[2]["key_dandelion"]

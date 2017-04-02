@@ -65,7 +65,7 @@ class ExtractCandidates:
         for ca in rank:
             DF = self.computeDF(ca, seeds)
             i+=1
-            print(i)
+            #print(i)
             TTF = self.computeTTF(ca)
             formula = (DF * TTF) / (N - DF + 1)
             ca["ranking_index"] = formula

@@ -9,7 +9,7 @@ class TweetsChunk:
         self.index_tweet = []
         start = 0
         for t in self.tweets:
-            self.index_tweet.append({"tweet": t, "start": start, "end": start + len(t["text"]) - 1, "annotations": []})
+            self.index_tweet.append({"tweet": t, "start": start, "end": start + len(t["text"]), "annotations": []})
             start = start + len(t["text"]) + 1
 
         return " ".join([t["text"].replace("\n", " ") for t in self.tweets])
