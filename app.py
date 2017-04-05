@@ -22,7 +22,7 @@ ALLOWED_EXTENSIONS = set(['svg'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
-#app.config["APPLICATION_ROOT"] = "/ske/"
+app.config["APPLICATION_ROOT"] = "/ske/"
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
 initialization_application_keys.init_application_keys(db_manager)
@@ -137,7 +137,7 @@ def run():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect("/ske/home")
 
 
 @app.route('/authorize/<provider>')
@@ -165,7 +165,7 @@ def oauth_callback(provider):
         user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"], user[0]["profile_img"])
 
     login_user(user, remember=True)
-    return render_template('index.html',title='About')
+    return redirect("/ske/home")
 
 @app.route('/start')
 def start_pipeline():
