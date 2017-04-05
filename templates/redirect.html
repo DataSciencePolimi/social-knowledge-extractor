@@ -26,13 +26,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Social Knowledge Extraction</a>
+            <a class="navbar-brand" href="#">Social Knowledge Enricher</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="home">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="results">Results</a></li>
+                {% endif %}
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -42,8 +43,9 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>An email with the cumputation result will be send in a couple of hours</h1>
-        <a href="/"><p class="lead">Return to Home page</p></a>
+        <h1>Pipeline started.</h1>
+        <h1>Click <a href="results">here</a> to check the status of the analysis</h1>
+        <a href="home"><p class="lead">Return to Home page</p></a>
     </div>
 </div>
     <!-- /.container -->

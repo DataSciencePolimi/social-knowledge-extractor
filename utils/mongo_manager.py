@@ -114,10 +114,16 @@ class MongoManager():
         }
         return self.find(collection,query)
     
-    def getResults(self,experiment_id):
+    def getResults(self,experiment_id,limit=False):
         collection = "rankings"
         query = {
-            "experiment_id"
+            "experiment_id":experiment_id,
+            "score":{"$ne":float('nan')}
         }
+        if(limit):
+            return self.find(collection,query).sort("score",-1).limit(20)
+        else:
+            return self.find(collection,query).sort("score",-1)
+
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

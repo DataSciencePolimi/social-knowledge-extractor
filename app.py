@@ -1,7 +1,8 @@
-from flask import Flask, redirect, url_for, render_template, flash,request
+from flask import Flask, redirect, url_for, render_template, flash,request,make_response
 from flask_login import LoginManager, UserMixin, login_user, logout_user,current_user
 from knowledge_extractor.pipeline import Pipeline
 import configuration
+from bson.objectid import ObjectId
 from utils import mongo_manager
 from crawler.crawler_pipeline import PipelineCrawler
 from werkzeug.utils import secure_filename
@@ -9,6 +10,7 @@ import os
 import pandas as pd
 import threading
 import pprint
+import io, csv
 from orchestrator import Orchestrator
 from oauth import OAuthSignIn
 from model.User import User
@@ -22,7 +24,6 @@ ALLOWED_EXTENSIONS = set(['svg'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
-app.config["APPLICATION_ROOT"] = "/ske/"
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
 initialization_application_keys.init_application_keys(db_manager)
@@ -49,6 +50,38 @@ def about():
 @app.route('/home')
 def index():
     return render_template('index.html',title='Home')
+
+@app.route('/results')
+def results():
+    email = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
+    experiments = list(db_manager.find("experiment",{"email":email}))
+    rankings = {}
+    for experiment in experiments:
+        ranks = list(db_manager.getResults(experiment["_id"],True))
+        rankings[experiment["_id"]] = {
+            "status":experiment["status"],
+            "ranks":ranks
+        }
+    
+    return render_template('results.html',title="Results",results=rankings)
+
+@app.route('/test')
+def text():
+    return render_template('redirect.html',title='Completed Request')
+
+@app.route('/full_results/<experiment>')
+def fullResults(experiment):
+    ranks = list(db_manager.getResults(ObjectId(experiment)))
+    si = io.StringIO()
+    cw = csv.writer(si)
+    for r in ranks:
+        cw.writerow([r["handle"]])
+
+    output = make_response(si.getvalue())
+    output.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    output.headers["Content-type"] = "text/csv"
+    return output
+
 
 
 @app.route('/run', methods=['POST'])
