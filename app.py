@@ -165,7 +165,7 @@ def oauth_callback(provider):
         user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"], user[0]["profile_img"])
 
     login_user(user, remember=True)
-    return render_template('about.html',title='About')
+    return render_template('index.html',title='About')
 
 @app.route('/start')
 def start_pipeline():
