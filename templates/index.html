@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-social.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/bootstrap-social.css') }}"/>
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/style.css') }}"/>
 
-    <link href="{{ url_for('static', filename='css/bootstrap-treeview.css') }}" rel="stylesheet">
+    <link href=".{{ url_for('static', filename='css/bootstrap-treeview.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-md-9 text-left">
                     <h2 style="margin-top: 0px !important;">Hi, {{ current_user.nickname }}!</h2>
-                    <a href="{{ url_for('logout') }}" class="btn btn-social btn-twitter">
+                    <a href=".{{ url_for('logout') }}" class="btn btn-social btn-twitter">
                         <span class="fa fa-twitter"></span> Logout
                     </a>
                 </div>
@@ -147,7 +147,7 @@
                                 <input type="file" class="form-control-file" name="input_expert" id="input_expert"
                                        aria-describedby="fileHelp">
                                 <small id="fileHelp" class="form-text text-muted">List of Expert Types extracted from
-                                    DBPedia <a target="_blank" href="{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here you can see an exemple:</a></small>
+                                    DBPedia <a target="_blank" href=".{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here you can see an exemple:</a></small>
                             </div>
                         </div>
                     </div>
