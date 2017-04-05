@@ -27,7 +27,7 @@ class MongoManager():
         return self.db[collection].find_one()
 
     def find(self, collection, query, limite=sys.maxsize,project={}):
-        return self.db[collection].find(query).limit(limite)
+        return self.db[collection].find(query)
 
     def delete_element(self, collection, query):
         return self.db[collection].delete_many(query)
@@ -44,6 +44,12 @@ class MongoManager():
     def get_dandelion_keys(self):
         query = {
             "service":"dandelion"
+        }
+        return self.db["application_keys"].find(query)
+    
+    def get_twitter_keys(self):
+        query = {
+            "service":"twitter"
         }
         return self.db["application_keys"].find(query)
     
