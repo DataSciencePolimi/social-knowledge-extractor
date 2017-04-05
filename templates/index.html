@@ -113,7 +113,7 @@
                                 <input type="file" class="form-control-file" name="input_seeds" id="input_seeds"
                                        aria-describedby="fileHelp">
                                 <small id="fileHelp" class="form-text text-muted">List of Seeds (Max 20 seeds). <a
-                                        target="_blank" href="{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here
+                                        target="_blank" href=".{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here
                                     you can see an exemple:</a></small>
                             </div>
                         </div>
@@ -179,7 +179,7 @@
         {% else %}
             <h1>Social Knowledge Extractor</h1>
             <p class="lead">In order to run the pipeline you need to sign in with Twitter</p>
-            <a href="{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-social btn-twitter">
+            <a href=".{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-social btn-twitter">
                 <span class="fa fa-twitter"></span> Sign in with Twitter
             </a>
         {% endif %}
@@ -190,9 +190,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
-<script src="{{ url_for('static', filename='js/data.js') }}"></script>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/data.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
 </html>
