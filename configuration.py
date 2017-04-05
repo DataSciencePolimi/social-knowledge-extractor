@@ -24,6 +24,6 @@ providers = {
 # MONGO DB LOCAL
 address_local = "localhost"
 port_local = 27017
-db_name = "ske_db"
+db_name = "ske_db_marco"
 db_name_test = "ske_db_test"
 

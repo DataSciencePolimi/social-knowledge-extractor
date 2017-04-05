@@ -29,13 +29,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Social Knowledge Extractor</a>
+            <a class="navbar-brand" href="#">Social Knowledge Enricher</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -59,8 +57,17 @@
                     </a>
                 </div>
             </div>
-
             <hr>
+            <div class="row text-left">
+                <div class="col-md-10">
+                    To proceed with the analysis, you need to provide three input elements:
+                    <ol>
+                        <li>The list of seeds, i.e., the twitter user ids (handles) that represent the emerging entities for your field of interest.</li>
+                        <li>The list of entity types (DBpedia types) that are relevant for your domain (you can search in the list or directly check them in the checklist).</li>
+                        <li>The access key for the Dandelion API. If you want, you can use the default key of our platform.</li>
+                    </ol>
+                </div>
+            </div>
             <div class="row text-left">
                 <form id="main-form" action="/run" method="POST" enctype="multipart/form-data">
                     {% if current_user.email == None %}
@@ -78,29 +85,12 @@
                     {% endif %}
 
                     <div class="row" style="padding-top: 15px; padding-bottom: 15px">
-                        <div class="col-md-6">
-                            <h2 class="control-label">Insert Dandelion Key</h2>
-                            <div id="dandelion_input">
-                                <div class="form-group">
-                                    <label for="consumer_secret">Dandelion App ID</label>
-                                    <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id"
-                                           placeholder="Enter access dandelion app ID">
-                                </div>
-                                <div class="form-group">
-                                    <label for="consumer_secret">Dandelion App Key</label>
-                                    <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key"
-                                           placeholder="Enter access dandelion app Key">
-                                </div>
-                            </div>
-                            <a href="#" onclick="toggler('dandelion_input',event);">Use Platform's Dandelion Keys <i
-                                    id="arr_dandelion_input" class="fa fa-arrow-up"></i></a><br>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <input type="hidden" name="count" value="1"/>
                             <div class="control-group" id="fields">
-                                <h2 class="control-label">Insert Twitter handles</h2>
-                                <label style="visibility: hidden" for="consumer_secret">nsert Twitter handles</label>
-
+                                <h2 class="control-label"> 1. Seeds (Twitter accounts in the form of @username)</h2>
+                                <label style="visibility: hidden" for="consumer_secret">Insert Twitter handles</label>
+                               
                                 <div class="controls" id="profs">
                                     <div class="input-append">
                                         <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
@@ -128,7 +118,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <hr style="border-top-color: #d5d5d5;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2>2. Domain-relevant types (search and select the right types from the DBpedia taxonomy below)</h2>
+                        </div>
+                    </div>
                     <div class="row" style="padding-top: 15px;">
                         <div class="col-sm-6">
                             <h2 class="control-label">Search DBPedia Types</h2>
@@ -156,14 +151,34 @@
                             </div>
                         </div>
                     </div>
+                    <hr style="border-top-color: #d5d5d5;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="control-label">3. Dandelion Keys</h2>
+                            <div id="dandelion_input" style="display: none;">
+                                <div class="form-group">
+                                    <label for="consumer_secret">Dandelion App ID</label>
+                                    <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id"
+                                            placeholder="Enter access dandelion app ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="consumer_secret">Dandelion App Key</label>
+                                    <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key"
+                                            placeholder="Enter access dandelion app Key">
+                                </div>
+                            </div>
+                            <a href="#" onclick="toggler('dandelion_input',event);">Use Your Dandelion Keys <i
+                                    id="arr_dandelion_input" class="fa fa-arrow-down"></i></a><br>
+                        </div>
+                    </div>
                     <br>
                     <button id="submit-form" style="margin-top: 15px;" type="submit" class="btn btn-primary">Run Pipeline</button>
                 </form>
             </div>
             </div>
         {% else %}
-            <h1>Run Pipeline</h1>
-            <p class="lead">Fill the form in order to run the pipeline</p>
+            <h1>Social Knowledge Extractor</h1>
+            <p class="lead">In order to run the pipeline you need to sign in with Twitter</p>
             <a href="{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-social btn-twitter">
                 <span class="fa fa-twitter"></span> Sign in with Twitter
             </a>

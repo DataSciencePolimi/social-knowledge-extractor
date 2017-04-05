@@ -1,0 +1,42 @@
+header {
+  text-align: center;
+  color: #4D4861;
+  background: #F7C4A5;
+}
+section.success {
+  color: #4D4861;
+  background: #F7C4A5;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: #4D4861;
+}
+
+section.info:nth-child(2n) {
+  color: #000;
+  background: #f5f5f5;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  color: #EDCB96;
+  background-color: #605770;
+  border-color: #4D4861;
+}
+
+section.info a,
+section.info a:hover,
+section.info a:focus,
+section.info a:active,
+section.info a.active {
+  outline: 0;
+  color: #9E7682;
+}
+section.info:nth-child(2n) a,
+section.info:nth-child(2n) a:hover,
+section.info:nth-child(2n) a:focus,
+section.info:nth-child(2n) a:active,
+section.info:nth-child(2n) a.active {
+  outline: 0;
+  color: #4f9fcf;
+}

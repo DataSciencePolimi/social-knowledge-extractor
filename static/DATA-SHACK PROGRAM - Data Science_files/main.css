@@ -1,0 +1,144 @@
+/* Typography */
+html, body {
+  font-size: 20px;
+}
+
+@media(min-width:992px) {
+  html, body {
+    font-size: 24px;
+  }
+}
+
+
+.navbar-nav > li > a {
+  font-size: 0.75rem;
+}
+.navbar-fixed-top .navbar-brand {
+}
+@media(min-width:992px) {
+  .navbar-fixed-top .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+header .intro-text .name {
+  font-size: 1.6rem;
+}
+header .intro-text .skills {
+  font-size: 1rem;
+}
+@media(min-width:992px) {
+  header .intro-text .name {
+    font-size: 2.5rem;
+  }
+}
+
+
+section {
+  padding: 50px 0 1rem 0;
+}
+section h2 {
+  font-size: 1.6rem;
+}
+section p {
+  font-size: 0.8rem;
+}
+section li {
+  font-size: 0.75rem;
+}
+@media(min-width:992px) {
+  section {
+    padding: 100px 0 2rem 0;
+  }
+  section h2 {
+    font-size: 2rem;
+  }
+}
+
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+
+
+.logos {
+  /*margin-top: 1em;*/
+  /*margin-bottom: 1em;*/
+}
+.logos img {
+  max-width: 150px;
+}
+@media(min-width:992px) {
+  .logos img {
+    max-width: none;
+    max-height: 300px;
+  }
+}
+
+
+#contact .media img {
+  max-width: 64px;
+  /* height: 64px;*/
+}
+
+
+
+#institutions img {
+  max-width: 80px;
+}
+#institutions .harvard img {
+  margin-right: 1rem;
+}
+#institutions .polimi img {
+  margin-left: 1rem;
+}
+@media(min-width:992px) {
+  #institutions img {
+    max-width: 150px;
+  }
+}
+
+
+
+#problem img {
+  /*margin-right: 1rem;*/
+  max-width: 70px;
+}
+@media(min-width:992px) {
+  #problem img {
+    max-width: 100px;
+  }
+}
+
+
+
+
+
+#benefits img {
+  max-height: 70px;
+  float: left;
+  margin-right: 1rem;
+}
+#benefits hr {
+  display: none;
+}
+#benefits .polimi img {
+}
+#benefits .harvard img {
+}
+@media(min-width:992px) {
+  #benefits img {
+    margin: auto 0;
+    float: none;
+    max-height: 100px;
+  }
+  #benefits hr {
+    display: block;
+  }
+}
+
+
+section h2 {
+  margin-bottom: 1rem;
+}

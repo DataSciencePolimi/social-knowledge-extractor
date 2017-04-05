@@ -94,7 +94,15 @@ class MongoManager():
                 "experiment_id":id_experiment
             }
             self.write_mongo(collection,score)
-
-
+    
+    def getExperiment(self,experiment_id):
+        collection = "experiment"
+        query={
+            "_id":experiment_id
+        }
+        return self.find(collection,query)
+    
+    def getResults(self,experiment_id):
+        collection = "rankings"
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)
