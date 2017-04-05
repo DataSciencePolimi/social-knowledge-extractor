@@ -15,7 +15,7 @@ def init_application_keys(db_manager):
     configuration.API_KEY_DANDELION4 = dandelion[3]["key_dandelion"]
     configuration.APP4_ID = dandelion[3]["app_id"]
 
-    twitter = list(db_manager.find("application_keys", {"service":"twitter"}))
+    twitter = list(db_manager.get_dandelion_keys())
     configuration.providers["twitter"]["id"] = twitter[0]["consumer_key"]
     configuration.providers["twitter"]["secret"] = twitter[0]["consumer_secret"]
 
