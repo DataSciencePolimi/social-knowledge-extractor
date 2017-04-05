@@ -22,7 +22,7 @@ ALLOWED_EXTENSIONS = set(['svg'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
-app.config["APPLICATION_ROOT"] = "/ske/"
+#app.config["APPLICATION_ROOT"] = "/ske/"
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
 initialization_application_keys.init_application_keys(db_manager)
