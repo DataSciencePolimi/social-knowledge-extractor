@@ -96,9 +96,10 @@ class TwitterSignIn(OAuthSignIn):
         )
 
     def authorize(self):
-        request_token = self.service.get_request_token(
-            params={'oauth_callback': self.get_callback_url()}
-        )
+        #request_token = self.service.get_request_token(
+        #    params={'oauth_callback': self.get_callback_url()}
+        #)
+        request_token = self.service.get_request_token()
         session['request_token'] = request_token
         return redirect(self.service.get_authorize_url(request_token[0]))
 
