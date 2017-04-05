@@ -3,10 +3,9 @@ __author__ = 'marcotagliabue'
 import configuration
 from utils import mongo_manager
 
-def init_application_keys():
-    db_manager = mongo_manager.MongoManager(configuration.db_name)
+def init_application_keys(db_manager):
 
-    dandelion = list(db_manager.find("application_keys", {"service":"dandelion"}))
+    dandelion = list(db_manager.get_dandelion_keys())
     configuration.API_KEY_DANDELION = dandelion[0]["key_dandelion"]
     configuration.APP_ID = dandelion[0]["app_id"]
     configuration.API_KEY_DANDELION2 = dandelion[1]["key_dandelion"]

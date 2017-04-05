@@ -24,7 +24,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'top secret!'
 
 db_manager = mongo_manager.MongoManager(configuration.db_name)
-initialization_application_keys.init_application_keys()
+initialization_application_keys.init_application_keys(db_manager)
 
 lm = LoginManager(app)
 lm.login_view = 'index'

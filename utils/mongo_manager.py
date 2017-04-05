@@ -40,7 +40,13 @@ class MongoManager():
 
     def drop_collection(self, collection):
         return self.db.drop_collection(collection)
-
+    
+    def get_dandelion_keys(self):
+        query = {
+            "service":"dandelion"
+        }
+        return self.db["application_keys"].find(query)
+    
     # Avoid duplicates based on the key
     def create_index(self, collection, key):
         unique = True
@@ -104,5 +110,8 @@ class MongoManager():
     
     def getResults(self,experiment_id):
         collection = "rankings"
+        query = {
+            "experiment_id"
+        }
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)
