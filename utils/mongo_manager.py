@@ -124,6 +124,10 @@ class MongoManager():
             return self.find(collection,query).sort("score",-1).limit(20)
         else:
             return self.find(collection,query).sort("score",-1)
+    
+    def register_evaluation(self,query,update):
+        collection="evaluation"
+        return self.db[collection].update(query,update,upsert=True)
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

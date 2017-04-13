@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, flash,request,make_response
+from flask import Flask, redirect, url_for, render_template, flash,request,make_response,jsonify
 from flask_login import LoginManager, UserMixin, login_user, logout_user,current_user
 from knowledge_extractor.pipeline import Pipeline
 import configuration
@@ -43,18 +43,47 @@ def load_user(social_id):
 def contacts():
     return render_template('landing.html',title='Landing')
 
-@app.route('/about')
-def about():
-    return render_template('about.html',title='About')
-
 @app.route('/home')
 def index():
     return render_template('index.html',title='Home')
 
+@app.route('/evaluate/<experiment>')
+def evaluation(experiment):
+    ranks = list(db_manager.getResults(ObjectId(experiment),True))
+    return render_template('evaluation.html',ranks=ranks,experiment=experiment)
+
+@app.route('/sendEvaluation/<experiment>',methods=['GET','POST'])
+def registerEvaluation(experiment):
+
+    options = {
+        "upsert":True
+    }
+    for k,v in request.form.items():
+        print(k)
+        print(v)
+        query={
+            "handle":k,
+            "experiment":ObjectId(experiment)
+        }
+        update={}
+        if v=="true":
+            update["$inc"] = {
+                "correct":1
+            }
+        else:
+            update["$inc"] = {
+                "wrong":1
+            }
+        print(update)
+        db_manager.register_evaluation(query,update)
+
+    flash('Evaluation sent','success')
+    return redirect(url_for('index'))
+    
 @app.route('/results')
 def results():
-    email = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
-    experiments = list(db_manager.find("experiment",{"email":email}))
+    id = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["_id"]
+    experiments = list(db_manager.find("experiment",{"user_id":id}))
     rankings = {}
     for experiment in experiments:
         ranks = list(db_manager.getResults(experiment["_id"],True))
@@ -64,10 +93,6 @@ def results():
         }
     
     return render_template('results.html',title="Results",results=rankings)
-
-@app.route('/test')
-def text():
-    return render_template('redirect.html',title='Completed Request')
 
 @app.route('/full_results/<experiment>')
 def fullResults(experiment):
@@ -91,6 +116,7 @@ def run():
 
     experiment = {}
 
+    experiment["user_id"] = current_user["_id"]
     configuration.access_token = current_user.access_token
     configuration.access_token_secret = current_user.access_token_secret
     configuration.consumer_key = configuration.providers["twitter"]["id"]
@@ -144,7 +170,7 @@ def run():
     experiment["consumer_key"] = configuration.providers["twitter"]["id"]
     experiment["consumer_secret"] = configuration.providers["twitter"]["secret"]
     experiment["expert_types"] = experts
-    experiment["status"] = "processing"
+    experiment["status"] = "PROCESSING"
 
     id_experiment = db_manager.write_mongo("experiment", experiment)
 
@@ -153,7 +179,7 @@ def run():
         print("error")
         error = "No units left in our Dandelion Keys! Please Insert yours key"
         flash(error, 'error')
-        return render_template('index.html',title='Completed Request')
+        return render_template('index.html',title='Error')
     else:
         # #TODO: create inside orchestrator
         crawler = PipelineCrawler(100,new_seeds,id_experiment,db_manager)
