@@ -1,3 +1,10 @@
+// disable form submission by pressing enter
+$("#main-form").bind("keypress", function (e) {
+    if (e.keyCode == 13) {
+        return false;
+    }
+});
+
 $("#submit-form").on("click", function (e) {
     e.preventDefault();
     console.log($('.node-checked'));
@@ -16,15 +23,25 @@ var search = function (e) {
     var options = {
         ignoreCase: true,
         exactMatch: false,
-        revealResults: false
+        //expands all the results
+        revealResults: true
     };
     var results = $searchableTree.treeview('search', [pattern, options]);
 
+    console.log(results)
+
+   
+
     // Check/uncheck/toggle nodes
-    var findExpandibleNodess = function () {
+    /*var findExpandibleNodess = function () {
         return $searchableTree.treeview('search', [pattern, {ignoreCase: false, exactMatch: true}]);
     };
-    $('.expand-node').prop('disabled', !(findExpandibleNodess().length >= 1));
+
+    $('.expand-node').prop('disabled', !(findExpandibleNodess().length >= 1));*/
+
+    /*if(results.length===1){
+        $('#treeview-searchable').treeview('expandNode', [ results[0].nodeId ]);
+    }*/
 
 
     var output = '<p>' + results.length + ' matches found</p>';
@@ -33,8 +50,20 @@ var search = function (e) {
     });
     $('#search-output').html(output);
 
+    if(results.length>0){
+        // scroll to the first id
+        var scrollToId = results[0].nodeId
+
+        var $node = $($searchableTree).find("li[data-nodeid="+scrollToId+"]")
+
+        var offset = $node[0].offsetTop;
+
+        $searchableTree[0].scrollTop = offset - 70 //magic number yeah
+    }
+
 };
-$('#input-search').on('keyup', search);
+
+$('#search-button').on('click', search);
 
 $(document).ready(function () {
     var next = 1;

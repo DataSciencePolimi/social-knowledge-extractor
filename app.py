@@ -59,8 +59,7 @@ def registerEvaluation(experiment):
         "upsert":True
     }
     for k,v in request.form.items():
-        print(k)
-        print(v)
+
         query={
             "handle":k,
             "experiment":ObjectId(experiment)
@@ -170,6 +169,7 @@ def run():
     experiment["consumer_key"] = configuration.providers["twitter"]["id"]
     experiment["consumer_secret"] = configuration.providers["twitter"]["secret"]
     experiment["expert_types"] = experts
+    experiment["tags"] = request.form["tags"]
     experiment["status"] = "PROCESSING"
 
     id_experiment = db_manager.write_mongo("experiment", experiment)
