@@ -36,7 +36,7 @@ def load_user(social_id):
     u = list(db_manager.find("auth_users", {"social_id": social_id}))
     if len(u) == 0:
         return None
-    return User(u[0]["social_id"],u[0]["username"] ,u[0]["email"], u[0]["access_token"],u[0]["access_token_secret"], u[0]["profile_img"])
+    return User(u[0]["_id"],u[0]["social_id"],u[0]["username"] ,u[0]["email"], u[0]["access_token"],u[0]["access_token_secret"], u[0]["profile_img"])
 
 
 @app.route('/')
@@ -115,7 +115,8 @@ def run():
 
     experiment = {}
 
-    experiment["user_id"] = current_user["_id"]
+    experiment["user_id"] = current_user._id
+    
     configuration.access_token = current_user.access_token
     configuration.access_token_secret = current_user.access_token_secret
     configuration.consumer_key = configuration.providers["twitter"]["id"]
@@ -216,12 +217,14 @@ def oauth_callback(provider):
     if social_id is None:
         flash('Authentication failed.')
         return redirect(url_for('index'))
-    user = list(db_manager.find("auth_users", {"social_id":social_id}))
-    if len(user) == 0:
-        user = User(social_id, username, email, access_token, access_token_secret, profile_img)
+    old_user = list(db_manager.find("auth_users", {"social_id":social_id}))
+    if len(old_user) == 0:
         db_manager.write_mongo("auth_users", {"social_id": social_id, "username":username, "email":email, "access_token": access_token, "access_token_secret":access_token_secret, "profile_img":profile_img })
     else:
-        user = User(user[0]["social_id"],user[0]["username"] ,user[0]["email"],user[0]["access_token"],user[0]["access_token_secret"], user[0]["profile_img"])
+        db_manager.update_user_twitter(old_user[0]["_id"],access_token,access_token_secret,profile_img)
+    
+    db_user = list(db_manager.find("auth_users", {"social_id":social_id}))
+    user = User(db_user[0]["_id"],db_user[0]["social_id"],db_user[0]["username"] ,db_user[0]["email"],db_user[0]["access_token"],db_user[0]["access_token_secret"], db_user[0]["profile_img"])
 
     login_user(user, remember=True)
     return redirect("/ske/home")

@@ -128,6 +128,20 @@ class MongoManager():
     def register_evaluation(self,query,update):
         collection="evaluation"
         return self.db[collection].update(query,update,upsert=True)
+    
+    def update_user_twitter(self,user_id,access_token,access_token_secret,profile_img):
+        collection="auth_users"
+        query={
+            "_id":user_id
+        }
+        update={
+            "$set":{
+                "access_token":access_token,
+                "access_token_secret":access_token_secret,
+                "profile_img":profile_img
+            }
+        }
+        return self.db[collection].update(query,update)
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

@@ -30,20 +30,6 @@ var search = function (e) {
 
     console.log(results)
 
-   
-
-    // Check/uncheck/toggle nodes
-    /*var findExpandibleNodess = function () {
-        return $searchableTree.treeview('search', [pattern, {ignoreCase: false, exactMatch: true}]);
-    };
-
-    $('.expand-node').prop('disabled', !(findExpandibleNodess().length >= 1));*/
-
-    /*if(results.length===1){
-        $('#treeview-searchable').treeview('expandNode', [ results[0].nodeId ]);
-    }*/
-
-
     var output = '<p>' + results.length + ' matches found</p>';
     $.each(results, function (index, result) {
         output += '<p>- ' + result.text + '</p>';
