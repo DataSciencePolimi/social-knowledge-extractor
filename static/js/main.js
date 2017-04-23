@@ -94,3 +94,10 @@ function toggler(divId, e) {
     else
         $("#" + "arr_" + divId).attr('class', 'fa fa-arrow-up');
 }
+
+//assigning correct label class according to experiment status
+var $label=$('.status')
+if($label.html()==="COMPLETED"){
+    $label.removeClass("label-warning")
+    $label.addClass("label-success")
+}

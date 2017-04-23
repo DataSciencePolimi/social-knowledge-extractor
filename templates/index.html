@@ -36,7 +36,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 {% if current_user.is_authenticated %}
-                <li><a href="results">Results</a></li>
+                <li><a href="results">My Experiments</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -72,24 +72,34 @@
             <hr>
             <div class="row text-left">
                 <div class="col-md-10">
-                    To proceed with the analysis, you need to provide three input elements:
+                    To proceed with the analysis, you need to provide these input elements:
                     <ol>
+                        <li>A title for the experiment.</li>
                         <li>The list of seeds, i.e., the twitter user ids (handles) that represent the emerging entities for your field of interest.</li>
                         <li>The list of entity types (DBpedia types) that are relevant for your domain (you can search in the list or directly check them in the checklist).</li>
-                        <li>The access key for the Dandelion API. If you want, you can use the default key of our platform.</li>
+                       <!-- <li>The access key for the Dandelion API. If you want, you can use the default key of our platform.</li>-->
                         <li>(Optional) Tag you experiment with one or more keywords</li>
                     </ol>
                 </div>
             </div>
             <div class="row text-left">
                 <form id="main-form" action="run" method="POST" enctype="multipart/form-data">
-               
-
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="control-label">1. Experiment Title</h2>
+                                <div class="form-group">
+                                    <label for="consumer_secret">Insert the title</label>
+                                    <input type="text" class="form-control" name="title" id="title"
+                                            placeholder="Title">
+                                </div>
+                        </div>
+                    </div>
+                    <hr style="border-top-color: #d5d5d5;">
                     <div class="row" style="padding-top: 15px; padding-bottom: 15px">
                         <div class="col-md-10">
                             <input type="hidden" name="count" value="1"/>
                             <div class="control-group" id="fields">
-                                <h2 class="control-label"> 1. Seeds (Twitter accounts)</h2>
+                                <h2 class="control-label"> 2. Seeds (Twitter accounts)</h2>
                                 <label style="visibility: hidden" for="consumer_secret">Insert Twitter handles</label>
                                
                                 <div class="controls" id="profs">
@@ -122,7 +132,7 @@
                     <hr style="border-top-color: #d5d5d5;">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2>2. Domain-relevant types (search and select the right types from the DBpedia taxonomy below)</h2>
+                            <h2>3. Domain-relevant types (search and select the right types from the DBpedia taxonomy below)</h2>
                         </div>
                     </div>
                     <div class="row" style="padding-top: 15px;">
@@ -153,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr style="border-top-color: #d5d5d5;">
+                      <!-- <hr style="border-top-color: #d5d5d5;">
                     <div class="row">
                         <div class="col-md-10">
                             <h2 class="control-label">3. Dandelion Keys</h2>
@@ -172,7 +182,7 @@
                             <a href="#" onclick="toggler('dandelion_input',event);">Use Your Dandelion Keys <i
                                     id="arr_dandelion_input" class="fa fa-arrow-down"></i></a><br>
                         </div>
-                    </div>
+                    </div>-->
                     <hr style="border-top-color: #d5d5d5;">
                     <div class="row">
                         <div class="col-md-10">

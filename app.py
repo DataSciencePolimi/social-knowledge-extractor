@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, flash,request,make_response,jsonify
 from flask_login import LoginManager, UserMixin, login_user, logout_user,current_user
 from knowledge_extractor.pipeline import Pipeline
+from datetime import datetime
 import configuration
 from bson.objectid import ObjectId
 from utils import mongo_manager
@@ -85,13 +86,23 @@ def results():
     experiments = list(db_manager.find("experiment",{"user_id":id}))
     rankings = {}
     for experiment in experiments:
-        ranks = list(db_manager.getResults(experiment["_id"],True))
         rankings[experiment["_id"]] = {
             "status":experiment["status"],
-            "ranks":ranks
+            "title":experiment["title"]
         }
     
-    return render_template('results.html',title="Results",results=rankings)
+    return render_template('experiments.html',title="My Experiments",results=rankings)
+
+@app.route('/experiment')
+def get_experiment():
+    experiment_id = request.args.get('experiment')
+    ranks = list(db_manager.getResults(ObjectId(experiment_id),True))
+    experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])
+    experiment["ranks"] = ranks
+    
+    experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
+    experiment["endDate"] = experiment["endDate"].strftime("%Y-%m-%d %H:%M:%S")  
+    return render_template('experiment.html',title="Experiment",results=experiment)
 
 @app.route('/full_results/<experiment>')
 def fullResults(experiment):
@@ -99,7 +110,7 @@ def fullResults(experiment):
     si = io.StringIO()
     cw = csv.writer(si)
     for r in ranks:
-        cw.writerow([r["handle"]])
+        cw.writerow([r["handle"],r["score"]])
 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"
@@ -122,12 +133,11 @@ def run():
     configuration.consumer_key = configuration.providers["twitter"]["id"]
     configuration.consumer_secret = configuration.providers["twitter"]["secret"]
 
-    if request.form["dandelion_app_id"] != "" and request.form["dandelion_app_key"] != "":
-        experiment["dandelion_app_id"] = request.form["dandelion_app_id"]
-        experiment["dandelion_app_key"] = request.form["dandelion_app_key"]
-
-        configuration.APP_ID = request.form["dandelion_app_id"]
-        configuration.API_KEY_DANDELION = request.form["dandelion_app_key"]
+    #if request.form["dandelion_app_id"] != "" and request.form["dandelion_app_key"] != "":
+    #    experiment["dandelion_app_id"] = request.form["dandelion_app_id"]
+    #    experiment["dandelion_app_key"] = request.form["dandelion_app_key"]
+    #    configuration.APP_ID = request.form["dandelion_app_id"]
+    #   configuration.API_KEY_DANDELION = request.form["dandelion_app_key"]
 
     #Get seeds and expert types
     if request.files["input_seeds"].filename == '':
@@ -148,7 +158,7 @@ def run():
     #Add DbPedia Types to seeds and checks dandelion rate limit
     new_seeds = []
     join_seeds = tweets_chunk.TweetsChunk([{"text":s}for s in seeds])
-    datatxt = EntityExtraction(app_id="7342eec6", app_key="76012ac4dc76150ae485bf553c69b127")
+    datatxt = EntityExtraction(app_id=configuration.APP_ID , app_key=configuration.API_KEY_DANDELION )
     res = datatxt.nex(join_seeds.get_unique_string(), **{"include": ["types", "categories",
                                                                         "abstract", "alternate_labels"],
                                                                            "social.hashtag": True,
@@ -164,6 +174,7 @@ def run():
 
     #End Add DBPedia
 
+    experiment["title"] = request.form["title"]
     experiment["email"] = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
     experiment["access_token"] = current_user.access_token
     experiment["access_token_secret"] = current_user.access_token_secret
@@ -172,9 +183,9 @@ def run():
     experiment["expert_types"] = experts
     experiment["tags"] = request.form["tags"]
     experiment["status"] = "PROCESSING"
+    experiment["creationDate"] = datetime.now()
 
-    id_experiment = db_manager.write_mongo("experiment", experiment)
-
+    id_experiment = db_manager.write_mongo("experiment", dict(experiment))
 
     if(int(datatxt.units_left) < configuration.MIN_REQUEST_DANDELION_NEEDED):
         print("error")

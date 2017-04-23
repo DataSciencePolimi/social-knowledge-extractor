@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/bootstrap-social.css') }}"/>
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/style.css') }}"/>
+
+    <link href="{{ url_for('static', filename='css/bootstrap-treeview.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Social Knowledge Enricher</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="home">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="active"><a href="results">My Experiments</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+<div class="jumbotron"> 
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>{{results.title}} <span class="status label label-warning">{{results.status}}</span></h3>
+            <span class="date" id="creationDate"><label>Start date:</label> {{results.creationDate}} </span>
+            <span class="date" id="endDate"><label>Completion date:</label> {{results.endDate}} </span>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="border-top-color: #d5d5d5;">
+            <div class="row">
+                <h3 class="text-center">Extracted entitites</h3>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Twitter Handle</th>
+                                <th>Score</th>
+                                <th>Correct evaluation</th>
+                                <th>Wrong evaluation</th>
+                                <th>Accept</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for  v in results.ranks %}
+                            <tr>    
+                                <td><label><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></label></td>
+                                <td>{{ v.score|round(2) }}</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><input type="checkbox" name="accepted" /></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary">More results</button>
+                </div>
+                <div class="col-md-4">
+                    <a href="full_results/{{results._id}}"><button class="btn btn-primary">Export</button></a>
+                    <a target="_blank" href="evaluate/{{results._id}}"><button class="btn btn-primary">Evaluation Page</button></a>
+                    <button class="btn btn-primary">Rerun</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- /.container -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src=".{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/data.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

@@ -35,7 +35,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="home">Home</a></li>
                 {% if current_user.is_authenticated %}
-                <li class="active"><a href="results">Results</a></li>
+                <li class="active"><a href="results">My Experiments</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -47,24 +47,15 @@
 <div class="jumbotron"> 
     <div class="row">
         <div class="col-md-10">
-            <h3>Here you find the the new entities extracted by the pipeline</h3>
+            <h3>Here you find your experiments</h3>
         </div>
     </div>   
     {% for key, value in results.items() %}
     <div class="row">
-        <div class="col-md-10">
-            <h3>Experiment: {{ key }}</h3>
+        <div class="col-md-10 experiment">
+            <h3>{{ value.title }}</h3>
             <h4>Status: {{ value.status }}</h4>
-            {% if value.ranks|length > 0 %}
-            <h4>New Entitities (top 20)</h4>
-            <ul>
-            {% for v in value.ranks %} 
-                <li><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></li>
-            {% endfor %}
-            </ul>
-            <h4><a href="full_results/{{key}}">Download full list</a></h4>
-            <h4><a href="evaluate/{{key}}">Evaluate the results</a></h4>
-            {% endif %}
+            <a href="experiment?experiment={{key}}">Details</a>
         </div>
     </div>
     {% endfor %}

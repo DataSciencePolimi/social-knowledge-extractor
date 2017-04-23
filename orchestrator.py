@@ -1,25 +1,29 @@
 from utils import mongo_manager
+from datetime import datetime
 
 class Orchestrator(object):
     
     def run(self):
         print("Orchestrator: starting crawling pipeline")
-        user = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
-        user["status"] = "CRAWLING"
-        self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
+        experiment = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
+        experiment["status"] = "CRAWLING"
+        experiment["crawlingDate"] = datetime.now()
+        self.db_manager.update("experiment",{"_id":self.id_experiment}, experiment)
 
         self.crawler.run()
 
-        user = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
-        user["status"] = "COMPUTING_CANDIDATES"
-        self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
+        experiment = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
+        experiment["status"] = "COMPUTING_CANDIDATES"
+        experiment["computationDate"] = datetime.now()
+        self.db_manager.update("experiment",{"_id":self.id_experiment}, experiment)
         
         print("Orchestrator: starting knowledge extractor pipeline")
         self.knowledge_extractor.run()
 
-        user = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
-        user["status"] = "COMPLETED"
-        self.db_manager.update("experiment",{"_id":self.id_experiment}, user)
+        experiment = list(self.db_manager.find("experiment",{"_id":self.id_experiment}))[0]
+        experiment["status"] = "COMPLETED"
+        experiment["endDate"] = datetime.now()
+        self.db_manager.update("experiment",{"_id":self.id_experiment}, experiment)
 
     def __init__(self,crawler,knowldege_extractor,id_experiment,db_manager):
         self.crawler=crawler
