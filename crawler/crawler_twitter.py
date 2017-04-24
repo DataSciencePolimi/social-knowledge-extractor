@@ -8,9 +8,10 @@ from pymongo import IndexModel, DESCENDING
 class CrawlerTwitter():
     def __init__(self, id_experiment):
         self.id_experiment = id_experiment
-        self.crawler = CrawlerUserTimelineTwitter()
         self.db_manager = mongo_manager.MongoManager(configuration.db_name)
 
+        self.tokens = self.db_manager.get_user_twitter_tokens(id_experiment)
+        self.crawler = CrawlerUserTimelineTwitter(self.tokens)
         self.db_manager.create_index("tweets", [("id_str", DESCENDING),("id_experiment", DESCENDING)])
         self.db_manager.create_index("seeds",[("handle", DESCENDING),("id_experiment", DESCENDING)])
 

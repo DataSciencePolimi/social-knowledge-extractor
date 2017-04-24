@@ -53,8 +53,7 @@
     {% for key, value in results.items() %}
     <div class="row">
         <div class="col-md-10 experiment">
-            <h3>{{ value.title }}</h3>
-            <h4>Status: {{ value.status }}</h4>
+            <h4>{{value.title}} <span class="status label label-warning">{{value.status}}</span></h4>
             <a href="experiment?experiment={{key}}">Details</a>
         </div>
     </div>

@@ -10,12 +10,12 @@ import configuration
 
 
 class CrawlerUserTimelineTwitter:
-    def __init__(self):
+    def __init__(self,tokens):
         self.languages = ("de", "en", "es", "fr", "it", "pt")
         self.max_tweets_retrievable = 3200
         self.max_per_request = 200
-        self.twitter = Twython(configuration.consumer_key, configuration.consumer_secret, configuration.access_token,
-                               configuration.access_token_secret)
+        self.twitter = Twython(configuration.consumer_key, configuration.consumer_secret, tokens["access_token"],
+                               tokens["access_token_secret"])
 
     def get_users_tweets(self, screen_name, N):
         """

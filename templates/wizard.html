@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/bootstrap-social.css') }}"/>
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/bootstrap-tagsinput.css') }}"/>
+
+    <link href=".{{ url_for('static', filename='css/bootstrap-treeview.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Social Knowledge Enricher</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="results">My Experiments</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% if current_user.is_authenticated %}
+        <div class="jumbotron vertical-center text-center">
+            <div class="row">
+                <div class="col-md-1">
+                    <img alt="{{ current_user.nickname }}" src="{{ current_user.profile_img }}" class="twPc-avatarImg">
+                </div>
+                <div class="col-md-9 text-left">
+                    <h2 style="margin-top: 0px !important;">Hi, {{ current_user.nickname }}!</h2>
+                    <a href=".{{ url_for('logout') }}" class="btn btn-social btn-twitter">
+                        <span class="fa fa-twitter"></span> Logout
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row text-left">
+                <div class="col-md-10">
+                    To proceed with the analysis, you need to provide these input elements:
+                    <ol>
+                        <li>A title for the experiment.</li>
+                        <li>The list of seeds, i.e., the twitter user ids (handles) that represent the emerging entities for your field of interest.</li>
+                        <li>The list of entity types (DBpedia types) that are relevant for your domain (you can search in the list or directly check them in the checklist).</li>
+                       <!-- <li>The access key for the Dandelion API. If you want, you can use the default key of our platform.</li>-->
+                        <li>(Optional) Tag you experiment with one or more keywords</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row text-left">
+                <form id="main-form" action="run" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="control-label">1. Experiment Title</h2>
+                                <div class="form-group">
+                                    <label for="consumer_secret">Insert the title</label>
+                                    <input type="text" class="form-control" name="title" id="title"
+                                            placeholder="Title">
+                                </div>
+                        </div>
+                    </div>
+                    <hr style="border-top-color: #d5d5d5;">
+                    <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                        <div class="col-md-10">
+                            <input type="hidden" name="count" value="1"/>
+                            <div class="control-group" id="fields">
+                                <h2 class="control-label"> 2. Seeds (Twitter accounts)</h2>
+                                <label style="visibility: hidden" for="consumer_secret">Insert Twitter handles</label>
+                               
+                                <div class="controls" id="profs">
+                                    <div class="input-append">
+                                        <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
+                                            <div class="col-md-10"><input autocomplete="off" class="form-control"
+                                                                          id="input-field1" name="prof1" type="text"
+                                                                          placeholder="Twitter username 1"
+                                                                          aria-describedby="sizing-addon2" data-items="8"/>
+                                            </div>
+                                            <div class="col-md-2" id="add_col">
+                                                <button id="b1" class="btn add-more" type="button">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" onclick="toggler('seed_input_file', event);">Load seeds by csv File <i
+                                    id="arr_seed_input_file" class="fa fa-arrow-down"></i></a><br>
+
+                            <div class="form-group" id="seed_input_file" style="display: none">
+                                <input type="file" class="form-control-file" name="input_seeds" id="input_seeds"
+                                       aria-describedby="fileHelp">
+                                <small id="fileHelp" class="form-text text-muted">List of Seeds (Max 20 seeds). <a
+                                        target="_blank" href=".{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here
+                                    you can see an exemple:</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border-top-color: #d5d5d5;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2>3. Domain-relevant types (search and select the right types from the DBpedia taxonomy below)</h2>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 15px;">
+                        <div class="col-sm-6">
+                            <h2 class="control-label">Search DBPedia Types</h2>
+                            <!-- <form> -->
+                            <div class="form-group">
+                                <label for="input-search" class="sr-only">Search Type:</label>
+                                <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+                                <button style="margin-top: 15px;" class="btn btn-secondary" type="button" id="search-button">Search</button>
+                            </div>
+                            <!-- </form> -->
+                            <h2>Results:</h2>
+                            <div id="search-output" style="overflow-y: scroll;height: 300px;"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h2>DbPedia Types</h2>
+                            <div id="treeview-searchable" class="h-scroll"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" onclick="toggler('expert_input_file', event);">Load expert types by csv File <i
+                                    id="arr_expert_input_file" class="fa fa-arrow-down"></i></a><br>
+                            <div class="form-group" id="expert_input_file" style="display: none">
+                                <input type="file" class="form-control-file" name="input_expert" id="input_expert"
+                                       aria-describedby="fileHelp">
+                                <small id="fileHelp" class="form-text text-muted">List of Expert Types extracted from
+                                    DBPedia <a target="_blank" href=".{{ url_for('static',filename='csv_exemples/expert_types.csv') }}">Here you can see an exemple:</a></small>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- <hr style="border-top-color: #d5d5d5;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="control-label">3. Dandelion Keys</h2>
+                            <div id="dandelion_input" style="display: none;">
+                                <div class="form-group">
+                                    <label for="consumer_secret">Dandelion App ID</label>
+                                    <input type="text" class="form-control" name="dandelion_app_id" id="dandelion_app_id"
+                                            placeholder="Enter access dandelion app ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="consumer_secret">Dandelion App Key</label>
+                                    <input type="text" class="form-control" name="dandelion_app_key" id="dandelion_app_key"
+                                            placeholder="Enter access dandelion app Key">
+                                </div>
+                            </div>
+                            <a href="#" onclick="toggler('dandelion_input',event);">Use Your Dandelion Keys <i
+                                    id="arr_dandelion_input" class="fa fa-arrow-down"></i></a><br>
+                        </div>
+                    </div>-->
+                    <hr style="border-top-color: #d5d5d5;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 class="control-label">4. Experiment tags</h2>
+                                <div class="form-group">
+                                    <label for="consumer_secret">Insert your tags</label>
+                                    <input type="text" class="form-control" name="tags" id="tags"
+                                            placeholder="Tags" data-role="tagsinput">
+                                </div>
+                        </div>
+                    </div>
+
+                    {% if current_user.email == None %}
+                     <hr style="border-top-color: #d5d5d5;">
+                        <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                            <div class="col-md-6">
+                                <h2 class="control-label">For notification of the results</h2>
+                                <div class="form-group">
+                                    <label for="Email">Email address</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           aria-describedby="emailHelp"
+                                           placeholder="Enter email">
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <br>
+                    <button id="submit-form" style="margin-top: 15px;" type="submit" class="btn btn-primary">Run Pipeline</button>
+                </form>
+            </div>
+            </div>
+        {% else %}
+            <h1>Social Knowledge Enricher</h1>
+            <p class="lead">In order to run the pipeline you need to sign in with Twitter</p>
+            <a href=".{{ url_for('oauth_authorize', provider='twitter') }}" class="btn btn-social btn-twitter">
+                <span class="fa fa-twitter"></span> Sign in with Twitter
+            </a>
+        {% endif %}
+</div>
+</div>
+<!-- /.container -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src=".{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/data.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/main.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/bootstrap-tagsinput.min.js') }}"></script>
+
+</body>
+</html>

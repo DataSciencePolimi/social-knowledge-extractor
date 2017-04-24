@@ -129,6 +129,19 @@ class MongoManager():
         collection="evaluation"
         return self.db[collection].update(query,update,upsert=True)
     
+    def get_user_twitter_tokens(self,experiment_id):
+        experiment = list(self.getExperiment(experiment_id))[0]
+        user_id = experiment["user_id"]
+        query = {
+            "_id":user_id
+        }
+        user = list(self.find("auth_users",query))[0]
+        tokens = {
+            "access_token":user["access_token"],
+            "access_token_secret":user["access_token_secret"]
+        }
+        return tokens
+
     def update_user_twitter(self,user_id,access_token,access_token_secret,profile_img):
         collection="auth_users"
         query={

@@ -117,7 +117,13 @@ def fullResults(experiment):
     output.headers["Content-type"] = "text/csv"
     return output
 
+@app.route('/wizard')
+def wizard():
+    return render_template('wizard.html',title="Index")
 
+@app.route('/wizard_recipe')
+def recipe():
+    return render_template('wizard_from_recipe.html',title="Wizard")
 
 @app.route('/run', methods=['POST'])
 def run():

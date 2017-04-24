@@ -97,7 +97,11 @@ function toggler(divId, e) {
 
 //assigning correct label class according to experiment status
 var $label=$('.status')
-if($label.html()==="COMPLETED"){
-    $label.removeClass("label-warning")
-    $label.addClass("label-success")
-}
+$.each($label,function(k,v){
+    var value = $(v).html()
+
+    if(value==="COMPLETED"){
+        $(v).removeClass("label-warning")
+        $(v).addClass("label-success")
+    }
+})
