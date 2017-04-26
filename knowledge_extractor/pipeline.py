@@ -78,6 +78,7 @@ class Pipeline:
         
         for cand in cands:
             #computer array of mentioned entity
+            print("Getting mentions for candidate " + cand["handle"])
             mentions[cand["handle"]] = ehe.getEntities(cand)
             ast_mentions[cand["handle"]] = ast.getEntities(cand)
         
@@ -110,6 +111,7 @@ class Pipeline:
 
         scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
         
+        print("Saving the rankings")
         self.db.saveScores(scores,self.experiment_id)
         
         return scores

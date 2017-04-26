@@ -100,9 +100,29 @@ def get_experiment():
     experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])
     experiment["ranks"] = ranks
     
-    experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
-    experiment["endDate"] = experiment["endDate"].strftime("%Y-%m-%d %H:%M:%S")  
-    return render_template('experiment.html',title="Experiment",results=experiment)
+    if "creationDate" in experiment:
+        experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
+    
+    if "endDate" in experiment:
+        experiment["endDate"] = experiment["endDate"].strftime("%Y-%m-%d %H:%M:%S")  
+
+    evaluations = list(db_manager.get_evaluations(ObjectId(experiment_id)))
+    evaluationsDict = {}
+
+    for ev in ranks:
+        evaluationsDict[ev["handle"]] = {
+            "correct":0,
+            "wrong":0
+        }
+    
+    
+    for ev in evaluations:
+        pprint.pprint(ev)
+        if ev["handle"] in evaluationsDict:
+            evaluationsDict[ev["handle"]]["correct"] = ev.get("correct",0)
+            evaluationsDict[ev["handle"]]["wrong"] = ev.get("wrong",0)
+
+    return render_template('experiment.html',title="Experiment",results=experiment,evaluations=evaluationsDict)
 
 @app.route('/full_results/<experiment>')
 def fullResults(experiment):
@@ -129,8 +149,16 @@ def recipe():
 def run():
     if request.form.get("email") != None:
         db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
+    
+    if "recipe" in request.form:
+       recipe = list(db_manager.get_recipe(request.form["recipe"]))[0]
+    
 
     experiment = {}
+    original_experiment_id = request.args.get('experiment')
+    if original_experiment_id!=None:
+        original_experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(original_experiment_id)}))[0])
+
 
     experiment["user_id"] = current_user._id
     
@@ -146,14 +174,23 @@ def run():
     #   configuration.API_KEY_DANDELION = request.form["dandelion_app_key"]
 
     #Get seeds and expert types
-    if request.files["input_seeds"].filename == '':
+    if original_experiment_id!=None:
+        seeds = request.form.getlist("accepted")
+        experiment["original_experiment"] = ObjectId(original_experiment_id)
+    elif "recipe" in request.form:
+        seeds = recipe["seeds"]
+    elif request.files["input_seeds"].filename == '':
         seeds = [v for k,v in request.form.items() if "prof" in k]
     else:
         seeds_file = request.files["input_seeds"]
         seeds_dataframe = pd.read_csv(seeds_file)
         seeds = seeds_dataframe.ix[:, 0].tolist()[:20]
-
-    if request.files["input_expert"].filename == '':
+    
+    if original_experiment_id!=None:
+        experts = original_experiment["expert_types"]
+    elif "recipe" in request.form:
+        experts = recipe["expertTypes"]
+    elif request.files["input_expert"].filename == '':
         experts = [v for k,v in request.form.items() if "check-box" in k]
     else:
         expert_file = request.files["input_expert"]
@@ -180,14 +217,18 @@ def run():
 
     #End Add DBPedia
 
-    experiment["title"] = request.form["title"]
+    if original_experiment_id!=None:
+        experiment["title"] = "Rerun of "+original_experiment["title"]
+    else:
+        experiment["title"] = request.form["title"]
+
     experiment["email"] = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["email"]
     experiment["access_token"] = current_user.access_token
     experiment["access_token_secret"] = current_user.access_token_secret
     experiment["consumer_key"] = configuration.providers["twitter"]["id"]
     experiment["consumer_secret"] = configuration.providers["twitter"]["secret"]
     experiment["expert_types"] = experts
-    experiment["tags"] = request.form["tags"]
+    #experiment["tags"] = request.form.get("tags",[])
     experiment["status"] = "PROCESSING"
     experiment["creationDate"] = datetime.now()
 

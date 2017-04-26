@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="home">Home</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="results">My Experiments</a></li>
                 {% endif %}
@@ -71,28 +71,30 @@
             </div>
             <hr>
             <div class="row">
+                <div class="col-md-12">
                     <form method=POST action="/run">
+                    <div class="row">
                     <div class="col-md-6">
-                        <h3 class="control-label"> Select the starting recipe</h3>
+                        <h3 class="control-label"> Select the experiment</h3>
                         <div class="form-group">
-                            <input type="radio" name="recipe" id="id">Fashion</input>
-                            <input type="radio" name="recipe" id="id">Australian Writers</input>
-                            <input type="radio" name="recipe" id="id">Finance</input>
+                            <input type="radio" name="recipe" value="fashion">Fashion</input>
+                            <input type="radio" name="recipe" value="au">Australian Writers</input>
+                            <input type="radio" name="recipe" value="finance">Finance</input>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3> Run</h3>
                             <div class="form-group">
-                                <label class="control-label" for="title">Title</label>
-                                <input type="text" name="title" id="id"/>
-                                <a href="#"><button class="btn btn-primary">Run</button></a>
-                                <label class="control-label" for="tags">Insert your tags</label>
-                                <input type="text" class="form-control" name="tags" id="tags"
-                                                placeholder="Tags" data-role="tagsinput">
+                                <h3> Run</h3>
+                                <label for="title">Title</label>
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title"/>
                             </div>
-                        </form>
+                             <a href="#"><button class="btn btn-primary">Run</button></a>
+                    </div>
+                    </div>
+                    </form>
                     </div>
             </div>
+                    
         {% else %}
             <h1>Social Knowledge Enricher</h1>
             <p class="lead">In order to run the pipeline you need to sign in with Twitter</p>

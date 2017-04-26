@@ -129,6 +129,13 @@ class MongoManager():
         collection="evaluation"
         return self.db[collection].update(query,update,upsert=True)
     
+    def get_evaluations(self,experiment_id):
+        collection="evaluation"
+        query = {
+            "experiment":experiment_id
+        }
+        return self.find(collection,query)
+    
     def get_user_twitter_tokens(self,experiment_id):
         experiment = list(self.getExperiment(experiment_id))[0]
         user_id = experiment["user_id"]
@@ -155,6 +162,13 @@ class MongoManager():
             }
         }
         return self.db[collection].update(query,update)
+    
+    def get_recipe(self,name):
+        collection = "recipe"
+        query = {
+            "name":name
+        }
+        return self.find(collection,query)
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

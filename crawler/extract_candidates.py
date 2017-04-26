@@ -62,18 +62,19 @@ class ExtractCandidates:
 
         rank = candidates.copy()
         i = 0
-        for ca in rank:
-            DF = self.computeDF(ca, seeds)
-            i+=1
+        #for ca in rank:
+        #    DF = self.computeDF(ca, seeds)
+        #    i+=1
             #print(i)
-            TTF = self.computeTTF(ca)
-            formula = (DF * TTF) / (N - DF + 1)
-            ca["ranking_index"] = formula
+        #    TTF = self.computeTTF(ca)
+        #    formula = (DF * TTF) / (N - DF + 1)
+        #    ca["ranking_index"] = formula
 
         for item in rank:
             item.update( {"id_experiment":self.id_experiment})
         self.db_manager.write_mongo("rank_candidates", rank)
-        return list(self.db_manager.find("rank_candidates", {"id_experiment":self.id_experiment}).sort("ranking_index", pymongo.DESCENDING))[:250]
+        return list(self.db_manager.find("rank_candidates", {"id_experiment":self.id_experiment}))[:250]
+        #return list(self.db_manager.find("rank_candidates", {"id_experiment":self.id_experiment}).sort("ranking_index", pymongo.DESCENDING))[:250]
 
 
 if __name__ == "__main__":

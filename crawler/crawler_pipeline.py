@@ -20,7 +20,9 @@ class PipelineCrawler:
         # Crawling Tweet
         print("Crawling Twitter...")
         crawler_twitter = CrawlerTwitter(self.id_experiment)
+        print("Crawling first seeds")
         new_seeds = crawler_twitter.run(self.N, self.seeds)
+        print("Crawling the mentions")
         crawler_twitter.run(self.N, new_seeds)
         crawler_twitter.storeSeeds(self.original_seeds)
 

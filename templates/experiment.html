@@ -48,8 +48,8 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h3>{{results.title}} <span class="status label label-warning">{{results.status}}</span></h3>
-            <span class="date" id="creationDate"><label>Start date:</label> {{results.creationDate}} </span>
-            <span class="date" id="endDate"><label>Completion date:</label> {{results.endDate}} </span>
+            <span class="date" id="creationDate"><label>Start date:</label> {{results.get("creationDate","--")}} </span>
+            <span class="date" id="endDate"><label>Completion date:</label> {{results.get("endDate","--")}} </span>
         </div>
     </div>   
     <div class="row">
@@ -58,6 +58,7 @@
             <div class="row">
                 <h3 class="text-center">Extracted entitites</h3>
                 <div class="col-md-8">
+                    <form method=POST action="run?experiment={{results._id}}">
                     <table class="table">
                         <thead>
                             <tr>
@@ -73,9 +74,9 @@
                             <tr>    
                                 <td><label><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></label></td>
                                 <td>{{ v.score|round(2) }}</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td><input type="checkbox" name="accepted" /></td>
+                                <td>{{ evaluations[v.handle]["correct"]}}</td>
+                                <td>{{ evaluations[v.handle]["wrong"]}}</td>
+                                <td><input type="checkbox" name="accepted" value="{{v.handle}}" /></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -85,7 +86,8 @@
                 <div class="col-md-4">
                     <a href="full_results/{{results._id}}"><button class="btn btn-primary">Export</button></a>
                     <a target="_blank" href="evaluate/{{results._id}}"><button class="btn btn-primary">Evaluation Page</button></a>
-                    <button class="btn btn-primary">Rerun</button>
+                    <input type="submit" class="btn btn-primary" value="Rerun"/>
+                </form>
                 </div>
             </div>
         </div>

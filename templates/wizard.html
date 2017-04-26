@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="home">Home</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="results">My Experiments</a></li>
                 {% endif %}
@@ -78,7 +78,7 @@
                         <li>The list of seeds, i.e., the twitter user ids (handles) that represent the emerging entities for your field of interest.</li>
                         <li>The list of entity types (DBpedia types) that are relevant for your domain (you can search in the list or directly check them in the checklist).</li>
                        <!-- <li>The access key for the Dandelion API. If you want, you can use the default key of our platform.</li>-->
-                        <li>(Optional) Tag you experiment with one or more keywords</li>
+                       <!-- <li>(Optional) Tag you experiment with one or more keywords</li>-->
                     </ol>
                 </div>
             </div>
@@ -145,11 +145,11 @@
                                 <button style="margin-top: 15px;" class="btn btn-secondary" type="button" id="search-button">Search</button>
                             </div>
                             <!-- </form> -->
-                            <h2>Results:</h2>
+                            <h2>Search Results:</h2>
                             <div id="search-output" style="overflow-y: scroll;height: 300px;"></div>
                         </div>
                         <div class="col-sm-6">
-                            <h2>DbPedia Types</h2>
+                            <h2>Select DBPedia Types</h2>
                             <div id="treeview-searchable" class="h-scroll"></div>
                         </div>
                         <div class="col-md-6">
@@ -183,7 +183,7 @@
                                     id="arr_dandelion_input" class="fa fa-arrow-down"></i></a><br>
                         </div>
                     </div>-->
-                    <hr style="border-top-color: #d5d5d5;">
+                    <!--<hr style="border-top-color: #d5d5d5;">
                     <div class="row">
                         <div class="col-md-10">
                             <h2 class="control-label">4. Experiment tags</h2>
@@ -193,7 +193,7 @@
                                             placeholder="Tags" data-role="tagsinput">
                                 </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     {% if current_user.email == None %}
                      <hr style="border-top-color: #d5d5d5;">
