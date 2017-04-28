@@ -114,13 +114,16 @@ class MongoManager():
         }
         return self.find(collection,query)
     
-    def getResults(self,experiment_id,limit=False):
+    def getResults(self,experiment_id,limit=False,skip=None):
         collection = "rankings"
         query = {
             "experiment_id":experiment_id,
             "score":{"$ne":float('nan')}
         }
         if(limit):
+            if(skip!=None):
+                return self.find(collection,query).sort("score",-1).limit(20).skip(skip)
+
             return self.find(collection,query).sort("score",-1).limit(20)
         else:
             return self.find(collection,query).sort("score",-1)

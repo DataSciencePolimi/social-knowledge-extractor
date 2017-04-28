@@ -52,21 +52,27 @@
             <span class="date" id="endDate"><label>Completion date:</label> {{results.get("endDate","--")}} </span>
         </div>
     </div>   
+            <hr style="border-top-color: #d5d5d5;">
+     <div class="row">
+        <div class="col-md-12 text-center">
+             <a class="btn btn-primary" href="full_results/{{results._id}}">Export</a>
+            <a class="btn btn-primary" target="_blank" href="evaluate/{{results._id}}">Evaluation Page</a>
+        </div>
+    </div> 
     <div class="row">
         <div class="col-md-12">
-            <hr style="border-top-color: #d5d5d5;">
             <div class="row">
                 <h3 class="text-center">Extracted entitites</h3>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <form method=POST action="run?experiment={{results._id}}">
-                    <table class="table">
+                    <table class="table" id="candidates_table">
                         <thead>
                             <tr>
                                 <th>Twitter Handle</th>
                                 <th>Score</th>
-                                <th>Correct evaluation</th>
-                                <th>Wrong evaluation</th>
-                                <th>Accept</th>
+                                <th>Positive Crowd Evaluation</th>
+                                <th>Negative Crowd Evaluation</th>
+                                <th>Set as new Seed</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,13 +87,15 @@
                         {% endfor %}
                         </tbody>
                     </table>
-                    <button class="btn btn-primary">More results</button>
                 </div>
-                <div class="col-md-4">
-                    <a href="full_results/{{results._id}}"><button class="btn btn-primary">Export</button></a>
-                    <a target="_blank" href="evaluate/{{results._id}}"><button class="btn btn-primary">Evaluation Page</button></a>
+                <div class="col-md-2">
                     <input type="submit" class="btn btn-primary" value="Rerun"/>
                 </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="more" class="btn btn-primary" data-page="1" data-experiment="{{results._id}}" onclick="moreCandidates()">More results</button>
                 </div>
             </div>
         </div>
@@ -100,9 +108,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src=".{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/data.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/main.js') }}"></script>
+<script src=".{{ url_for('static', filename='js/experiment.js') }}"></script>
 
 </body>
 </html>

@@ -48,17 +48,17 @@
         </div>
     </div>   
     <div class="row">
-        <form method=POST action="/sendEvaluation/{{experiment}}">
+        <form data-toggle="validator" role="form" method=POST action="/sendEvaluation/{{experiment}}">
         <div class="col-md-10 form-group">
             {% for  v in ranks %}
             <div class="row">
                 <div class="col-md-5"><label><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></label></div>
-                <div class="col-md-5 btn-group" id="tab" data-toggle="buttons">
+                <div class="col-md-5 btn-group form-group" id="tab" data-toggle="buttons">
                     <a href="#" class="btn btn-default" data-toggle="tab">
-                        <input class="form-check-input material-switch" type="radio" name="{{v.handle}}" value="true">Correct
+                        <input class="form-check-input material-switch" type="radio" name="{{v.handle}}" value="true" required>Correct
                     </a>
                      <a href="#" class="btn btn-default" data-toggle="tab">
-                        <input class="form-check-input material-switch" type="radio" name="{{v.handle}}" value="false">Wrong
+                        <input class="form-check-input material-switch" type="radio" name="{{v.handle}}" value="false"required>Wrong
                     </a>
                 </div>
             </div>
@@ -76,7 +76,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src=".{{ url_for('static', filename='js/bootstrap-treeview.js') }}"></script>
+<script src="https://cdnjs.com/libraries/1000hz-bootstrap-validator"></script>
 <script src=".{{ url_for('static', filename='js/data.js') }}"></script>
 <script src=".{{ url_for('static', filename='js/main.js') }}"></script>
 

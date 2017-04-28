@@ -4,6 +4,7 @@ from knowledge_extractor.pipeline import Pipeline
 from datetime import datetime
 import configuration
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 from utils import mongo_manager
 from crawler.crawler_pipeline import PipelineCrawler
 from werkzeug.utils import secure_filename
@@ -74,14 +75,14 @@ def registerEvaluation(experiment):
             update["$inc"] = {
                 "wrong":1
             }
-        print(update)
+
         db_manager.register_evaluation(query,update)
 
     flash('Evaluation sent','success')
     return redirect(url_for('index'))
     
 @app.route('/results')
-def results():
+def get_experiments_list():
     id = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["_id"]
     experiments = list(db_manager.find("experiment",{"user_id":id}))
     rankings = {}
@@ -92,6 +93,28 @@ def results():
         }
     
     return render_template('experiments.html',title="My Experiments",results=rankings)
+
+@app.route('/more')
+def get_more_candidates():
+    limit=20
+    page = int(request.args.get('page'))
+    experiment_id = request.args.get('experiment')
+    skip = page*limit
+    candidates = list(db_manager.getResults(ObjectId(experiment_id),True,skip))
+
+    return dumps({
+        "page":page+1,
+        "candidates":candidates
+    })
+
+@app.route('/import')
+def import_scenariio():
+    recipe = list(db_manager.get_recipe(request.args.get("recipe")))[0]
+    title = request.args.get("title")
+    recipe["title"] = title
+    recipe["seeds"] = recipe["seeds"][:20]
+    
+    return render_template("wizard.html",title="Index",scenario=recipe)
 
 @app.route('/experiment')
 def get_experiment():
@@ -139,7 +162,7 @@ def fullResults(experiment):
 
 @app.route('/wizard')
 def wizard():
-    return render_template('wizard.html',title="Index")
+    return render_template('wizard.html',title="Index",scenario={})
 
 @app.route('/wizard_recipe')
 def recipe():
