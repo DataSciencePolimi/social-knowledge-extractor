@@ -89,7 +89,7 @@ def get_experiments_list():
     for experiment in experiments:
         rankings[experiment["_id"]] = {
             "status":experiment["status"],
-            "title":experiment["title"]
+            "title":experiment.get("title","No-Title")
         }
     
     return render_template('experiments.html',title="My Experiments",results=rankings)
