@@ -90,7 +90,7 @@
                                 <div class="form-group">
                                     <label for="consumer_secret">Insert the title</label>
                                     <input type="text" class="form-control" name="title" id="title"
-                                            placeholder="Title">
+                                            placeholder="Title" value="{{scenario.get('title','')}}">
                                 </div>
                         </div>
                     </div>
@@ -104,6 +104,7 @@
                                
                                 <div class="controls" id="profs">
                                     <div class="input-append">
+                                        {% if scenario.get('seeds',[])|length==0 %}
                                         <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
                                             <div class="col-md-10"><input autocomplete="off" class="form-control"
                                                                           id="input-field1" name="prof1" type="text"
@@ -114,6 +115,24 @@
                                                 <button id="b1" class="btn add-more" type="button">+</button>
                                             </div>
                                         </div>
+                                        {% else %}
+                                            {% for s in scenario.seeds %}
+                                            <div class="row dynamic-input" id="{{s}}" style="margin-bottom: 5px">
+                                                <div class="col-md-10"><input value="{{s}}" autocomplete="off" class="form-control"
+                                                                            id="input-{{s}}" name="prof1" type="text"
+                                                                            placeholder="Twitter username 1"
+                                                                            aria-describedby="sizing-addon2" data-items="8"/>
+                                                </div>
+                                                <div class="col-md-2" id="add_col">
+                                                    {% if loop.index==scenario.seeds|length-1 %}
+                                                    <button id="remove-{{s}}" class="btn remove-me" type="button">+</button>
+                                                    {% else %}
+                                                    <button id="b-{{s}}" class="btn add-more" type="button">+</button>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +169,7 @@
                         </div>
                         <div class="col-sm-6">
                             <h2>Select DBPedia Types</h2>
-                            <div id="treeview-searchable" class="h-scroll"></div>
+                            <div data-preselected="{{scenario.get('expertTypes',[])}}"id="treeview-searchable" class="h-scroll"></div>
                         </div>
                         <div class="col-md-6">
                             <a href="#" onclick="toggler('expert_input_file', event);">Load expert types by csv File <i
