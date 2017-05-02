@@ -8,6 +8,26 @@ $.each($label,function(k,v){
         $(v).addClass("label-success")
     }
 })
+function atLeastOne(){
+    return $('input[name="accepted"]:checked').length >=1
+}
+
+$("#seed_form").on("submit",function(event){
+
+    if(atLeastOne()){
+        return true
+    }else{
+        var alertHtml = ' <div class="alert alert-danger alert-dismissible" role="alert">'
+                    +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                        +'<span aria-hidden="true">&times;</span>'
+                   +'</button>'
+                    +'Select at least one seed'
+                +'</div>'
+
+        $("#alert").html(alertHtml)
+        event.preventDefault()
+    }
+})
 
 //ajax call to retrieve morre candidates in the experiment page
 function moreCandidates(){

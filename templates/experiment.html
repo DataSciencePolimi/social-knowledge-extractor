@@ -63,8 +63,10 @@
         <div class="col-md-12">
             <div class="row">
                 <h3 class="text-center">Extracted entitites</h3>
+                <div id="alert"></div>
+               
                 <div class="col-md-10">
-                    <form method=POST action="run?experiment={{results._id}}">
+                    <form id="seed_form" method=POST action="run?experiment={{results._id}}">
                     <table class="table" id="candidates_table">
                         <thead>
                             <tr>
@@ -82,7 +84,7 @@
                                 <td>{{ v.score|round(2) }}</td>
                                 <td>{{ evaluations[v.handle]["correct"]}}</td>
                                 <td>{{ evaluations[v.handle]["wrong"]}}</td>
-                                <td><input type="checkbox" name="accepted" value="{{v.handle}}" /></td>
+                                <td><input class="seed" type="checkbox" name="accepted" value="{{v.handle}}" /></td>
                             </tr>
                         {% endfor %}
                         </tbody>
