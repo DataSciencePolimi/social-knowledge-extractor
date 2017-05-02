@@ -15,7 +15,11 @@ $("#submit-form").on("click", function (e) {
 });
 
 
-var preselected = JSON.parse($("#treeview-searchable").data('preselected').split("'").join('"'))
+var preselected = [];
+
+if($("#treeview-searchable").data('preselected') && $("#treeview-searchable").data('preselected').length>0  ){
+    preselected = JSON.parse($("#treeview-searchable").data('preselected').split("'").join('"'))
+}
 
 var checkSelected = function(node){
     if(preselected.indexOf(node.text)!=-1){
