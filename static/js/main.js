@@ -45,6 +45,21 @@ var $searchableTree = $('#treeview-searchable').treeview({
     data: data,
     showCheckbox: true
 });
+
+$searchableTree.on("nodeChecked",function(event,node){
+    var name = node.text;
+
+    var $list = $('#selected-expertType')
+    $list.append('<li id="'+name+'">'+name+'</li>')
+})
+
+$searchableTree.on("nodeUnchecked",function(event,node){
+    var name = node.text;
+
+    var $node = $("#"+name)
+    $node.remove()
+})
+
 var search = function (e) {
     var pattern = $('#input-search').val();
     var options = {

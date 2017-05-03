@@ -125,7 +125,7 @@
                                                 </div>
                                                 <div class="col-md-2" id="add_col">
                                                     {% if loop.index==scenario.seeds|length-1 %}
-                                                    <button id="remove-{{s}}" class="btn remove-me" type="button">+</button>
+                                                    <button id="remove-{{s}}" class="btn remove-me" type="button">-</button>
                                                     {% else %}
                                                     <button id="b-{{s}}" class="btn add-more" type="button">+</button>
                                                     {% endif %}
@@ -166,6 +166,14 @@
                             <!-- </form> -->
                             <h2>Search Results:</h2>
                             <div id="search-output" style="overflow-y: scroll;height: 300px;"></div>
+                            <h2>Selected DBPedia Types:</h2>
+                            <div  style="overflow-y: scroll;">
+                                <ul id="selected-expertType">
+                                    {% for e in scenario.get("expertTypes",[]) %}
+                                        <li id="{{e}}">{{e}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <h2>Select DBPedia Types</h2>

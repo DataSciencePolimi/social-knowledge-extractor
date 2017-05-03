@@ -55,8 +55,8 @@
             <hr style="border-top-color: #d5d5d5;">
      <div class="row">
         <div class="col-md-12 text-center">
-             <a class="btn btn-primary" href="full_results/{{results._id}}">Export</a>
-            <a class="btn btn-primary" target="_blank" href="evaluate/{{results._id}}">Evaluation Page</a>
+             <a class="btn btn-primary" href="full_results/{{results._id}}" {{'disabled="true"' if results.status!="COMPLETED"}}>Export</a>
+            <a class="btn btn-primary" target="_blank" href="evaluate/{{results._id}}" {{'disabled="true"' if results.status!="COMPLETED"}}>Evaluation Page</a>
         </div>
     </div> 
     <div class="row">
@@ -91,13 +91,13 @@
                     </table>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="btn btn-primary" value="Rerun"/>
+                    <input type="submit" class="btn btn-primary" value="Run with new seeds" {{'disabled="true"' if results.status!="COMPLETED"}}/>
                 </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button id="more" class="btn btn-primary" data-page="1" data-experiment="{{results._id}}" onclick="moreCandidates()">More results</button>
+                    <button id="more" class="btn btn-primary" data-page="1" data-experiment="{{results._id}}" onclick="moreCandidates()" {{'disabled="true"' if results.status!="COMPLETED"}}>More results</button>
                 </div>
             </div>
         </div>
