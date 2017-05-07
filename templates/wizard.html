@@ -83,14 +83,14 @@
                 </div>
             </div>
             <div class="row text-left">
-                <form id="main-form" action="run" method="POST" enctype="multipart/form-data">
+                <form id="main-form" data-toggle="validator" role="form" action="run" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-10">
                             <h2 class="control-label">1. Experiment Title</h2>
                                 <div class="form-group">
                                     <label for="consumer_secret">Insert the title</label>
                                     <input type="text" class="form-control" name="title" id="title"
-                                            placeholder="Title" value="{{scenario.get('title','')}}">
+                                            placeholder="Title" value="{{scenario.get('title','')}}" required/>
                                 </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                                             <div class="col-md-10"><input autocomplete="off" class="form-control"
                                                                           id="input-field1" name="prof1" type="text"
                                                                           placeholder="Twitter username 1"
-                                                                          aria-describedby="sizing-addon2" data-items="8"/>
+                                                                          aria-describedby="sizing-addon2" data-items="8" required/>
                                             </div>
                                             <div class="col-md-2" id="add_col">
                                                 <button id="b1" class="btn add-more" type="button">+</button>
@@ -167,7 +167,7 @@
                             <h2>Search Results:</h2>
                             <div id="search-output" style="overflow-y: scroll;height: 300px;"></div>
                             <h2>Selected DBPedia Types:</h2>
-                            <div  style="overflow-y: scroll;">
+                            <div id="expertType-parent" style="overflow-y: scroll;">
                                 <ul id="selected-expertType">
                                     {% for e in scenario.get("expertTypes",[]) %}
                                         <li id="{{e}}">{{e}}</li>

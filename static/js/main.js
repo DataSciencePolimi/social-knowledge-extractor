@@ -14,6 +14,58 @@ $("#submit-form").on("click", function (e) {
     $("#main-form").submit();
 });
 
+//validation
+$("#main-form").on("submit",function(event){
+
+    var $title = $("#title");
+
+    if(!$title.val() || $title.val().length===0){
+
+        $title.parent().addClass("has-danger")
+        $title.parent().addClass("has-error")
+        $('<div class="help-block">Required </div>').appendTo($title.parent())
+        event.preventDefault()
+        return false
+    }
+
+    var $seed = $("#profs input")
+    var $file = $("#input_seeds")
+
+    if(!$file.val()){
+
+        for (var index = 0; index < $seed.length; index++) {
+            var element = $seed[index];
+
+            element = $(element)
+            if(!element.val()){
+                event.preventDefault()
+                element.parent().addClass("has-danger")
+                element.parent().addClass("has-error")
+                $('<div class="help-block">Required </div>').appendTo(element.parent())
+                return false
+            }
+            
+        }
+    }
+
+    var $selected = $('#selected-expertType li')
+    var $fileExpert = $("#input_expert")
+
+    if(!$fileExpert.val()){
+        if($selected.length===0){
+            var $parent = $('#expertType-parent')
+            $parent.addClass("has-danger")
+            $parent.addClass("has-error")
+            $('<div class="help-block">At least one expert type must be selected </div>').appendTo($parent)
+            event.preventDefault()
+            return false
+        }
+    }
+
+    return true
+
+    
+})
 
 var preselected = [];
 

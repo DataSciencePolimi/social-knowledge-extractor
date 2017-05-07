@@ -223,7 +223,15 @@ def run():
 
     #Add DbPedia Types to seeds and checks dandelion rate limit
     new_seeds = []
+   
+    pprint.pprint(seeds)
+    if len(seeds)==1:
+        seeds.append("dummy")
+
     join_seeds = tweets_chunk.TweetsChunk([{"text":s}for s in seeds])
+
+  
+
     datatxt = EntityExtraction(app_id=configuration.APP_ID , app_key=configuration.API_KEY_DANDELION )
     res = datatxt.nex(join_seeds.get_unique_string(), **{"include": ["types", "categories",
                                                                         "abstract", "alternate_labels"],
@@ -233,10 +241,11 @@ def run():
     join_seeds.split_annotation_each_tweet(res["annotations"])
     for tweet in join_seeds.index_tweet:
         ann = tweet.get("annotations",[])
-        if len(ann) != 0:
-            new_seeds.append({"handle":tweet["tweet"]["text"], "types":ann[0].get("types",[])})
-        else:
-            new_seeds.append({"handle":tweet["tweet"]["text"], "types":[]})
+        if tweet['tweet']['text']!="dummy":
+            if len(ann) != 0:
+                new_seeds.append({"handle":tweet["tweet"]["text"], "types":ann[0].get("types",[])})
+            else:
+                new_seeds.append({"handle":tweet["tweet"]["text"], "types":[]})
 
     #End Add DBPedia
 
