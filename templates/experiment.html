@@ -53,6 +53,43 @@
         </div>
     </div>   
             <hr style="border-top-color: #d5d5d5;">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h3>Starting Seed</h3>
+           <table class="table" id="seedss_table">
+                        <thead>
+                            <tr>
+                                <th>Twitter Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for  v in results.seeds %}
+                            <tr>    
+                                <td><label><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></label></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+        </div>
+        <div class="col-md-6 text-center">
+            <h3>Expert Types</h3>
+               <table class="table text-center" id="seedss_table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for  v in results.expert_types %}
+                            <tr>    
+                                <td><label>{{v}}</label></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table> 
+        </div>
+    </div>   
+            <hr style="border-top-color: #d5d5d5;">
      <div class="row">
         <div class="col-md-12 text-center">
              <a class="btn btn-primary" href="full_results/{{results._id}}" {{'disabled="true"' if results.status!="COMPLETED"}}>Export</a>

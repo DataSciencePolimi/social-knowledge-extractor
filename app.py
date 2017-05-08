@@ -120,8 +120,15 @@ def import_scenariio():
 def get_experiment():
     experiment_id = request.args.get('experiment')
     ranks = list(db_manager.getResults(ObjectId(experiment_id),True))
+    query = {
+        "starting":True,
+        "id_experiment":ObjectId(experiment_id)
+    }
+    seeds = list(db_manager.getSeeds(query))
+    
     experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])
     experiment["ranks"] = ranks
+    experiment["seeds"] = seeds
     
     if "creationDate" in experiment:
         experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
