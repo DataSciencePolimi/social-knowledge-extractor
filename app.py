@@ -84,12 +84,16 @@ def registerEvaluation(experiment):
 @app.route('/results')
 def get_experiments_list():
     id = list(db_manager.find("auth_users",{"social_id":current_user.social_id}))[0]["_id"]
-    experiments = list(db_manager.find("experiment",{"user_id":id}))
+    experiments = list(db_manager.find("experiment",{"user_id":id}).sort("creationDate",-1))
     rankings = {}
     for experiment in experiments:
+        if "creationDate" in experiment:
+             experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
+
         rankings[experiment["_id"]] = {
             "status":experiment["status"],
-            "title":experiment.get("title","No-Title")
+            "title":experiment.get("title","No-Title"),
+            "creationDate":experiment.get("creationDate","--")
         }
     
     return render_template('experiments.html',title="My Experiments",results=rankings)
