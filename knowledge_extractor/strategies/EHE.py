@@ -19,6 +19,7 @@ class EHE:
             if "@" in entity["spot"] or "#" in entity["spot"]:
                consideredMention.append(entity["label"])
 
+        entities.close()
         return consideredMention
 
    

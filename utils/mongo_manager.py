@@ -83,11 +83,11 @@ class MongoManager():
 
     def getSeeds(self,query):
         collection = "seeds"
-        return self.find(collection,query)
+        return list(self.find(collection,query))
 
     def getCandidates(self,query):
         collection = "rank_candidates"
-        return self.find(collection,query)
+        return list(self.find(collection,query))
 
     def getMentions(self,query):
         collection = "entity"

@@ -10,7 +10,8 @@ class AST:
 
         for e in entities:
             mentions+=e["types"]
-
+        
+        entities.close()
         return mentions
     
     def __init__(self,db,expertTypes):
