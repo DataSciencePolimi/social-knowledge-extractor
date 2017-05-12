@@ -99,7 +99,7 @@ class Pipeline:
         seeds = self.getSeeds()
         candidates = self.getCandidates()
 
-        print("Compßuting seeds fv")
+        print("Computing seeds fv")
         seeds_components = self.computeSeedVectors(seeds)
         
         feature_vectors["seeds"] = seeds_components["fv"]
