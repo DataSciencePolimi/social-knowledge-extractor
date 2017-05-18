@@ -92,3 +92,6 @@ ske-env/
 # Mac
 .DS_store
 .idea/
+
+#Visual Code settings
+.vscode
