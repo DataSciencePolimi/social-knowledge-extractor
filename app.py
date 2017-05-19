@@ -184,15 +184,18 @@ def run():
     if request.form.get("email") != None:
         db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
     
-    if "recipe" in request.form:
-       recipe = list(db_manager.get_recipe(request.form["recipe"]))[0]
+    #if "recipe" in request.form:
+    #   print("recipe present in the request")
+    #   recipe = list(db_manager.get_recipe(request.form["recipe"]))[0]
+    #   pprint.pprint(recipe["seeds"])
     
+    #return "asd" 
 
     experiment = {}
     original_experiment_id = request.args.get('experiment')
     if original_experiment_id!=None:
         original_experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(original_experiment_id)}))[0])
-
+    
 
     experiment["user_id"] = current_user._id
     
@@ -211,10 +214,11 @@ def run():
     if original_experiment_id!=None:
         seeds = request.form.getlist("accepted")
         experiment["original_experiment"] = ObjectId(original_experiment_id)
-    elif "recipe" in request.form:
-        seeds = recipe["seeds"]
+    #elif "recipe" in request.form:
+    #    seeds = recipe["seeds"] 
     elif request.files["input_seeds"].filename == '':
         seeds = [v for k,v in request.form.items() if "prof" in k]
+        pprint.pprint(seeds)
     else:
         seeds_file = request.files["input_seeds"]
         seeds_dataframe = pd.read_csv(seeds_file)
@@ -222,8 +226,8 @@ def run():
     
     if original_experiment_id!=None:
         experts = original_experiment["expert_types"]
-    elif "recipe" in request.form:
-        experts = recipe["expertTypes"]
+    #elif "recipe" in request.form:
+    #    experts = recipe["expertTypes"]
     elif request.files["input_expert"].filename == '':
         experts = [v for k,v in request.form.items() if "check-box" in k]
     else:
