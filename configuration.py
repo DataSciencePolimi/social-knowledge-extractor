@@ -1,5 +1,3 @@
-__author__ = 'marcotagliabue'
-
 # DANDELION API KEYS
 APP_ID = ""
 API_KEY_DANDELION = ""

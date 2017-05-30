@@ -117,17 +117,17 @@
                                         </div>
                                         {% else %}
                                             {% for s in scenario.seeds %}
-                                            <div class="row dynamic-input" id="{{s}}" style="margin-bottom: 5px">
+                                            <div class="row dynamic-input" id="field{{loop.index+1}}" style="margin-bottom: 5px">
                                                 <div class="col-md-10"><input value="{{s}}" autocomplete="off" class="form-control"
-                                                                            id="input-{{s}}" name="prof1" type="text"
-                                                                            placeholder="Twitter username 1"
+                                                                            id="input-{{s}}" name="prof{{loop.index+1}}" type="text"
+                                                                            placeholder="Twitter username {{loop.index+1}}"
                                                                             aria-describedby="sizing-addon2" data-items="8"/>
                                                 </div>
                                                 <div class="col-md-2" id="add_col">
                                                     {% if loop.index==scenario.seeds|length-1 %}
-                                                    <button id="remove-{{s}}" class="btn remove-me" type="button">-</button>
+                                                    <button id="remove{{loop.index+1}}" class="btn remove-me" type="button">-</button>
                                                     {% else %}
-                                                    <button id="b-{{s}}" class="btn add-more" type="button">+</button>
+                                                    <button id="b{{loop.index+1}}" class="btn add-more" type="button">+</button>
                                                     {% endif %}
                                                 </div>
                                             </div>
