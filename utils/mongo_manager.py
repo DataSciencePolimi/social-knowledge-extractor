@@ -83,6 +83,12 @@ class MongoManager():
 
     def getSeeds(self,query):
         collection = "seeds"
+        query.update({"hub":False})
+        return list(self.find(collection,query))
+    
+    def getHubs(self,query):
+        collection = "seeds"
+        query.update({"hub":True})
         return list(self.find(collection,query))
 
     def getCandidates(self,query):
@@ -172,6 +178,41 @@ class MongoManager():
             "name":name
         }
         return self.find(collection,query)
+    
+    def store_seeds(self,seeds,experiment_id):
+        collection = "seeds"
+        for seed in seeds:
+            s = {
+                "id_experiment":experiment_id,
+                "starting":True,
+                "hub":False,
+                "handle":seed
+            }
+            self.db[collection].insert(s)
+
+    
+    def store_hubs(self,hubs,experiment_id):
+        collection = "seeds"
+        for hub in hubs:
+            h = {
+                "id_experiment":experiment_id,
+                "starting":True,
+                "hub":True,
+                "handle":hub
+            }
+            self.db[collection].insert(h)
+    
+    def store_candidates(self,candidates,experiment_id):
+        collection = "seeds"
+        for cand in candidates:
+              c = {
+                "id_experiment":experiment_id,
+                "starting":False,
+                "hub":False,
+                "handle":cand["handle"],
+                "origin":cand["origin"]
+              }
+              self.db[collection].insert(c)
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

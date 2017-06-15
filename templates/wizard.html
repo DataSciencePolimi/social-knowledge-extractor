@@ -96,7 +96,7 @@
                     </div>
                     <hr style="border-top-color: #d5d5d5;">
                     <div class="row" style="padding-top: 15px; padding-bottom: 15px">
-                        <div class="col-md-10">
+                        <div class="col-md-10" id="seeds">
                             <input type="hidden" name="count" value="1"/>
                             <div class="control-group" id="fields">
                                 <h2 class="control-label"> 2. Seeds (Twitter accounts)</h2>
@@ -108,10 +108,10 @@
                                         <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
                                             <div class="col-md-10"><input autocomplete="off" class="form-control"
                                                                           id="input-field1" name="prof1" type="text"
-                                                                          placeholder="Twitter username 1"
+                                                                          placeholder="Twitter username"
                                                                           aria-describedby="sizing-addon2" data-items="8" required/>
                                             </div>
-                                            <div class="col-md-2" id="add_col">
+                                            <div class="col-md-2" id="add_col-seeds">
                                                 <button id="b1" class="btn add-more" type="button">+</button>
                                             </div>
                                         </div>
@@ -120,10 +120,10 @@
                                             <div class="row dynamic-input" id="field{{loop.index+1}}" style="margin-bottom: 5px">
                                                 <div class="col-md-10"><input value="{{s}}" autocomplete="off" class="form-control"
                                                                             id="input-{{s}}" name="prof{{loop.index+1}}" type="text"
-                                                                            placeholder="Twitter username {{loop.index+1}}"
+                                                                            placeholder="Twitter username"
                                                                             aria-describedby="sizing-addon2" data-items="8"/>
                                                 </div>
-                                                <div class="col-md-2" id="add_col">
+                                                <div class="col-md-2" id="add_col_seeds">
                                                     {% if loop.index==scenario.seeds|length-1 %}
                                                     <button id="remove{{loop.index+1}}" class="btn remove-me" type="button">-</button>
                                                     {% else %}
@@ -143,6 +143,60 @@
                                 <input type="file" class="form-control-file" name="input_seeds" id="input_seeds"
                                        aria-describedby="fileHelp">
                                 <small id="fileHelp" class="form-text text-muted">List of Seeds (Max 20 seeds). <a
+                                        target="_blank" href=".{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here
+                                    you can see an exemple:</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border-top-color: #d5d5d5;">
+                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                        <div class="col-md-10" id="hubs-container">
+                            <input type="hidden" name="count" value="1"/>
+                            <div class="control-group" id="fields">
+                                <h2 class="control-label"> 3. Hubs (Twitter accounts)</h2>
+                                <label style="visibility: hidden" for="consumer_secret">Insert Twitter handles</label>
+                               
+                                <div class="controls" id="hubs">
+                                    <div class="input-append">
+                                        {% if scenario.get('hubs',[])|length==0 %}
+                                        <div class="row dynamic-input" id="field1" style="margin-bottom: 5px">
+                                            <div class="col-md-10"><input autocomplete="off" class="form-control"
+                                                                          id="input-field1" name="hub1" type="text"
+                                                                          placeholder="Twitter username 1"
+                                                                          aria-describedby="sizing-addon2" data-items="8" required/>
+                                            </div>
+                                            <div class="col-md-2" id="add_col-hubs-container">
+                                                <button id="b2" class="btn add-more" type="button">+</button>
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                            {% for s in scenario.hubs %}
+                                            <div class="row dynamic-input" id="field{{loop.index+1}}" style="margin-bottom: 5px">
+                                                <div class="col-md-10"><input value="{{s}}" autocomplete="off" class="form-control"
+                                                                            id="input-{{s}}" name="hub{{loop.index+1}}" type="text"
+                                                                            placeholder="Twitter username {{loop.index+1}}"
+                                                                            aria-describedby="sizing-addon2" data-items="8"/>
+                                                </div>
+                                                <div class="col-md-2" id="add_col-hubs">
+                                                    {% if loop.index==scenario.seeds|length-1 %}
+                                                    <button id="remove{{loop.index+1}}" class="btn remove-me" type="button">-</button>
+                                                    {% else %}
+                                                    <button id="b{{loop.index+1}}" class="btn add-more" type="button">+</button>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" onclick="toggler('seed_input_file', event);">Load hubs by csv File <i
+                                    id="arr_seed_input_file" class="fa fa-arrow-down"></i></a><br>
+
+                            <div class="form-group" id="seed_input_file" style="display: none">
+                                <input type="file" class="form-control-file" name="input_hubs" id="input_hubs"
+                                       aria-describedby="fileHelp">
+                                <small id="fileHelp" class="form-text text-muted">List of Hubs (Max 20 hubs). <a
                                         target="_blank" href=".{{ url_for('static',filename='csv_exemples/seed.csv') }}">Here
                                     you can see an exemple:</a></small>
                             </div>
@@ -222,20 +276,6 @@
                         </div>
                     </div>-->
 
-                    {% if current_user.email == None %}
-                     <hr style="border-top-color: #d5d5d5;">
-                        <div class="row" style="padding-top: 15px; padding-bottom: 15px">
-                            <div class="col-md-6">
-                                <h2 class="control-label">For notification of the results</h2>
-                                <div class="form-group">
-                                    <label for="Email">Email address</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                           aria-describedby="emailHelp"
-                                           placeholder="Enter email">
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
                     <br>
                     <button id="submit-form" style="margin-top: 15px;" type="submit" class="btn btn-primary">Run Pipeline</button>
                 </form>
