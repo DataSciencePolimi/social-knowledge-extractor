@@ -12,7 +12,8 @@ from model import tweets_chunk
 
 
 class CrawlDandelion:
-    def __init__(self, id_experiment, one_dandelion_key):
+    def __init__(self, id_experiment, one_dandelion_key,db_manager):
+        self.db_manager = db_manager
         if one_dandelion_key:
             self.run_crawler_one_keys(id_experiment)
         else:
@@ -22,7 +23,6 @@ class CrawlDandelion:
         self.id_experiment = id_experiment
 
         # Documentation: http://python-dandelion-eu.readthedocs.io/en/latest/datatxt.html#nex-named-entity-extraction
-        self.db_manager = mongo_manager.MongoManager(configuration.db_name)
         languages = ("de", "en", "es", "fr", "it", "pt")
 
         all_tweets = list(self.db_manager.find("tweets", {"id_experiment":id_experiment}))
@@ -110,8 +110,7 @@ class CrawlDandelion:
             join_tweets.split_annotation_each_tweet(response.annotations)
             # pprint.pprint(join_tweets.index_tweet)
             for tweet in join_tweets.index_tweet:
-                seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"], "id_experiment":self.id_experiment}))[0][
-                    "_id"]
+                seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"], "id_experiment":self.id_experiment}))[0]["_id"]
                 for annotation in tweet["annotations"]:
                     annotation["tweet"] = tweet["tweet"]["_id"]
                     annotation["seed"] = seed_id

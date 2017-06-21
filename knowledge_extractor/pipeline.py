@@ -4,7 +4,7 @@ import collections
 from scipy.spatial.distance import cosine
 from .strategies.AST import AST
 from .strategies.EHE import EHE
-
+from flask import current_app
 
 class Pipeline:
 
@@ -30,11 +30,11 @@ class Pipeline:
         
 
     def getSeeds(self):
-        query = {"id_experiment":self.experiment_id, "starting":True}
+        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
         return self.db.getSeeds(query)
 
     def getCandidates(self):
-        query = {"id_experiment":self.experiment_id, "starting":False}
+        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False}
         return self.db.getCandidates(query)
     
     def computeSeedVectors(self,seeds):
@@ -47,9 +47,11 @@ class Pipeline:
         
         for seed in seeds:
             #computer array of mentioned entity
+            pprint.pprint(seed)
             mentions[seed["handle"]] = ehe.getEntities(seed)
             ast_mentions[seed["handle"]] = ast.getEntities(seed)
         
+        pprint.pprint(ast_mentions)
         space_ehe = self.createSpace(mentions)
         space_ast = self.createSpace(ast_mentions)
 
@@ -82,11 +84,11 @@ class Pipeline:
             mentions[cand["handle"]] = ehe.getEntities(cand)
             ast_mentions[cand["handle"]] = ast.getEntities(cand)
         
-
         print("Creating feature vector for the candidates")
         
         cands_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions)*(1-self.alfa) 
         cands_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)*self.alfa
+
 
         cands_feature_vectors = cands_feature_vectors_ast.join(cands_feature_vectors_ehe)
        
@@ -101,9 +103,10 @@ class Pipeline:
 
         print("Computing seeds fv")
         seeds_components = self.computeSeedVectors(seeds)
-        
+       
         feature_vectors["seeds"] = seeds_components["fv"]
         print("Computing candidates fv")
+        pprint.pprint(seeds_components["fv"])
         feature_vectors["candidates"] = self.computeCandidatesVectors(candidates,seeds_components["space_ast"],seeds_components["space_ehe"])
         
         centroid = self.createCentroid(feature_vectors["seeds"])
@@ -123,10 +126,10 @@ class Pipeline:
         self.expertFile = self.db.getExpertTypes(experiment_id)
 
 if __name__ == "__main__":
-     from utils import mongo_manager
+     import mongo_manager
      import configuration
      from bson import ObjectId
      db_manager = mongo_manager.MongoManager(configuration.db_name)
 
-     kn = Pipeline(db_manager, ObjectId('58d157ee68f6207a5e782ba7'))
+     kn = Pipeline(db_manager, ObjectId('594142ebd576065c263fc798'))
      kn.run()

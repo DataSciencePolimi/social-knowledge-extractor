@@ -1,3 +1,5 @@
+import pprint
+
 class AST:
     
     def getEntities(self,seed):
@@ -12,6 +14,7 @@ class AST:
             mentions+=e["types"]
         
         entities.close()
+
         return mentions
     
     def __init__(self,db,expertTypes):

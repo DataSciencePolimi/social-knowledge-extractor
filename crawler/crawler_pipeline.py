@@ -10,25 +10,35 @@ import pymongo
 from utils import mongo_manager
 import configuration
 from bson import ObjectId
+import pprint
 
 class PipelineCrawler:
 
     def run(self, one_dandelion_key = True):
         print("Pipeline started!")
         print("Seeds: ", len(self.seeds), self.seeds)
+        print("Hubs: ", len(self.hubs), self.hubs)
 
         # Crawling Tweet
         print("Crawling Twitter...")
-        crawler_twitter = CrawlerTwitter(self.id_experiment)
-        print("Crawling first seeds")
-        new_seeds = crawler_twitter.run(self.N, self.seeds)
+        crawler_twitter = CrawlerTwitter(self.id_experiment,self.db_manager)
+        
+        print("Crawling first seeds or hub")
+        new_seeds = crawler_twitter.run(self.N, self.original_seeds)
+        self.db_manager.store_candidates(new_seeds,self.id_experiment)
+
+        if(self.isHub):
+            print("Crawling the seeds")
+            crawler_twitter.run(self.N,self.seeds)
+        
+
         print("Crawling the mentions")
         crawler_twitter.run(self.N, new_seeds)
-        crawler_twitter.storeSeeds(self.original_seeds)
+        #crawler_twitter.storeSeeds(self.original_seeds)
 
         # Crawling Dandelion
         print("Crawling Dandelion for High Frequencies Entities...")
-        CrawlDandelion(self.id_experiment, one_dandelion_key)
+        CrawlDandelion(self.id_experiment, one_dandelion_key,self.db_manager)
 
         # Extract Low Frequencies Entities
         print("Extract Mention and Hashtag from Tweets...")
@@ -41,11 +51,23 @@ class PipelineCrawler:
         #Email sender with rank is needed
         #print(list(self.db_manager.find("rank_candidates", {}).sort("ranking_index", pymongo.DESCENDING))[:250])
 
-    def __init__(self, N, seeds, id_experiment,db_manager):
+    def __init__(self, N, id_experiment,db_manager,isHub):
         self.db_manager = db_manager
         self.N = N
-        self.seeds = [s["handle"] for s in seeds]
-        self.original_seeds = seeds
+
+        query = {
+            "id_experiment":id_experiment
+        }
+
+        self.isHub = isHub
+        self.seeds = self.db_manager.getSeeds(query)   
+        self.hubs = self.db_manager.getHubs(query)
+        
+        if(isHub):
+            self.original_seeds = self.hubs
+        else:  
+            self.original_seeds = self.seeds
+        
         self.id_experiment = id_experiment
        
 

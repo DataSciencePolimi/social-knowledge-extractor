@@ -16,8 +16,8 @@ class EHE:
 
         consideredMention = []
         for entity in entities:
-            if "@" in entity["spot"] or "#" in entity["spot"]:
-               consideredMention.append(entity["label"])
+            consideredMention.append(entity["label"])
+            #if "@" in entity["spot"] or "#" in entity["spot"]:
 
         entities.close()
         return consideredMention

@@ -145,39 +145,55 @@ var search = function (e) {
 
 $('#search-button').on('click', search);
 
-$(document).ready(function () {
-    var next = 1;
-    $(".add-more").click(function (e) {
-        var number_fields = $('.dynamic-input').length + 1;
-        console.log(number_fields);
+function addMore(idContainer,e){
+
         e.preventDefault();
-        next = next + 1;
-        var adding = '<div class="row dynamic-input" id="field' + next + '" style="margin-bottom: 5px"><div class="col-md-10"><input autocomplete="off" class="form-control" id="input-field' + next + '" name="prof' + next + '" type="text" placeholder="Twitter username ' + next + '" aria-describedby="sizing-addon2" data-items="8"/></div></div>';
-        var removeBtn = '<div class="col-md-2" id="remove_col' + next + '"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div></div></div>';
+        var container = $('#'+idContainer);
+        var number_fields = container.find('.dynamic-input').length;
+        var next = number_fields + 1;
+        console.log(next);
+        var name;
+        if(idContainer==="hubs-container"){
+            name="hub"
+        }else{
+            name="prof"
+        }
+        var adding = '<div class="row dynamic-input" id="field' + next + '" style="margin-bottom: 5px"><div class="col-md-10"><input autocomplete="off" class="form-control" id="input-field' + next + '" name="' + name + next + '" type="text" placeholder="Twitter username" aria-describedby="sizing-addon2" data-items="8"/></div></div>';
+        var removeBtn = '<div class="col-md-2" id="'+ idContainer+'remove_col' + next + '"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div></div></div>';
 
-        $("#field" + (next - 1)).after(adding);
+        console.log(container.find(".dynamic-input").last())
+        var addingElem = $(adding)
+        var removeBtnElem = $(removeBtn)
+        container.find(".dynamic-input").last().after(addingElem)
+        //container.find("#field" + (next - 1)).after(adding);
 
-        $("#field" + (next)).append($("#add_col"));
+        addingElem.append($("#add_col-"+idContainer));
+        //container.find(".dynamic-input:last-child > *:first-child")[0].append($("#add_col-"+idContainer))
         if (number_fields >= 20) {
-            $("#add_col").hide();
+            $("#add_col-"+idContainer).hide();
         }
 
-        $("#field" + (next - 1)).append(removeBtn);
+        addingElem.prev().append(removeBtnElem);
 
-        $('.remove-me').click(function (e) {
-            e.preventDefault();
-            var fieldNum = this.id.match(/\d+/);
-            var fieldID = "#field" + fieldNum;
+        //container.find('#remove'+(next - 1) 
+        removeBtnElem.find("*:first-child").click(function (e) {
+            //e.preventDefault();
+            //var fieldNum = this.id.match(/\d+/);
+            //console.log(fieldNum)
+            //var fieldID = "#field" + fieldNum;
+            //console.log(fieldID)
+            //container.find(fieldID).remove();
+
+            $(this).parent().parent().remove()
             $(this).remove();
-            $(fieldID).remove();
 
-            console.log($('.dynamic-input').length + 1);
-            if ($('.dynamic-input').length + 1 <= 20) {
-                $("#add_col").show();
-            }
         });
 
-    });
+}
+
+$(document).ready(function () {
+    $("#b1").click(addMore.bind({},"seeds"))
+    $("#b2").click(addMore.bind({},"hubs-container"))
 });
 
 function toggler(divId, e) {

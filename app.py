@@ -19,6 +19,7 @@ from model.User import User
 from utils import initialization_application_keys
 from model import tweets_chunk
 from utils.dandelion_interface import EntityExtraction
+from pydash import py_
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -126,13 +127,16 @@ def get_experiment():
     ranks = list(db_manager.getResults(ObjectId(experiment_id),True))
     query = {
         "starting":True,
-        "id_experiment":ObjectId(experiment_id)
+        "id_experiment":ObjectId(experiment_id),
+        "hub":False
     }
     seeds = list(db_manager.getSeeds(query))
-    
+    query["hub"] = True
+    hubs = list(db_manager.getHubs(query))
     experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])
     experiment["ranks"] = ranks
     experiment["seeds"] = seeds
+    experiment["hubs"] = hubs
     
     if "creationDate" in experiment:
         experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
@@ -184,14 +188,8 @@ def run():
     if request.form.get("email") != None:
         db_manager.update("auth_users", {"social_id":current_user.social_id}, { "$set": {"email": request.form.get("email")}})
     
-    #if "recipe" in request.form:
-    #   print("recipe present in the request")
-    #   recipe = list(db_manager.get_recipe(request.form["recipe"]))[0]
-    #   pprint.pprint(recipe["seeds"])
-    
-    #return "asd" 
-
     experiment = {}
+    hubs = []
     original_experiment_id = request.args.get('experiment')
     if original_experiment_id!=None:
         original_experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(original_experiment_id)}))[0])
@@ -204,13 +202,8 @@ def run():
     configuration.consumer_key = configuration.providers["twitter"]["id"]
     configuration.consumer_secret = configuration.providers["twitter"]["secret"]
 
-    #if request.form["dandelion_app_id"] != "" and request.form["dandelion_app_key"] != "":
-    #    experiment["dandelion_app_id"] = request.form["dandelion_app_id"]
-    #    experiment["dandelion_app_key"] = request.form["dandelion_app_key"]
-    #    configuration.APP_ID = request.form["dandelion_app_id"]
-    #   configuration.API_KEY_DANDELION = request.form["dandelion_app_key"]
-
     #Get seeds and expert types
+
     if original_experiment_id!=None:
         seeds = request.form.getlist("accepted")
         experiment["original_experiment"] = ObjectId(original_experiment_id)
@@ -223,6 +216,19 @@ def run():
         seeds_file = request.files["input_seeds"]
         seeds_dataframe = pd.read_csv(seeds_file)
         seeds = seeds_dataframe.ix[:, 0].tolist()[:20]
+    
+    if original_experiment_id!=None:
+        hubs = request.form.getlist("accepted-hubs")
+        experiment["original_experiment"] = ObjectId(original_experiment_id)
+    #elif "recipe" in request.form:
+    #    seeds = recipe["seeds"] 
+    elif request.files["input_hubs"].filename == '':
+        hubs = [v for k,v in request.form.items() if "hub" in k]
+        pprint.pprint(hubs)
+    else:
+        hubs_file = request.files["input_hubs"]
+        hubs_dataframe = pd.read_csv(hubs_file)
+        hubs = hubs_dataframe.ix[:, 0].tolist()[:20]
     
     if original_experiment_id!=None:
         experts = original_experiment["expert_types"]
@@ -239,10 +245,6 @@ def run():
     #Add DbPedia Types to seeds and checks dandelion rate limit
     new_seeds = []
    
-    pprint.pprint(seeds)
-    if len(seeds)==1:
-        seeds.append("dummy")
-
     join_seeds = tweets_chunk.TweetsChunk([{"text":s}for s in seeds])
 
   
@@ -288,7 +290,13 @@ def run():
         return render_template('index.html',title='Error')
     else:
         # #TODO: create inside orchestrator
-        crawler = PipelineCrawler(100,new_seeds,id_experiment,db_manager)
+
+        db_manager.store_seeds(py_.map(new_seeds,"handle"),id_experiment)
+        db_manager.store_hubs(hubs,id_experiment)
+
+        isHub = True if len(hubs)>0 else False
+
+        crawler = PipelineCrawler(100,id_experiment,db_manager,isHub)
         knowldege_extractor = Pipeline(db_manager,id_experiment)
 
         #orchestrator = Orchestrator(crawler,knowldege_extractor,id_experiment)
