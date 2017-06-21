@@ -65,6 +65,6 @@ TBD
 
 ## Try the online version
 
-A depolyed version of SKE is available online at [here](http://ske.westeurope.cloudapp.azure.com/ske)
+A depolyed version of SKE is available online at [here](http://131.175.141.249/ske/)
 
 A tutorial on how to effectively use it is available [here](https://github.com/DataSciencePolimi/social-knowledge-extractor/wiki/Usage-Guide)
