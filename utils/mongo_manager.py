@@ -236,5 +236,16 @@ class MongoManager():
         }
         return list(self.find(collection,query))
 
+    def get_mention_count_all(self,experiment_id):
+        collection = "entity"
+        query = ([{"$match":{"id_experiment":experiment_id,"types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"types":1}},{"$unwind":"$types"},{"$group":{_id:"$types",count:{"$sum":1}}},{"$sort":{count:-1}}])
+        return list(self.db[collection].aggregate(query))
+    
+    def get_mention_count_by_seeds(self,experiment_id,seed_ids):
+        collection = "entity"
+        query = ([{"$match":{"id_experiment":experiment_id,"seed":{"$in":seed_ids},"types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"types":1}},{"$unwind":"$types"},{"$group":{"_id":"$types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
+        return list(self.db[collection].aggregate(query))
+
+
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)

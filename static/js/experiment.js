@@ -8,6 +8,64 @@ $.each($label,function(k,v){
         $(v).addClass("label-success")
     }
 })
+
+
+var experimentId = $("#data").data("id")
+var array;
+console.log(experimentId)
+$.ajax({
+    url:"mentions_distribution?experiment="+experimentId
+})
+.done(function(data){
+    console.log(data)
+    array = data
+    Highcharts.chart('mentions-chart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Types mentioned by the seeds'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Number of mentions'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Number of mentions: <b>{point.y}</b>'
+    },
+    series: [{
+        name: 'Mention Types',
+        data: data.map(function(x){return [x._id.split("/").pop(),x.count]}),
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+})
+
 function atLeastOne(){
     return $('input[name="accepted"]:checked').length >=1
 }

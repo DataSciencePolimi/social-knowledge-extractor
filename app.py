@@ -159,8 +159,20 @@ def get_experiment():
         if ev["handle"] in evaluationsDict:
             evaluationsDict[ev["handle"]]["correct"] = ev.get("correct",0)
             evaluationsDict[ev["handle"]]["wrong"] = ev.get("wrong",0)
-
+    
     return render_template('experiment.html',title="Experiment",results=experiment,evaluations=evaluationsDict)
+
+@app.route("/mentions_distribution")
+def mention_distribution():
+    experiment_id = request.args.get('experiment')
+    query = {
+        "starting":True,
+        "id_experiment":ObjectId(experiment_id),
+        "hub":False
+    }
+    seeds = list(db_manager.getSeeds(query))
+    mention_distribution = db_manager.get_mention_count_by_seeds(ObjectId(experiment_id),[s["_id"] for s in seeds])
+    return jsonify(mention_distribution)
 
 @app.route('/full_results/<experiment>')
 def fullResults(experiment):
@@ -223,7 +235,7 @@ def run():
     #elif "recipe" in request.form:
     #    seeds = recipe["seeds"] 
     elif request.files["input_hubs"].filename == '':
-        hubs = [v for k,v in request.form.items() if "hub" in k]
+        hubs = [v for k,v in request.form.items() if "hub" in k and v!=""] 
         pprint.pprint(hubs)
     else:
         hubs_file = request.files["input_hubs"]
