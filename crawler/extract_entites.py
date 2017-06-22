@@ -26,7 +26,8 @@ class ExtractEntities():
             hashtags = tw["entities"]["hashtags"]
             mentions = tw["entities"]["user_mentions"]
             # print(tw["user"]["screen_name"])
-            seed_id = list(self.db_manager.find("seeds", {"handle": tw["user"]["screen_name"], "id_experiment":self.id_experiment}))[0]["_id"]
+            #seed_id = list(self.db_manager.find("seeds", {"handle": tw["user"]["screen_name"], "id_experiment":self.id_experiment}))[0]["_id"]
+            seed_id = tw["seed"]
 
             for h in hashtags:
                 # print({"tweet":tw["id"], "seed":seed_id, "spot":h["text"], "category": "hashtag"})

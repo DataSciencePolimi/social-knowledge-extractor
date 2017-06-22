@@ -26,6 +26,8 @@ class PipelineCrawler:
         print("Crawling first seeds or hub")
         new_seeds = crawler_twitter.run(self.N, self.original_seeds)
         self.db_manager.store_candidates(new_seeds,self.id_experiment)
+        # I need the mongo id
+        new_seeds = self.db_manager.get_unranked_candidates(self.id_experiment)
 
         if(self.isHub):
             print("Crawling the seeds")

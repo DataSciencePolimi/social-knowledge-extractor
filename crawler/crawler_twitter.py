@@ -42,7 +42,7 @@ class CrawlerTwitter():
             #     logging.info(s+" Tweets' number: "+str(len(tweets_seed)))
 
             for item in tweets_seed:
-                item.update( {"id_experiment":self.id_experiment})
+                item.update( {"id_experiment":self.id_experiment, "seed":s["_id"]})
 
             self.db_manager.write_mongo("tweets", tweets_seed)
 

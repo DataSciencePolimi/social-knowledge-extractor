@@ -1,7 +1,7 @@
 __author__ = 'marcotagliabue'
 import math
 import logging
-
+import pprint
 from dandelion import DataTXT
 
 from dandelion.base import DandelionException
@@ -96,6 +96,7 @@ class CrawlDandelion:
         datatxt = DataTXT(app_id=app_id, app_key=app_key)
         for tweets in tweets_chunks:
             join_tweets = tweets_chunk.TweetsChunk(tweets)
+            pprint.pprint(len(tweets))
             try:
                 response = datatxt.nex(join_tweets.get_unique_string(), **{"lang": tweets[0]["lang"],
                                                                            "include": ["types", "categories",
@@ -110,10 +111,17 @@ class CrawlDandelion:
             join_tweets.split_annotation_each_tweet(response.annotations)
             # pprint.pprint(join_tweets.index_tweet)
             for tweet in join_tweets.index_tweet:
-                seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"], "id_experiment":self.id_experiment}))[0]["_id"]
-                for annotation in tweet["annotations"]:
-                    annotation["tweet"] = tweet["tweet"]["_id"]
-                    annotation["seed"] = seed_id
-                    annotation["id_experiment"] = self.id_experiment
-                    #print(annotation)
-                    self.db_manager.write_mongo("entity", annotation)
+                    #seed_id = list(self.db_manager.find("seeds", {"handle": tweet["tweet"]["user"]["screen_name"], "id_experiment":self.id_experiment}))
+                    #if(len(seed_id)>0):
+                    #        seed_id=seed_id[0]["_id"]
+                    #else:
+                    #    pprint.pprint(tweet["tweet"]["user"]["screen_name"])
+                    #    continue
+
+                    seed_id = tweet["tweet"]["seed"]
+                    for annotation in tweet["annotations"]:
+                        annotation["tweet"] = tweet["tweet"]["_id"]
+                        annotation["seed"] = seed_id
+                        annotation["id_experiment"] = self.id_experiment
+                        #print(annotation)
+                        self.db_manager.write_mongo("entity", annotation)

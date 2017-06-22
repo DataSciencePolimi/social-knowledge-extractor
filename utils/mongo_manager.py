@@ -190,7 +190,20 @@ class MongoManager():
             }
             self.db[collection].insert(s)
 
-    
+    def store_feature_ast_vector(self,fv,experiment_id):
+        collection = "seeds"
+        for handle,row in fv.itertuples():
+            query={
+                "id_experiment":experiment_id,
+                "handle":handle
+            }
+            update={
+                "$set":{
+                    "fv":row
+                }
+            }
+        return self.db[collection].update(query,update)
+
     def store_hubs(self,hubs,experiment_id):
         collection = "seeds"
         for hub in hubs:
@@ -213,6 +226,15 @@ class MongoManager():
                 "origin":cand["origin"]
               }
               self.db[collection].insert(c)
+    
+    def get_unranked_candidates(self,experiment_id):
+        collection = "seeds"
+        query = {
+            "id_experiment":experiment_id,
+            "starting":False,
+            "hub":False
+        }
+        return list(self.find(collection,query))
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)
