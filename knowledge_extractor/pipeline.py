@@ -59,7 +59,7 @@ class Pipeline:
         
         seed_feature_vectors_ast = self.createFeatureVector(space_ast,ast_mentions)*(1-self.alfa) 
         #self.db.store_feature_ast_vector(seed_feature_vectors_ast,self.experiment_id)
-        seed_feature_vectors_ast = sseed_feature_vectors_ast*(1-self.alfa) 
+        seed_feature_vectors_ast = seed_feature_vectors_ast*(1-self.alfa) 
         seed_feature_vectors_ehe = self.createFeatureVector(space_ehe,mentions)*self.alfa
 
         seed_feature_vectors = seed_feature_vectors_ast.join(seed_feature_vectors_ehe)
