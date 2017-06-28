@@ -43,8 +43,8 @@ class PipelineCrawler:
         CrawlDandelion(self.id_experiment, one_dandelion_key,self.db_manager)
 
         # Extract Low Frequencies Entities
-        print("Extract Mention and Hashtag from Tweets...")
-        ExtractEntities(self.id_experiment)
+        #print("Extract Mention and Hashtag from Tweets...")
+        #ExtractEntities(self.id_experiment)
 
         # Compute ranking candidates
         print("Compute DF/TFF and rank candidates...")
