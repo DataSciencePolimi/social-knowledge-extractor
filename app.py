@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 from bson.json_util import dumps
 from utils import mongo_manager
 from crawler.crawler_pipeline import PipelineCrawler
+from crawler.crawler_dandelion import CrawlDandelion
 from werkzeug.utils import secure_filename
 import os
 import pandas as pd
@@ -20,6 +21,7 @@ from utils import initialization_application_keys
 from model import tweets_chunk
 from utils.dandelion_interface import EntityExtraction
 from pydash import py_
+import json
 
 UPLOAD_FOLDER = 'data/In_csv'
 ALLOWED_EXTENSIONS = set(['svg'])
@@ -121,6 +123,12 @@ def import_scenariio():
     
     return render_template("wizard.html",title="Index",scenario=recipe)
 
+@app.route('/test')
+def test():
+    dandelion = CrawlDandelion(None,True,db_manager)
+    seed_type = dandelion.get_seed_type("Angela Merkel")
+    return jsonify(seed_type)
+
 @app.route('/experiment')
 def get_experiment():
     experiment_id = request.args.get('experiment')
@@ -164,14 +172,18 @@ def get_experiment():
 
 @app.route("/mentions_distribution")
 def mention_distribution():
+
     experiment_id = request.args.get('experiment')
     query = {
         "starting":True,
         "id_experiment":ObjectId(experiment_id),
         "hub":False
     }
+    ontology_file = open('data/dbpedia_ontology.json')
+    ontology_content = ontology_file.read()
+    ontology = json.loads(ontology_content)["owl:Thing"]
     seeds = list(db_manager.getSeeds(query))
-    mention_distribution = db_manager.get_mention_count_by_seeds(ObjectId(experiment_id),[s["_id"] for s in seeds])
+    mention_distribution = db_manager.get_mention_count_by_seeds(ObjectId(experiment_id),[s["_id"] for s in seeds],ontology)
     return jsonify(mention_distribution)
 
 @app.route('/full_results/<experiment>')
