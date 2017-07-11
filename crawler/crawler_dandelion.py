@@ -13,16 +13,16 @@ from model import tweets_chunk
 
 
 class CrawlDandelion:
-    def __init__(self, id_experiment, one_dandelion_key,db_manager):
+    def __init__(self, one_dandelion_key,db_manager):
         self.db_manager = db_manager
         self.one_dandelion_key = one_dandelion_key
-        ontology_file = open('../data/dbpedia_ontology.json')
+        ontology_file = open('crawler/dbpedia_ontology.json')
         ontology_content = ontology_file.read()
         ontology = json.loads(ontology_content)["owl:Thing"]
         self.ontology = ontology
     
-    def start(self):
-        if one_dandelion_key:
+    def start(self,id_experiment):
+        if self.one_dandelion_key:
             self.run_crawler_one_keys(id_experiment)
         else:
             self.run_crawler_four_keys(id_experiment)
@@ -33,6 +33,23 @@ class CrawlDandelion:
         datatxt = DataTXT(app_id=app_id, app_key=app_key)
         response = datatxt.nex(seed_name, **{"min_confidence":0.6,"include":["types"]})
         return response.annotations
+    
+    def get_all_seed_type(self,seeds):
+        typed_seeds=[]
+        for s in seeds:
+            try:
+                print(s["handle"])
+                name=self.db_manager.get_seed_name(s["_id"])
+                print(name)
+                if(name==None):
+                    continue
+                types = self.get_seed_type(name)
+                self.db_manager.update("seeds",{"_id":s["_id"]},{"$set":{"annotations":types}})
+            except DandelionException as e:
+                print(e.message)
+                continue
+
+    
 
     def run_crawler_one_keys(self,id_experiment):
         self.id_experiment = id_experiment
@@ -107,7 +124,7 @@ class CrawlDandelion:
         self.run(tweets[size_chunk * 2:size_chunk * 3], configuration.APP3_ID, configuration.API_KEY_DANDELION3)
         self.run(tweets[size_chunk * 3:], configuration.APP4_ID, configuration.API_KEY_DANDELION4)
     
-    def is_parent(node,parent,tree, found=False):
+    def is_parent(self,node,parent,tree, found=False):
         result = None
         keys = tree.keys()
 
@@ -123,12 +140,12 @@ class CrawlDandelion:
         
         return False
     
-    def find_concrete_type(types,ontology):
+    def find_concrete_type(self,types,ontology):
         results = []
         for t in types:
             found = False
             for k in types:
-                if(is_parent(k,t,ontology)):
+                if(self.is_parent(k,t,ontology)):
                     found=True
                     break
             if(not found):
@@ -166,7 +183,7 @@ class CrawlDandelion:
                     for annotation in tweet["annotations"]:
                         annotation["tweet"] = tweet["tweet"]["_id"]
                         annotation["seed"] = seed_id
-                        annotation["concrete_types"] = find_concrete_type(annotation["types"])
+                        annotation["concrete_types"] = self.find_concrete_type(annotation["types"])
                         annotation["id_experiment"] = self.id_experiment
                         #print(annotation)
                         self.db_manager.write_mongo("entity", annotation)

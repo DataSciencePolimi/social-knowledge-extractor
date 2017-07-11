@@ -125,9 +125,11 @@ def import_scenariio():
 
 @app.route('/test')
 def test():
-    dandelion = CrawlDandelion(None,True,db_manager)
-    seed_type = dandelion.get_seed_type("Angela Merkel")
-    return jsonify(seed_type)
+    experiment_id = request.args.get('experiment')
+    seeds = db_manager.getSeeds({"id_experiment":ObjectId(experiment_id)})
+    dandelion = CrawlDandelion(True,db_manager)
+    dandelion.get_all_seed_type(seeds)
+    return "ok"
 
 @app.route('/experiment')
 def get_experiment():
@@ -139,6 +141,17 @@ def get_experiment():
         "hub":False
     }
     seeds = list(db_manager.getSeeds(query))
+    
+    for s in seeds:
+        if(len(s["annotations"])==0):
+            s["annotations"].append({
+                "types":["--"]
+            })
+            continue
+        if(len(s["annotations"][0]["types"])==0):
+            s["annotations"][0]["types"].append("--")
+
+
     query["hub"] = True
     hubs = list(db_manager.getHubs(query))
     experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])

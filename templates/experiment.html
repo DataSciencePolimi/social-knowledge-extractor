@@ -60,12 +60,14 @@
                         <thead>
                             <tr>
                                 <th>Twitter Handle</th>
+                                <th>Type</th>
                             </tr>
                         </thead>
                         <tbody>
                         {% for  v in results.seeds %}
                             <tr>    
                                 <td><label><a target="_blank" href="http://www.twitter.com/{{v.handle}}">{{ v.handle }}</a></label></td>
+                                <td><label>{{v.annotations[0].types[0]}}</label></td>
                             </tr>
                         {% endfor %}
                         </tbody>
