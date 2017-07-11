@@ -143,6 +143,10 @@ def get_experiment():
     seeds = list(db_manager.getSeeds(query))
     
     for s in seeds:
+        if("annotation" not in s.keys()):
+            s["annotations"] = [{
+                "types":["--"]
+            }]
         if(len(s["annotations"])==0):
             s["annotations"].append({
                 "types":["--"]
