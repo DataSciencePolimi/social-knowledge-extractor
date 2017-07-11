@@ -249,13 +249,13 @@ class MongoManager():
     def get_seed_name(self,seed_id):
         collection = "tweets"
         query = {
-            seed:seed_id
+            "seed":seed_id
         }
         tweets = list(self.db[collection].find(query))
 
         # some seeds may not have any tweets (tweets rate limit exceeded)
         if(len(tweets)>0):
-            return tweets[0].user.name
+            return tweets[0]["user"]["name"]
         else:
             return None
 
