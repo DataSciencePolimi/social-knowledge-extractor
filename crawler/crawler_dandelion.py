@@ -38,9 +38,7 @@ class CrawlDandelion:
         typed_seeds=[]
         for s in seeds:
             try:
-                print(s["handle"])
                 name=self.db_manager.get_seed_name(s["_id"])
-                print(name)
                 if(name==None):
                     continue
                 types = self.get_seed_type(name)
