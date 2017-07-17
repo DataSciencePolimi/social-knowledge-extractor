@@ -83,22 +83,26 @@ def find_concrete_type(types,ontology):
     return results
 
 
-
+def is_leaf(node_name,ontology):
+    node = go_to_node(node_name,ontology)
+    if(node=={}):
+        return True
+    return False
 
 
 def update_db():
     db_manager = mongo_manager.MongoManager(configuration.db_name)
     print("connected to mongo")
-    annotations = list(db_manager.db["entity"].find({"types"{"$not":{"$size":0}}))
+    annotations = list(db_manager.db["entity"].find({"types":{"$not":{"$size":0}}}))
     for annotation in annotations:
         pprint.pprint(annotation)
-        concrete_types = find_concrete_type(annotation["types"],ontology)
+        concrete_types = list(filter(lambda x: is_leaf(x,ontology),annotation["types"]))
         query={
             "_id":annotation["_id"]
         }
         update={
             "$set":{
-                "concrete_types":concrete_types
+                "leaf_types":concrete_types
             }
         }
         db_manager.db["entity"].update(query,update)

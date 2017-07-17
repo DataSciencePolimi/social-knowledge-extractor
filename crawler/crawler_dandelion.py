@@ -44,6 +44,10 @@ class CrawlDandelion:
                 if(name==None):
                     continue
                 types = self.get_seed_type(name)
+                concrete_types = self.find_concrete_type(types["types"],self.ontology)
+                types.update({
+                    "concrete_types":concrete_types
+                })
                 self.db_manager.update("seeds",{"_id":s["_id"]},{"$set":{"annotations":types}})
             except DandelionException as e:
                 print(e.message)
@@ -134,7 +138,7 @@ class CrawlDandelion:
             for k in keys:
                 if(k==parent):
                     found=True
-                result = is_parent3(node,parent,tree[k],found)
+                result = self.is_parent(node,parent,tree[k],found)
                 if(result):
                     return True
         
@@ -183,7 +187,7 @@ class CrawlDandelion:
                     for annotation in tweet["annotations"]:
                         annotation["tweet"] = tweet["tweet"]["_id"]
                         annotation["seed"] = seed_id
-                        annotation["concrete_types"] = self.find_concrete_type(annotation["types"])
+                        annotation["concrete_types"] = self.find_concrete_type(annotation["types"],self.ontology)
                         annotation["id_experiment"] = self.id_experiment
                         #print(annotation)
                         self.db_manager.write_mongo("entity", annotation)

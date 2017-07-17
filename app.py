@@ -3,6 +3,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user,current
 from knowledge_extractor.pipeline import Pipeline
 from datetime import datetime
 import configuration
+import itertools
 from bson.objectid import ObjectId
 from bson.json_util import dumps
 from utils import mongo_manager
@@ -131,6 +132,81 @@ def test():
     dandelion.get_all_seed_type(seeds)
     return "ok"
 
+@app.route('/mention_graph')
+def mention_graph():
+    experiment_id = request.args.get('experiment')
+    experiment = dict(list(db_manager.find("experiment",{"_id":ObjectId(experiment_id)}))[0])
+    
+    if "creationDate" in experiment:
+        experiment["creationDate"] = experiment["creationDate"].strftime("%Y-%m-%d %H:%M:%S")  
+    
+    if "endDate" in experiment:
+        experiment["endDate"] = experiment["endDate"].strftime("%Y-%m-%d %H:%M:%S") 
+    
+    return render_template("mentions_graph.html",title="Experiment",results=experiment)
+
+@app.route('/mentions_graph_data')
+def get_mentions_graph():
+    experiment_id = request.args.get('experiment')
+    seeds = db_manager.getSeeds({"id_experiment":ObjectId(experiment_id),"starting":True})
+    ranks = list(db_manager.getResults(ObjectId(experiment_id)))[:100]
+    rank_handles = list(map(lambda x:  x["handle"],ranks))
+    ranks_origin = list(db_manager.db["rank_candidates"].find({"id_experiment":ObjectId(experiment_id),"handle":{"$in":rank_handles}}))
+    result = []
+    for s in seeds:
+        result.append({
+            "data":{
+                "name":s["handle"],
+                "id":s["handle"],
+                "type":"seed"
+            }
+        })
+
+    for r in ranks_origin:
+        result.append({
+            "data":{
+                "name":r["handle"],
+                "id":r["handle"],
+                "type":"candidate",
+                "score":next(item for item in ranks if item["handle"] == r["handle"])["score"]
+            }
+        })
+        for o in r["origin"]:
+            result.append({
+                "data":{
+                "target":r["handle"],
+                "source":o,
+                "id":o+"_"+r["handle"],
+                "type":"me"
+                }
+            })
+    
+    tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId("59662c9dd57606bab977a612")}))
+
+    cooccurences = []
+    for t in tweets:
+        user_mentions = t["entities"]["user_mentions"]
+        if(len(user_mentions)<2):
+            continue
+        
+        handles = list(map(lambda x: x["screen_name"],user_mentions))
+        cooccurences.append(handles)
+
+    for c in cooccurences:
+        combinations = itertools.combinations(c,2)
+        for comb in combinations:
+            if comb[0] not in rank_handles or comb[1] not in rank_handles:
+                continue
+            result.append({
+                "data":{
+                    "id":comb[0]+"_"+comb[1],
+                    "source":comb[0],
+                    "target":comb[1],
+                    "type":"co"
+                }
+            })
+    return jsonify(result)
+
 @app.route('/experiment')
 def get_experiment():
     experiment_id = request.args.get('experiment')
@@ -147,6 +223,7 @@ def get_experiment():
             s["annotations"] = [{
                 "types":["--"]
             }]
+            continue
         if(len(s["annotations"])==0):
             s["annotations"].append({
                 "types":["--"]
@@ -154,6 +231,9 @@ def get_experiment():
             continue
         if(len(s["annotations"][0]["types"])==0):
             s["annotations"][0]["types"].append("--")
+            continue
+
+            s["annotations"]
 
 
     query["hub"] = True
