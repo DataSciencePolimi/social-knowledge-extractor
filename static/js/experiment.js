@@ -175,7 +175,7 @@ function getMentionsByType(type) {
         var c = result[index];
 
         console.log(c);
-        var tableRow = "<tr><td>" + c._id + " </td>";
+        var tableRow = "<tr><td>" + c._id.spot + " </td>";
         tableRow += '<td><a href="'+c.uri+'">'+c.title+'</a></td>';
         tableRow += "</tr>";
 
