@@ -250,7 +250,10 @@ class MongoManager():
             },
             {
                 "$group":{
-                    "_id":"$spot",
+                    "_id":{
+                        "spot":"$spot",
+                        "title":"$title"
+                    },
                     "uri":{
                         "$first":"$uri"
                     },
@@ -270,7 +273,7 @@ class MongoManager():
     
     def get_mention_count_by_seeds(self,experiment_id,seed_ids,ontology):
         collection = "entity"
-        query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"concrete_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"concrete_types":1}},{"$unwind":"$concrete_types"},{"$group":{"_id":"$concrete_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
+        query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"concrete_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"concrete_types":1}},{"$unwind":"$concrete_types"},{"$match":{"concrete_types":{"$ne":"http://dbpedia.org/ontology/Location"}}},{"$group":{"_id":"$concrete_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
         #query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"leaf_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"leaf_types":1}},{"$unwind":"$leaf_types"},{"$group":{"_id":"$leaf_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
         return list(self.db[collection].aggregate(query))[:20]
     
