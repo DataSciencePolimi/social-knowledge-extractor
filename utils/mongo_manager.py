@@ -236,6 +236,33 @@ class MongoManager():
         }
         return list(self.find(collection,query))
 
+    def get_mentions_by_type(self,experiment_id,type_name,confidence,seed_ids):
+        collection = "entity"
+        query = {
+            "id_experiment":experiment_id,
+            "leaf_types":type_name,
+            "confidence":{"$gt":confidence},
+            "seed":{"$in":seed_ids}
+        }
+        aggregation=[
+            {
+                "$match":query
+            },
+            {
+                "$group":{
+                    "_id":"$spot",
+                    "uri":{
+                        "$first":"$uri"
+                    },
+                    "title":{
+                        "$first":"$title"
+                    }
+                }
+            }
+        ]
+        #return list(self.db[collection].find(query,{"_id":0,"tweet":0,"seed":0,"id_experiment":0}).distinct("spot"))
+        return list(self.db[collection].aggregate(aggregation))
+    
     def get_mention_count_all(self,experiment_id):
         collection = "entity"
         query = ([{"$match":{"id_experiment":experiment_id,"types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"types":{"$slice":["$types",1]}}},{"$unwind":"$types"},{"$group":{_id:"$types",count:{"$sum":1}}},{"$sort":{count:-1}}])
@@ -243,8 +270,8 @@ class MongoManager():
     
     def get_mention_count_by_seeds(self,experiment_id,seed_ids,ontology):
         collection = "entity"
-        query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"concrete_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"concrete_types":1}},{"$unwind":"$concrete_types"},{"$group":{"_id":"$concrete_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
-        #query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"leaf_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"leaf_types":1}},{"$unwind":"$leaf_types"},{"$group":{"_id":"$leaf_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
+        #query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"concrete_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"concrete_types":1}},{"$unwind":"$concrete_types"},{"$group":{"_id":"$concrete_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
+        query = ([{"$match":{"confidence":{"$gt":0.6},"id_experiment":experiment_id,"seed":{"$in":seed_ids},"leaf_types":{"$not":{"$size":0}}}},{"$project":{"seed":1,"leaf_types":1}},{"$unwind":"$leaf_types"},{"$group":{"_id":"$leaf_types","count":{"$sum":1}}},{"$sort":{"count":-1}}])
         return list(self.db[collection].aggregate(query))[:20]
     
     def get_seed_name(self,seed_id):

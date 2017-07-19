@@ -115,6 +115,21 @@ def get_more_candidates():
         "candidates":candidates
     })
 
+@app.route('/mentions_by_type')
+def get_mentions_by_type():
+    type_name = request.args.get("type")
+    type_name = "http://dbpedia.org/ontology/"+type_name
+    experiment_id = request.args.get("experiment")
+    query = {
+        "starting":True,
+        "id_experiment":ObjectId(experiment_id),
+        "hub":False
+    }
+    seeds = list(db_manager.getSeeds(query))
+    mentions = db_manager.get_mentions_by_type(ObjectId(experiment_id),type_name,0.6,[s["_id"] for s in seeds])
+
+    return jsonify(mentions)
+
 @app.route('/import')
 def import_scenariio():
     recipe = list(db_manager.get_recipe(request.args.get("recipe")))[0]
