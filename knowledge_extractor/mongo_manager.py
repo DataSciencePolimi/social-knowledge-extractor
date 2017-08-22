@@ -103,13 +103,16 @@ class MongoManager():
         collection = "entity"
         return self.find(collection,query,project={"types":1})
 
-    def saveScores(self,scores,id_experiment):
+    def saveScores(self,scores,id_experiment,name,index):
         collection = "rankings"
         for k,v in scores.items():
             score = {
                 "handle":k,
                 "score":v,
-                "experiment_id":id_experiment
+                "experiment_id":id_experiment,
+                "name":name,
+                "index":index,
+                "expert_type":False
             }
             self.write_mongo(collection,score)
     
@@ -124,8 +127,7 @@ class MongoManager():
         collection = "rankings"
         query = {
             "experiment_id":experiment_id,
-            "score":{"$ne":float('nan')},
-            "expert_type":False,
+            "score":{"$ne":float('nan')}
         }
         if(limit):
             if(skip!=None):

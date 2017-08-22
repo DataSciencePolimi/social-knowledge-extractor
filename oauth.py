@@ -96,10 +96,10 @@ class TwitterSignIn(OAuthSignIn):
         )
 
     def authorize(self):
-        #request_token = self.service.get_request_token(
-        #    params={'oauth_callback': self.get_callback_url()}
-        #)
-        request_token = self.service.get_request_token()
+        request_token = self.service.get_request_token(
+            params={'oauth_callback': self.get_callback_url()}
+        )
+        #request_token = self.service.get_request_token()
         session['request_token'] = request_token
         return redirect(self.service.get_authorize_url(request_token[0]))
 
@@ -114,7 +114,6 @@ class TwitterSignIn(OAuthSignIn):
             data={'oauth_verifier': request.args['oauth_verifier']}
         )
         me = oauth_session.get('account/verify_credentials.json').json()
-        print(me)
         social_id = 'twitter$' + str(me.get('id'))
         username = me.get('screen_name')
         profile_img = me["profile_image_url"].replace("_normal","")

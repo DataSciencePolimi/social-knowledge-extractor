@@ -212,6 +212,7 @@ def get_mentions_graph():
         for comb in combinations:
             if comb[0] not in rank_handles or comb[1] not in rank_handles:
                 continue
+            pprint.pprint(comb)
             result.append({
                 "data":{
                     "id":comb[0]+"_"+comb[1],
@@ -304,7 +305,7 @@ def fullResults(experiment):
     si = io.StringIO()
     cw = csv.writer(si)
     for r in ranks:
-        cw.writerow([r["handle"],r["score"]])
+        cw.writerow([r["handle"],r["score"],r["name"],r["index"],r["expert_type"],r["experiment_id"]])
 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"

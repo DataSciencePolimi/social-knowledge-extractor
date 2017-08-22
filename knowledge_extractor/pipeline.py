@@ -30,28 +30,46 @@ class Pipeline:
         
 
     def getSeeds(self):
-        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
+        #query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
+        #return self.db.getSeeds(query)[:5]
+        name = self.name
+        index = self.index
+        import os
+        script_dir = os.path.dirname(__file__)
+        file_name =  name+"/"+name+"_"+str(index)+".csv"
+        abs_file_path = os.path.join(script_dir, file_name)
+
+        seed_name = [line.rstrip('\n') for line in open(abs_file_path)]
+        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False,"handle":{"$in":seed_name}}
         return self.db.getSeeds(query)
 
     def getCandidates(self):
-        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False}
-        return self.db.getCandidates(query)
+        seeds = self.getSeeds()
+        seeds = list(map(lambda x: x["handle"],seeds))
+        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":seeds}}
+        candidates =  self.db.getCandidates(query)
+        print(candidates)
+        return candidates
     
     def computeSeedVectors(self,seeds):
         mentions = {}
         ast_mentions = {}
         
+        seed_ids =  list(map(lambda x:  x["_id"],seeds))
+        concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
+        concrete_types = list(map(lambda x:  x["_id"],concrete_types))
 
-        ehe = EHE(self.db,self.expertFile)
-        ast = AST(self.db,self.expertFile)
+        #ehe = EHE(self.db,self.expertType)
+        ehe = EHE(self.db,concrete_types)
+        ast = AST(self.db,self.expertType)
         
         for seed in seeds:
             #computer array of mentioned entity
-            pprint.pprint(seed)
+            #pprint.pprint(seed)
             mentions[seed["handle"]] = ehe.getEntities(seed)
             ast_mentions[seed["handle"]] = ast.getEntities(seed)
         
-        pprint.pprint(ast_mentions)
+        #pprint.pprint(ast_mentions)
         space_ehe = self.createSpace(mentions)
         space_ast = self.createSpace(ast_mentions)
 
@@ -77,12 +95,18 @@ class Pipeline:
         mentions = {}
         ast_mentions = {}
         
-        ehe = EHE(self.db,self.expertFile)
-        ast = AST(self.db,self.expertFile)
+        seeds = self.getSeeds()
+        seed_ids =  list(map(lambda x:  x["_id"],seeds))
+        concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
+        concrete_types = list(map(lambda x:  x["_id"],concrete_types))
+
+        #ehe = EHE(self.db,self.expertType)
+        ehe = EHE(self.db,concrete_types)
+        ast = AST(self.db,self.expertType)
         
         for cand in cands:
             #computer array of mentioned entity
-            print("Getting mentions for candidate " + cand["handle"])
+            #print("Getting mentions for candidate " + cand["handle"])
             mentions[cand["handle"]] = ehe.getEntities(cand)
             ast_mentions[cand["handle"]] = ast.getEntities(cand)
         
@@ -108,7 +132,7 @@ class Pipeline:
        
         feature_vectors["seeds"] = seeds_components["fv"]
         print("Computing candidates fv")
-        pprint.pprint(seeds_components["fv"])
+        #pprint.pprint(seeds_components["fv"])
         feature_vectors["candidates"] = self.computeCandidatesVectors(candidates,seeds_components["space_ast"],seeds_components["space_ehe"])
         
         centroid = self.createCentroid(feature_vectors["seeds"])
@@ -117,21 +141,38 @@ class Pipeline:
         scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
         
         print("Saving the rankings")
-        self.db.saveScores(scores,self.experiment_id)
+        self.db.saveScores(scores,self.experiment_id,self.name,self.index)
         
         return scores
 
-    def __init__(self,db,experiment_id):
+    def __init__(self,db,experiment_id,name,index):
         self.alfa=0.7
         self.db=db
         self.experiment_id = experiment_id
-        self.expertFile = self.db.getExpertTypes(experiment_id)
+        self.index = index
+        self.name = name
+        self.expertType = self.db.getExpertTypes(experiment_id)
 
 if __name__ == "__main__":
-     import mongo_manager
-     import configuration
-     from bson import ObjectId
-     db_manager = mongo_manager.MongoManager(configuration.db_name)
+    import mongo_manager
+    import configuration
+    from bson import ObjectId
 
-     kn = Pipeline(db_manager, ObjectId('594142ebd576065c263fc798'))
-     kn.run()
+
+    db_manager = mongo_manager.MongoManager(configuration.db_name)
+     
+
+    for index in range(0,10):
+        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_5",index)
+        kn.run()
+
+    for index in range(0,10):
+        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_10",index)
+        kn.run()
+    
+    for index in range(0,10):
+        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_15",index)
+        kn.run()
+
+    kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_20",0)
+    kn.run()

@@ -25,3 +25,4 @@ class AST:
         
     def __init__(self,db,expertTypes):
         self.db = db
+        self.expertTypes = expertTypes

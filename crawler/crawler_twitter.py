@@ -36,8 +36,8 @@ class CrawlerTwitter():
             print("Starting seed: "+s["handle"])
             tweets_seed = self.crawler.get_users_tweets(s["handle"], N)
             if (len(tweets_seed) == 0):
-                self.db_manager.delete_element("seeds", {"handle": s["handle"],"id_experiment":self.id_experiment})
                 continue
+            #    self.db_manager.delete_element("seeds", {"handle": s["handle"],"id_experiment":self.id_experiment})
             # else:
             #     logging.info(s+" Tweets' number: "+str(len(tweets_seed)))
 
