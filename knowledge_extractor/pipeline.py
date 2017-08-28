@@ -30,9 +30,10 @@ class Pipeline:
         
 
     def getSeeds(self):
-        #query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
-        #return self.db.getSeeds(query)[:5]
-        name = self.name
+        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
+        return self.db.getSeeds(query)
+        
+        ''' name = self.name
         index = self.index
         import os
         script_dir = os.path.dirname(__file__)
@@ -42,11 +43,19 @@ class Pipeline:
         seed_name = [line.rstrip('\n') for line in open(abs_file_path)]
         query = {"id_experiment":self.experiment_id, "starting":True, "hub":False,"handle":{"$in":seed_name}}
         return self.db.getSeeds(query)
-
+ '''
     def getCandidates(self):
-        seeds = self.getSeeds()
-        seeds = list(map(lambda x: x["handle"],seeds))
-        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":seeds}}
+        
+        name = self.name
+        index = self.index
+        import os
+        script_dir = os.path.dirname(__file__)
+        file_name =  name+"/"+name+"_"+str(index)+".csv"
+        abs_file_path = os.path.join(script_dir, file_name)
+
+        hub_name = [line.rstrip('\n') for line in open(abs_file_path)]
+
+        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":hub_name}}
         candidates =  self.db.getCandidates(query)
         print(candidates)
         return candidates
@@ -163,16 +172,20 @@ if __name__ == "__main__":
      
 
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_5",index)
-        kn.run()
-
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_10",index)
+        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_1",index)
         kn.run()
     
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_15",index)
+        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_3",index)
+        kn.run()
+    
+    for index in range(0,10):
+        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_5",index)
+        kn.run()
+    
+    for index in range(0,10):
+        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_8",index)
         kn.run()
 
-    kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"),"aw_seeds_20",0)
+    kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_10",0)
     kn.run()
