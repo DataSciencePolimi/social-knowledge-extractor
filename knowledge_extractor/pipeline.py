@@ -68,8 +68,8 @@ class Pipeline:
         concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
         concrete_types = list(map(lambda x:  x["_id"],concrete_types))
 
-        #ehe = EHE(self.db,self.expertType)
-        ehe = EHE(self.db,concrete_types)
+        ehe = EHE(self.db,self.expertType)
+        #ehe = EHE(self.db,concrete_types)
         ast = AST(self.db,self.expertType)
         
         for seed in seeds:
@@ -109,8 +109,8 @@ class Pipeline:
         concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
         concrete_types = list(map(lambda x:  x["_id"],concrete_types))
 
-        #ehe = EHE(self.db,self.expertType)
-        ehe = EHE(self.db,concrete_types)
+        ehe = EHE(self.db,self.expertType)
+        #ehe = EHE(self.db,concrete_types)
         ast = AST(self.db,self.expertType)
         
         for cand in cands:
@@ -172,20 +172,20 @@ if __name__ == "__main__":
      
 
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_1",index)
+        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_1",index)
         kn.run()
     
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_3",index)
+        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_3",index)
         kn.run()
     
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_5",index)
+        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_5",index)
         kn.run()
     
     for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_8",index)
+        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_8",index)
         kn.run()
 
-    kn = Pipeline(db_manager, ObjectId("599c271fd57606d1868643bf"),"aw_hub_10",0)
+    kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_10",0)
     kn.run()

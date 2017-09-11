@@ -112,7 +112,7 @@ class MongoManager():
                 "experiment_id":id_experiment,
                 "name":name,
                 "index":index,
-                "expert_type":False
+                "expert_type":True
             }
             self.write_mongo(collection,score)
     

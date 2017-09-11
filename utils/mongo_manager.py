@@ -125,7 +125,7 @@ class MongoManager():
         query = {
             "experiment_id":experiment_id,
             "score":{"$ne":float('nan')},
-            "expert_type":False,
+            "expert_type":True
         }
         if(limit):
             if(skip!=None):
