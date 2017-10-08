@@ -164,10 +164,20 @@ def mention_graph():
 def get_mentions_graph():
     experiment_id = request.args.get('experiment')
     seeds = db_manager.getSeeds({"id_experiment":ObjectId(experiment_id),"starting":True})
-    ranks = list(db_manager.getResults(ObjectId(experiment_id)))[:100]
+    hubs = db_manager.getHubs({"id_experiment":ObjectId(experiment_id),"starting":True})
+    ranks = list(db_manager.getResults(ObjectId(experiment_id)))
     rank_handles = list(map(lambda x:  x["handle"],ranks))
     ranks_origin = list(db_manager.db["rank_candidates"].find({"id_experiment":ObjectId(experiment_id),"handle":{"$in":rank_handles}}))
     result = []
+
+    for h in hubs:
+        result.append({
+            "data":{
+                "name":h["handle"],
+                "id":h["handle"],
+                "type":"hub"
+            }
+        })
     for s in seeds:
         result.append({
             "data":{
@@ -196,7 +206,7 @@ def get_mentions_graph():
                 }
             })
     
-    tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId("59662c9dd57606bab977a612")}))
+    tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId(experiment_id)}))
 
     cooccurences = []
     for t in tweets:

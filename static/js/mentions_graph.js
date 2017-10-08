@@ -30,6 +30,13 @@ $.ajax({
                     }
                 },
                 {
+                    selector: 'node[type="hub"]',
+                    style: {
+                        'background-color': 'blue',
+                        'label': 'data(id)'
+                    }
+                },
+                {
                     selector: 'node[type="candidate"]',
                     style: {
                         'background-color': 'green',
