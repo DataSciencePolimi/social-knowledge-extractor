@@ -5,7 +5,7 @@ import logging
 
 from twython import Twython, TwythonAuthError, TwythonError
 from langdetect import detect
-
+import time
 import configuration
 
 
@@ -68,15 +68,15 @@ class CrawlerUserTimelineTwitter:
             logging.error(e)
             return []
         except TwythonError as e:
+            logging.error(e.error_code)
             if (e.error_code == 429):
                 print(screen_name)
                 time.sleep(30)
                 return self.get_users_tweets(screen_name, N)
-                logging.error(e.error_code)
-                print(e.error_code)
-                print(screen_name)
+            print(e.error_code)
+            print(screen_name)
                 # Manage No Page Found: User Doesn't exist
-                return []
+            return []
     def get_all_handles_mentioned(self, list_of_tweet, owner):
 
         mentions = []
