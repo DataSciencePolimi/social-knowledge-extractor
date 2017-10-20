@@ -32,30 +32,9 @@ class Pipeline:
     def getSeeds(self):
         query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
         return self.db.getSeeds(query)
-        
-        ''' name = self.name
-        index = self.index
-        import os
-        script_dir = os.path.dirname(__file__)
-        file_name =  name+"/"+name+"_"+str(index)+".csv"
-        abs_file_path = os.path.join(script_dir, file_name)
 
-        seed_name = [line.rstrip('\n') for line in open(abs_file_path)]
-        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False,"handle":{"$in":seed_name}}
-        return self.db.getSeeds(query)
- '''
     def getCandidates(self):
-        
-        name = self.name
-        index = self.index
-        import os
-        script_dir = os.path.dirname(__file__)
-        file_name =  name+"/"+name+"_"+str(index)+".csv"
-        abs_file_path = os.path.join(script_dir, file_name)
-
-        hub_name = [line.rstrip('\n') for line in open(abs_file_path)]
-
-        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":hub_name}}
+        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False}
         candidates =  self.db.getCandidates(query)
         print(candidates)
         return candidates
@@ -141,7 +120,7 @@ class Pipeline:
        
         feature_vectors["seeds"] = seeds_components["fv"]
         print("Computing candidates fv")
-        #pprint.pprint(seeds_components["fv"])
+        pprint.pprint(seeds_components["fv"])
         feature_vectors["candidates"] = self.computeCandidatesVectors(candidates,seeds_components["space_ast"],seeds_components["space_ehe"])
         
         centroid = self.createCentroid(feature_vectors["seeds"])
@@ -150,16 +129,14 @@ class Pipeline:
         scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
         
         print("Saving the rankings")
-        self.db.saveScores(scores,self.experiment_id,self.name,self.index)
+        self.db.saveScores(scores,self.experiment_id)
         
         return scores
 
-    def __init__(self,db,experiment_id,name,index):
+    def __init__(self,db,experiment_id):
         self.alfa=0.7
         self.db=db
         self.experiment_id = experiment_id
-        self.index = index
-        self.name = name
         self.expertType = self.db.getExpertTypes(experiment_id)
 
 if __name__ == "__main__":
@@ -169,23 +146,21 @@ if __name__ == "__main__":
 
 
     db_manager = mongo_manager.MongoManager(configuration.db_name)
-     
 
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_1",index)
-        kn.run()
-    
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_3",index)
-        kn.run()
-    
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_5",index)
-        kn.run()
-    
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_8",index)
-        kn.run()
-
-    kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_10",0)
+    print("Chess player")
+    kn = Pipeline(db_manager, ObjectId("596e027dd5760631ae2d154e"))
     kn.run()
+   
+    print("Fashion")
+    kn = Pipeline(db_manager, ObjectId("59662c9dd57606bab977a612"))
+    kn.run()
+
+    print("Australian Writers")
+    kn = Pipeline(db_manager, ObjectId("59536f06a5528741b45f76d7"))
+    kn.run()
+
+    print("Finance")
+    kn = Pipeline(db_manager, ObjectId("595621baa552876f797a3fcb"))
+    kn.run()
+
+  

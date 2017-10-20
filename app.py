@@ -196,7 +196,9 @@ def get_mentions_graph():
                 "score":next(item for item in ranks if item["handle"] == r["handle"])["score"]
             }
         })
+        print(r)
         for o in r["origin"]:
+            print(o)
             result.append({
                 "data":{
                 "target":r["handle"],
@@ -315,7 +317,7 @@ def fullResults(experiment):
     si = io.StringIO()
     cw = csv.writer(si)
     for r in ranks:
-        cw.writerow([r["handle"],r["score"],r["name"],r["index"],r["expert_type"],r["experiment_id"]])
+        cw.writerow([r["handle"],r["score"],r["experiment_id"]])
 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"

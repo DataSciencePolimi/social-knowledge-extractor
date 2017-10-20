@@ -125,7 +125,9 @@ class MongoManager():
         query = {
             "experiment_id":experiment_id,
             "score":{"$ne":float('nan')},
-            "expert_type":True+
+            "expert_type":True,
+            "index":0,
+            "name":"chess_hub_10"
         }
         if(limit):
             if(skip!=None):
@@ -290,6 +292,19 @@ class MongoManager():
             return tweets[0]["user"]["name"]
         else:
             return None
+    
+    def getTweets(self,seed_name,experiment_id,start_date,end_date):
+        collection = "tweets"
+        query = {
+            "user.name":seed_name,
+            "experiment_id":experiment_id,
+            "date":{
+                "$gte": ISODate(start_date),
+                "$lt": ISODate(end_date)
+             }
+        }
+
+        return list(self.db[collection].find(query))
 
 if __name__ == '__main__':
     db_manager = MongoManager(configuration.db_name)
