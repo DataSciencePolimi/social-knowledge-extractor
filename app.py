@@ -196,7 +196,7 @@ def get_mentions_graph():
                 }
             })
     
-    tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId("59662c9dd57606bab977a612")}))
+    tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId(experiment_id)}))
 
     cooccurences = []
     for t in tweets:
