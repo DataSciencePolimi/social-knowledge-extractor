@@ -211,14 +211,17 @@ def get_mentions_graph():
     tweets = list(db_manager.db["tweets"].find({"id_experiment":ObjectId(experiment_id)}))
 
     cooccurences = []
+    origins = []
     for t in tweets:
         user_mentions = t["entities"]["user_mentions"]
         if(len(user_mentions)<2):
             continue
         
         handles = list(map(lambda x: x["screen_name"],user_mentions))
+        origins.append(t["user"]["screen_name"])
         cooccurences.append(handles)
 
+    i=0
     for c in cooccurences:
         combinations = itertools.combinations(c,2)
         for comb in combinations:
@@ -230,9 +233,12 @@ def get_mentions_graph():
                     "id":comb[0]+"_"+comb[1],
                     "source":comb[0],
                     "target":comb[1],
+                    "origin":origins[i],
                     "type":"co"
                 }
             })
+            i=i+1
+
     return jsonify(result)
 
 @app.route('/experiment')
