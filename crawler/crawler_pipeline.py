@@ -29,9 +29,9 @@ class PipelineCrawler:
         # I need the mongo id
         new_seeds = self.db_manager.get_unranked_candidates(self.id_experiment)
 
-        if(self.isHub):
-            print("Crawling the seeds")
-            crawler_twitter.run(self.N,self.seeds)
+        #if(self.isHub):
+        #    print("Crawling the seeds")
+        #    crawler_twitter.run(self.N,self.seeds)
         
 
         print("Crawling the mentions")
@@ -67,7 +67,7 @@ class PipelineCrawler:
         self.hubs = self.db_manager.getHubs(query)
         
         if(isHub):
-            self.original_seeds = self.hubs
+            self.original_seeds = self.hubs + self.seeds
         else:  
             self.original_seeds = self.seeds
         
