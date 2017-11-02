@@ -1,9 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
-
-# C extensions
+*pctor/mixed_runs/y.class
+knowledge_extractor/mixed_runs/
 *.so
 
 # Distribution / packaging
