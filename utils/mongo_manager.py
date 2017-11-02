@@ -119,15 +119,27 @@ class MongoManager():
             "_id":experiment_id
         }
         return self.find(collection,query)
-    
+
+    def getResultsExport(self,experiment_id,n_hubs,n_seeds,index):
+        collection = "rankings"
+        query = {
+            "experiment_id":experiment_id,
+            "score":{"$ne":float('nan')},
+            "expert_type":False,
+            "index":str(index),
+            "n_seeds":str(n_seeds),
+            "n_hubs":str(n_hubs)
+        }
+        
+        return self.find(collection,query).sort("score",-1).limit(20)
+        
+        
     def getResults(self,experiment_id,limit=False,skip=None):
         collection = "rankings"
         query = {
             "experiment_id":experiment_id,
             "score":{"$ne":float('nan')},
             "expert_type":True,
-            "index":0,
-            "name":"chess_hub_10"
         }
         if(limit):
             if(skip!=None):

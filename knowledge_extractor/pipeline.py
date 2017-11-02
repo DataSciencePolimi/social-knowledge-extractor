@@ -30,32 +30,51 @@ class Pipeline:
         
 
     def getSeeds(self):
-        query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
-        return self.db.getSeeds(query)
+        #query = {"id_experiment":self.experiment_id, "starting":True, "hub":False}
+        #return self.db.getSeeds(query)
         
-        ''' name = self.name
+        name = self.name
+        seeds_number = self.s_number
+        hubs_number = self.h_number
         index = self.index
         import os
         script_dir = os.path.dirname(__file__)
-        file_name =  name+"/"+name+"_"+str(index)+".csv"
+        folder_name = hubs_number+"_"+seeds_number
+        seed_file_name = name+"_seeds_"+seeds_number+"_"+index+".csv"
+        file_name =  "mixed_runs/"+name+"/"+folder_name+"/"+seed_file_name
         abs_file_path = os.path.join(script_dir, file_name)
 
         seed_name = [line.rstrip('\n') for line in open(abs_file_path)]
         query = {"id_experiment":self.experiment_id, "starting":True, "hub":False,"handle":{"$in":seed_name}}
         return self.db.getSeeds(query)
- '''
+
     def getCandidates(self):
         
+        import os
         name = self.name
         index = self.index
-        import os
+        seeds_number = self.s_number
+        hubs_number = self.h_number
+        folder_name = hubs_number+"_"+seeds_number
+        hub_name = []
         script_dir = os.path.dirname(__file__)
-        file_name =  name+"/"+name+"_"+str(index)+".csv"
-        abs_file_path = os.path.join(script_dir, file_name)
 
-        hub_name = [line.rstrip('\n') for line in open(abs_file_path)]
+        import os
 
-        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":hub_name}}
+        if int(hubs_number)>0:
+            hub_file_name = name+"_hub_"+hubs_number+"_"+index+".csv"
+            h_file_name =  "mixed_runs/"+name+"/"+folder_name+"/"+hub_file_name
+            h_abs_file_path = os.path.join(script_dir, h_file_name)
+
+            hub_name = [line.rstrip('\n') for line in open(h_abs_file_path)]
+
+        seed_file_name = name+"_seeds_"+seeds_number+"_"+index+".csv"
+        s_file_name =  "mixed_runs/"+name+"/"+folder_name+"/"+seed_file_name
+        s_abs_file_path = os.path.join(script_dir, s_file_name)
+
+        seed_name = [line.rstrip('\n') for line in open(s_abs_file_path)]
+
+        query = {"id_experiment":self.experiment_id, "starting":False, "hub":False,"origin":{"$in":hub_name+seed_name}}
         candidates =  self.db.getCandidates(query)
         print(candidates)
         return candidates
@@ -68,8 +87,8 @@ class Pipeline:
         concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
         concrete_types = list(map(lambda x:  x["_id"],concrete_types))
 
-        ehe = EHE(self.db,self.expertType)
-        #ehe = EHE(self.db,concrete_types)
+        #ehe = EHE(self.db,self.expertType)
+        ehe = EHE(self.db,concrete_types)
         ast = AST(self.db,self.expertType)
         
         for seed in seeds:
@@ -109,8 +128,8 @@ class Pipeline:
         concrete_types = self.db.get_mention_count_by_seeds(self.experiment_id,seed_ids,None)
         concrete_types = list(map(lambda x:  x["_id"],concrete_types))
 
-        ehe = EHE(self.db,self.expertType)
-        #ehe = EHE(self.db,concrete_types)
+        #ehe = EHE(self.db,self.expertType)
+        ehe = EHE(self.db,concrete_types)
         ast = AST(self.db,self.expertType)
         
         for cand in cands:
@@ -150,16 +169,18 @@ class Pipeline:
         scores = feature_vectors["candidates"].apply(lambda row: 1-cosine(row,centroid),axis=1)
         
         print("Saving the rankings")
-        self.db.saveScores(scores,self.experiment_id,self.name,self.index)
+        self.db.saveScores(scores,self.experiment_id,self.name,self.index,self.h_number,self.s_number)
         
         return scores
 
-    def __init__(self,db,experiment_id,name,index):
+    def __init__(self,db,experiment_id,name,hub_number,seed_number,index):
         self.alfa=0.7
         self.db=db
         self.experiment_id = experiment_id
         self.index = index
         self.name = name
+        self.s_number = seed_number
+        self.h_number = hub_number
         self.expertType = self.db.getExpertTypes(experiment_id)
 
 if __name__ == "__main__":
@@ -170,22 +191,27 @@ if __name__ == "__main__":
 
     db_manager = mongo_manager.MongoManager(configuration.db_name)
      
+    hubs_number = [1,3,5,8]
+    seeds_number = [2,5,10]
 
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_1",index)
+    #for index in hubs_number:
+    #    for index2 in seeds_number:
+    #        for k in range(0,3):
+    #            kn = Pipeline(db_manager,ObjectId("59f47ddcb98644853980c554"),"finance",str(index),str(index2),str(k))
+    #            kn.run()
+
+    for k in range(0,3):
+        kn = Pipeline(db_manager,ObjectId("59f3308eb986448539624d35"),"chess","0","2",str(k))
         kn.run()
     
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_3",index)
-        kn.run()
-    
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_5",index)
-        kn.run()
-    
-    for index in range(0,10):
-        kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_8",index)
+    for k in range(0,3):
+        kn = Pipeline(db_manager,ObjectId("59f33f5fb9864485396a6b4a"),"aw","0","2",str(k))
         kn.run()
 
-    kn = Pipeline(db_manager, ObjectId("59a52680d576061cf835a25c"),"fashion_hub_10",0)
-    kn.run()
+    for k in range(0,3):
+        kn = Pipeline(db_manager,ObjectId("59f472bcb9864485397963a7"),"fashion","0","2",str(k))
+        kn.run()
+    
+    for k in range(0,3):
+        kn = Pipeline(db_manager,ObjectId("59f47ddcb98644853980c554"),"finance","0","2",str(k))
+        kn.run()

@@ -103,7 +103,7 @@ class MongoManager():
         collection = "entity"
         return self.find(collection,query,project={"types":1})
 
-    def saveScores(self,scores,id_experiment,name,index):
+    def saveScores(self,scores,id_experiment,name,index,hubs_number,seeds_number):
         collection = "rankings"
         for k,v in scores.items():
             score = {
@@ -112,7 +112,9 @@ class MongoManager():
                 "experiment_id":id_experiment,
                 "name":name,
                 "index":index,
-                "expert_type":True
+                "n_hubs":hubs_number,
+                "n_seeds":seeds_number,
+                "expert_type":False
             }
             self.write_mongo(collection,score)
     

@@ -311,12 +311,26 @@ def mention_distribution():
 
 @app.route('/full_results/<experiment>')
 def fullResults(experiment):
-    ranks = list(db_manager.getResults(ObjectId(experiment)))
+
+    seeds_number = [2,5,10]
+    hubs_number = [1,3,5,8]
     si = io.StringIO()
     cw = csv.writer(si)
-    for r in ranks:
-        cw.writerow([r["handle"],r["score"],r["name"],r["index"],r["expert_type"],r["experiment_id"]])
 
+    cw.writerow(["handle","score","name","#run","hub number","seed number","expert type","experiment"])
+    ''' for index in hubs_number:
+        for index2 in seeds_number:
+            for k in range(0,3):
+                ranks = list(db_manager.getResultsExport(ObjectId(experiment),index,index2,k))
+                for r in ranks:
+                    cw.writerow([r["handle"],r["score"],r["name"],r["index"],r["n_hubs"],r["n_seeds"],r["expert_type"],r["experiment_id"]])
+ '''
+
+    for k in range(0,3):
+        ranks = list(db_manager.getResultsExport(ObjectId(experiment),"0","2",k))
+        for r in ranks:
+            cw.writerow([r["handle"],r["score"],r["name"],r["index"],r["n_hubs"],r["n_seeds"],r["expert_type"],r["experiment_id"]])
+ 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"
     output.headers["Content-type"] = "text/csv"

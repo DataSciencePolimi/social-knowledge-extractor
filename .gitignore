@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.ske-env/
+knowledge_extractor/mixed_runs/
 
 # C extensions
 *.so
