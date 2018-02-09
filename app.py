@@ -83,7 +83,7 @@ def registerEvaluation(experiment):
         db_manager.register_evaluation(query,update)
 
     flash('Evaluation sent','success')
-    return redirect("/ske/home")
+    return redirect("/home")
     
 @app.route('/results')
 def get_experiments_list():
